@@ -1,0 +1,55 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    color: white;
+}
+
+#header {
+    width: 100%;
+    background-color: #a814ff;
+    height: 50px;
+}
+
+.inner-wrapper {
+    background-color: #1a212d;
+    height: 100%;
+}
+
+#header > * {
+    display: inline;
+    color: white;
+}
+
+#hamburger {
+    padding-top: 5px;
+    padding-left: 50px;
+    max-width: 40px;
+}
+
+#logo {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700; 
+    font-size: 30px;
+    margin-top: 0;
+    padding-left: 20px;
+}
+
+#search-form {
+    padding-top: 10px;
+    float: right;
+    margin-right: 40px;
+    height: 10px;
+    width: 25%;
+}
+
+#search-box {
+    width: 80%;
+    color: gray;
+    height: 30px;
+}
+
+#submit-button {
+    width: 15%;
+    height: 30px;
+    color: black;
+}
