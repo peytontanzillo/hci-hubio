@@ -4,15 +4,11 @@
     color: white;
 }
 
+/* === All CSS necessary for header === */
 #header {
     width: 100%;
     background-color: #a814ff;
     height: 50px;
-}
-
-.inner-wrapper {
-    background-color: #1a212d;
-    height: 100%;
 }
 
 #header > * {
@@ -21,17 +17,19 @@
 }
 
 #hamburger {
+    float: left;
     padding-top: 5px;
-    padding-left: 50px;
+    padding-left: 10px;
     max-width: 40px;
 }
 
 #logo {
+    float: left;
     font-family: 'Roboto', sans-serif;
     font-weight: 700; 
     font-size: 30px;
-    margin-top: 0;
     padding-left: 20px;
+    padding-top: 9px;
 }
 
 #search-form {
@@ -52,4 +50,68 @@
     width: 15%;
     height: 30px;
     color: black;
+}
+
+/* === CSS for main page content === */
+.page-content {
+    background-color: #1a212d;
+}
+
+.inner-wrapper {
+    padding: 1px 100px;
+    height: 100%;
+}
+
+.content-band {
+     margin-top: 50px;
+}
+
+.content-band > h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700; 
+    font-size: 30px;
+    border-bottom: 1px solid white;
+    margin: 20px 0px;
+}
+
+.content-container {
+    overflow-x: scroll;
+}
+
+.content-container > * {
+    display: inline-block;
+    float: left;
+}
+
+.content {
+    position: relative;
+    width: 288px;
+    height: 162px;
+    background: url(Content/forest.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.content-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500; 
+    font-size: 20px;
+    text-align: center;
+    background-color: #eacaff;
+    color: #d79aff;
+    padding: 5px;
+}
+
+.content-service {
+    position: absolute;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500; 
+    font-size: 20px;
+    right: 0;
+    bottom: 0;
+    padding: 5px;
+}
+
+.netflix {
+    color: #ff0000;
 }
