@@ -54,5 +54,28 @@
                 </div>
             </div>
         </div>
+
+      <?php
+        include('connect-mysql.php')
+
+        $sqlget = "SELECT * FROM Services";
+        $sqldata = mysqli_query($dbcon, $sqlget) or die('error getting data');
+
+        echo "<table>";
+        echo "<tr><th>ID</th><th>Name</th></tr>"
+
+        while($row = mysqli_fetch_array($dbdata, MYSQLI_ASSOC)) {
+            echo "<tr><td>";
+              echo $row['service_id'];
+              echo "</td><td>";
+              echo $row['name']
+              echo "</td></tr>";
+        }
+
+        echo "</table>";
+
+      ?>
+
+
     </body>
 </html>
