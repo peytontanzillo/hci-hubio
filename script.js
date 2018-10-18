@@ -67,11 +67,12 @@ $(document).ready(function() {
     let TvShows = [TheOffice, SouthPark, DragonBallZ, Dark];
 
     for (var i = 0; i < TvShows.length; i++) {
-      AddElement(TvShows[i]);
+      AddElement(TvShows[i], "#recommended");
+      AddElement(TvShows[TvShows.length - (i + 1)], "#sortbygenre");
     }
 
-    function AddElement(show) {
+    function AddElement(show, location) {
         let html = "<div class=\"content\" style=\"background: url(" + show.imgPath + "); background-position: center; background-size: cover;\"><h5 class=\"content-title\">" + show.title + "</h5><h4 class=\"content-service " + show.services[0] + "\">" + show.services[0] + "</h4></div>";
-        $("#test_div").append(html);
+        $(location).append(html);
     };
 });
