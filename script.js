@@ -148,18 +148,20 @@ $(document).ready(function() {
         $(location).append(html);
     };
 
+    let ScrollAmount = 300;
+
     $('#recommended-scroll-right').click(function() {
-        document.getElementById('recommended').scrollLeft += 100;
+        document.getElementById('recommended').scrollLeft += ScrollAmount;
       });
     $('#recommended-scroll-left').click(function() {
-        document.getElementById('recommended').scrollLeft -= 100;
+        document.getElementById('recommended').scrollLeft -= ScrollAmount;
       });
 
     $('#genre-scroll-right').click(function() {
-        document.getElementById('sortbygenre').scrollLeft += 100;
+        document.getElementById('sortbygenre').scrollLeft += ScrollAmount;
       });
     $('#genre-scroll-left').click(function() {
-        document.getElementById('sortbygenre').scrollLeft -= 100;
+        document.getElementById('sortbygenre').scrollLeft -= ScrollAmount;
       });
 
 });
