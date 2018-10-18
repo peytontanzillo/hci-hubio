@@ -87,10 +87,8 @@
     position: relative;
     width: 288px;
     height: 162px;
-    background: url(Content/forest.jpg);
-    background-position: center;
-    background-size: cover;
     margin: 40px;
+    border-radius: 15px;
 }
 
 .content-title {
@@ -98,9 +96,12 @@
     font-weight: 500;
     font-size: 20px;
     text-align: center;
-    background-color: #eacaff;
+    /* background-color: #eacaff; */
+    background-image: linear-gradient(#eacaff, transparent);
     color: #d79aff;
     padding: 5px;
+    border-radius: 15px 15px 0px 0px;
+    height: 25%;
 }
 
 .content-service {
