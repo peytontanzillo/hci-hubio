@@ -59,12 +59,17 @@
 }
 
 .inner-wrapper {
-    padding: 1px 100px;
+    padding: 1px 10px;
     height: 100%;
 }
 
 .content-band {
      margin-top: 50px;
+     padding-left: 5%;
+     padding-right: 5%;
+     width: 100%;
+     margin-left: auto;
+     margin-right: auto;
 }
 
 .content-band > h2 {
@@ -73,6 +78,7 @@
     font-size: 30px;
     border-bottom: 1px solid white;
     margin: 20px 0px;
+    width: 87vw;
 
 }
 
@@ -80,9 +86,8 @@
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
-    width: 82vw;
     height: 202px;
-
+    width: 80vw;
 }
 
 .content {
