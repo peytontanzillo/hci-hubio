@@ -113,8 +113,8 @@ $(document).ready(function() {
       "1989",
       "Dragon Ball Z follows the adventures of Goku who, along with the Z Warriors, defends the Earth against evil. The action adventures are entertaining and reinforce the concept of good versus evil. Dragon Ball Z teaches valuable character virtues such as teamwork, loyalty, and trustworthiness.",
       [new Season(12), new Season(8), new Season(24), new Season(25)],
-      ["Hulu", "Crunchyroll"],
-      'Content/forest.jpg');
+      ["Crunchyroll", "Hulu"],
+      './Content/Dragon-Ball-Z.jpg');
 
     let Dark = new TvShow(
       "Dark",
@@ -153,6 +153,13 @@ $(document).ready(function() {
       });
     $('#recommended-scroll-left').click(function() {
         document.getElementById('recommended').scrollLeft -= 100;
+      });
+
+    $('#genre-scroll-right').click(function() {
+        document.getElementById('sortbygenre').scrollLeft += 100;
+      });
+    $('#genre-scroll-left').click(function() {
+        document.getElementById('sortbygenre').scrollLeft -= 100;
       });
 
 });

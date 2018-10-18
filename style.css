@@ -9,6 +9,7 @@
     width: 100%;
     background-color: #a814ff;
     height: 50px;
+    box-shadow: 0px 4px 6px #0c0c0c;
 }
 
 #header > * {
@@ -72,22 +73,26 @@
     font-size: 30px;
     border-bottom: 1px solid white;
     margin: 20px 0px;
+
 }
 
 .content-container {
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
-    width: 100%;
+    width: 82vw;
     height: 202px;
+
 }
 
 .content {
+  overflow-x: scroll;
+  overflow-y: hidden;
     display: inline-block;
     position: relative;
     width: 288px;
     height: 162px;
-    margin: 40px;
+    margin: 25px;
     border-radius: 15px;
 }
 
@@ -98,11 +103,13 @@
     text-align: center;
     background-color: #eacaff;
     /* background-image: linear-gradient(#eacaff, transparent); */
-    color: #d79aff;
+    /* color: #d79aff; */
+    color: #c487ed;
     padding: 5px;
     border-radius: 15px 15px 0px 0px;
     /* text-shadow: 2px 2px 6px #0c0c0c; */
     /* height: 25%; */
+    box-shadow: 0px 2px 8px #2c2c2ccc;
 }
 
 .content-service {
@@ -160,6 +167,10 @@
 
 .logout {
     background-color: limegreen;
+}
+
+.scroll-button {
+  padding:10px;
 }
 
 /* === Content Specific Colors === */
