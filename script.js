@@ -1,5 +1,3 @@
-var loginservices = [];
-// get the logged in services
 //
 // show content on homescreen from the logged in services
 // var content = [];
@@ -24,8 +22,45 @@ function sortbyGenre(genre){ // returns results that are the selected genre
 //console.log(results);
 
 $(document).ready(function() {
-    function TvShow(title, rating, description, genre, year, seasons, services, imgPath) {
-      // Metadata
+    //Code when hamburger is clicked
+    $('.hamburger-content').hide();
+    $(document).on('click', '#hamburger', function() {
+        $('.hamburger-content').toggle();
+    });
+
+    var loginServices = new Set();
+    // get the logged in services
+
+    let serviceToLoginID = new Map();
+    serviceToLoginID.set("#netflixLogin", "Netflix");
+    serviceToLoginID.set("#huluLogin", "Hulu");
+    serviceToLoginID.set("#hboLogin", "HBO GO");
+    serviceToLoginID.set("#showtimeLogin", "Showtime");
+    serviceToLoginID.set("#primeLogin", "Prime Video");
+    serviceToLoginID.set("#crunchyrollLogin", "Crunchyroll");
+
+    for (buttonid of serviceToLoginID.keys()) {
+        addButtonListener(buttonid);
+    }
+
+    function addButtonListener(buttonid) {
+        $(document).on('click', buttonid, function() {
+            if ($(buttonid).hasClass("login")) {
+                $(buttonid).removeClass("login");
+                $(buttonid).addClass("logout");
+                $(buttonid).text("Logout");
+                loginServices.add(serviceToLoginID.get(buttonid));
+            } else {
+                $(buttonid).removeClass("logout");
+                $(buttonid).addClass("login");
+                $(buttonid).text("Login");
+                loginServices.delete(serviceToLoginID.get(buttonid));
+            }
+            console.log(loginServices);
+        });
+    }
+
+    function TvShow(title, rating, description, seasons, services, imgPath) {
       this.title = title;
       this.rating = rating;
       this.description = description;

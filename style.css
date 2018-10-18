@@ -116,7 +116,56 @@
 
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* === All CSS for hamburger === */
+
+.hamburger-content {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    background-color: white;
+    width: 25%;
+    height: 95%;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.service-logo {
+    display: inline-block;
+    width: 60%;
+}
+
+.service-row {
+    margin: 15px;
+    border-bottom: 1px solid gray;
+}
+
+.service-row > button {
+    color: white;
+    border-radius: 10px;
+    height: 25px;
+    float: right;
+    width: 60px;
+}
+
+.login {
+    background-color: #a814ff;
+}
+
+.logout {
+    background-color: limegreen;
+}
+
+/* === Content Specific Colors === */
+
 .netflix {
+<<<<<<< HEAD
     color: #ff0000;
     text-shadow: 2px 2px 6px #0c0c0c;
 }
@@ -124,8 +173,27 @@
 .hulu {
     color: #00ff00;
     text-shadow: 2px 2px 6px #0c0c0c;
+=======
+    color: #f10000;
 }
 
-::-webkit-scrollbar {
-    display: none;
+.hulu {
+    color: #00cd90;
+>>>>>>> master
+}
+
+.hbo {
+    color: #ccd2d5;
+}
+
+.showtime {
+    color: #c20000;
+}
+
+.prime {
+    color: #00aae7;
+}
+
+.crunchyroll {
+    color: #ff8500;
 }
