@@ -115,14 +115,6 @@
     padding: 5px;
 }
 
-.netflix {
-    color: #ff0000;
-}
-
-.hulu {
-    color: #00ff00;
-}
-
 ::-webkit-scrollbar {
     display: none;
 }
@@ -145,8 +137,7 @@
 
 .service-logo {
     display: inline-block;
-    width: 30%;
-    color: darkgray;
+    width: 60%;
 }
 
 .service-row {
@@ -163,11 +154,35 @@
 }
 
 .login {
-    background-color: limegreen;
-}
-
-.logout {
     background-color: #a814ff;
 }
 
+.logout {
+    background-color: limegreen;
+}
 
+/* === Content Specific Colors === */
+
+.netflix {
+    color: #f10000;
+}
+
+.hulu {
+    color: #00cd90;
+}
+
+.hbo {
+    color: #ccd2d5;
+}
+
+.showtime {
+    color: #c20000;
+}
+
+.prime {
+    color: #00aae7;
+}
+
+.crunchyroll {
+    color: #ff8500;
+}
