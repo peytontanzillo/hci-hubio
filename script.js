@@ -17,7 +17,7 @@ function openVideo(Title, season, episode){
 }
 
 function sortbyGenre(genre){ // returns results that are the selected genre
-  var results = [];
+  let results = [];
   if (show.genre === genre){
     results.push(show);
   }
