@@ -50,32 +50,35 @@
                 <div class="content-band">
                     <h2>Sort by Genre</h2>
                     <!--Placeholder for dropdown by genre-->
-                    <div class="content-container"></div>
+                    <div class="content-container">
+                        <div class="content">
+                            <h5 class="content-title">Content1</h5>
+                            <!--<img src="Content/forest.jpg">-->
+                            <h4 class="content-service netflix">Netflix</h4>
+                        </div>
+                        <div class="content">
+                            <h5 class="content-title">Content2</h5>
+                            <!--<img src="Content/forest.jpg">-->
+                            <h4 class="content-service netflix">Netflix</h4>
+                        </div>
+                         <div class="content">
+                            <h5 class="content-title">Content3</h5>
+                            <!--<img src="Content/forest.jpg">-->
+                            <h4 class="content-service netflix">Netflix</h4>
+                        </div>
+                        <div class="content">
+                            <h5 class="content-title">Content4</h5>
+                            <!--<img src="Content/forest.jpg">-->
+                            <h4 class="content-service netflix">Netflix</h4>
+                        </div>
+                        <div class="content">
+                            <h5 class="content-title">Content5</h5>
+                            <!--<img src="Content/forest.jpg">-->
+                            <h4 class="content-service netflix">Netflix</h4>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-      <?php
-        include('connect-mysql.php')
-
-        $sqlget = "SELECT * FROM Services";
-        $sqldata = mysqli_query($dbcon, $sqlget) or die('error getting data');
-
-        echo "<table>";
-        echo "<tr><th>ID</th><th>Name</th></tr>"
-
-        while($row = mysqli_fetch_array($dbdata, MYSQLI_ASSOC)) {
-            echo "<tr><td>";
-              echo $row['service_id'];
-              echo "</td><td>";
-              echo $row['name']
-              echo "</td></tr>";
-        }
-
-        echo "</table>";
-
-      ?>
-
-
     </body>
 </html>
