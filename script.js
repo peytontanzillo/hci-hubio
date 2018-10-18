@@ -24,11 +24,12 @@ function sortbyGenre(genre){ // returns results that are the selected genre
 //console.log(results);
 
 $(document).ready(function() {
-    function TvShow(title, rating, description, seasons) {
+    function TvShow(title, rating, description, seasons, services) {
       this.title = title;
       this.rating = rating;
       this.description = description;
       this.seasons = seasons;
+      this.services = services;
       this.ImgName = 'forest.jpg';
     }
 
@@ -36,28 +37,42 @@ $(document).ready(function() {
       this.NumberOfEpisodes = NumberOfEpisodes;
     }
 
-    function Movie(title, rating, description) {
+    function Movie(title, rating, description, services) {
       this.title = title;
       this.rating = rating;
       this.description = description;
+      this.services = services;
     }
 
-    let OfficeSeasons = [new Season(25), new Season(20), new Season(26), new Season(25)];
-    let TheOffice = new TvShow("The Office", 10, "The series depicts the everyday lives of office employees in the Scranton, Pennsylvania, branch of the fictional Dunder Mifflin Paper Company. To simulate the look of an actual documentary, it was filmed in a single-camera setup, without a studio audience or a laugh track.", OfficeSeasons)
+    let TheOffice = new TvShow("The Office", 10,
+      "The series depicts the everyday lives of office employees in the Scranton, Pennsylvania, branch of the fictional Dunder Mifflin Paper Company. To simulate the look of an actual documentary, it was filmed in a single-camera setup, without a studio audience or a laugh track."
+      , [new Season(25), new Season(20), new Season(26), new Season(25)],
+      ["Netflix"]);
 
-    console.log(TheOffice.title);
-    console.log(TheOffice.seasons);
+    let SouthPark = new TvShow("South Park", 8,
+      "The animated series is not for children. In fact, its goal seems to be to offend as many as possible as it presents the adventures of Stan, Kyle, Kenny and Cartman."
+      , [new Season(12), new Season(12), new Season(12), new Season(12)],
+      ["Hulu"]);
 
-    let TvShows = [TheOffice, TheOffice, TheOffice];
+    let DragonBallZ = new TvShow("Dragon Ball Z", 7,
+      "Dragon Ball Z follows the adventures of Goku who, along with the Z Warriors, defends the Earth against evil. The action adventures are entertaining and reinforce the concept of good versus evil. Dragon Ball Z teaches valuable character virtues such as teamwork, loyalty, and trustworthiness."
+      , [new Season(12), new Season(8), new Season(24), new Season(25)],
+      ["Hulu", "Crunchyroll"]);
+
+    let Dark = new TvShow("Dark", 10,
+      "When two children go missing in a small German town, its sinful past is exposed along with the double lives and fractured relationships that exist among four families as they search for the kids."
+      , [new Season(12)],
+      ["Netflix"]);
+
+    let TvShows = [TheOffice, SouthPark, DragonBallZ, Dark];
 
     for (var i = 0; i < TvShows.length; i++) {
       AddElement(TvShows[i]);
     }
 
     function AddElement(show) {
-        let html = "<div class=\"content\"><h5 class=\"content-title\">" + show.title + "</h5><h4 class=\"content-service netflix\">Netflix</h4></div>";
+        let html = "<div class=\"content\"><h5 class=\"content-title\">" + show.title + "</h5><h4 class=\"content-service " + show.services[0] + "\">" + show.services[0] + "</h4></div>";
         $("#test_div").append(html);
         console.log(html);
     };
 });
-
