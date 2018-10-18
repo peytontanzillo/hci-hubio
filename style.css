@@ -26,7 +26,7 @@
 #logo {
     float: left;
     font-family: 'Roboto', sans-serif;
-    font-weight: 700; 
+    font-weight: 700;
     font-size: 30px;
     padding-left: 20px;
     padding-top: 9px;
@@ -68,7 +68,7 @@
 
 .content-band > h2 {
     font-family: 'Roboto', sans-serif;
-    font-weight: 700; 
+    font-weight: 700;
     font-size: 30px;
     border-bottom: 1px solid white;
     margin: 20px 0px;
@@ -92,7 +92,7 @@
 
 .content-title {
     font-family: 'Roboto', sans-serif;
-    font-weight: 500; 
+    font-weight: 500;
     font-size: 20px;
     text-align: center;
     background-color: #eacaff;
@@ -103,7 +103,7 @@
 .content-service {
     position: absolute;
     font-family: 'Roboto', sans-serif;
-    font-weight: 500; 
+    font-weight: 500;
     font-size: 20px;
     right: 0;
     bottom: 0;
@@ -114,6 +114,10 @@
     color: #ff0000;
 }
 
-::-webkit-scrollbar { 
-    display: none; 
+.hulu {
+    color: #00ff00;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
