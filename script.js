@@ -24,6 +24,12 @@ function sortbyGenre(genre){ // returns results that are the selected genre
 //console.log(results);
 
 $(document).ready(function() {
+    //Code when hamburger is clicked
+    $('.hamburger-content').hide();
+    $(document).on('click', '#hamburger', function () {
+        $('.hamburger-content').toggle();
+    });
+    
     function TvShow(title, rating, description, seasons, services, imgPath) {
       this.title = title;
       this.rating = rating;

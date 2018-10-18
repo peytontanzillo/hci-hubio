@@ -126,3 +126,48 @@
 ::-webkit-scrollbar {
     display: none;
 }
+
+/* === All CSS for hamburger === */
+
+.hamburger-content {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    background-color: white;
+    width: 25%;
+    height: 95%;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.service-logo {
+    display: inline-block;
+    width: 30%;
+    color: darkgray;
+}
+
+.service-row {
+    margin: 15px;
+    border-bottom: 1px solid gray;
+}
+
+.service-row > button {
+    color: white;
+    border-radius: 10px;
+    height: 25px;
+    float: right;
+    width: 60px;
+}
+
+.login {
+    background-color: limegreen;
+}
+
+.logout {
+    background-color: #a814ff;
+}
+
+
