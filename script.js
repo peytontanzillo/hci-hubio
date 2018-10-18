@@ -7,7 +7,7 @@ var loginservices = [];
 // var content = [];
 // for (service in loginservices){
 //  if (tvshow.service === service){
-//    content.add;
+//    content.push(tvshow);
 //  }
 //}
 
@@ -19,7 +19,7 @@ function openVideo(Title, season, episode){
 function sortbyGenre(genre){ // returns results that are the selected genre
   var results = [];
   if (show.genre === genre){
-    results.add(show);
+    results.push(show);
   }
   return results;
 }
