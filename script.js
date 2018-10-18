@@ -31,6 +31,7 @@ function TvShow(title, rating, description, seasons) {
   this.rating = rating;
   this.description = description;
   this.seasons = seasons;
+  this.ImgName = 'forest.jpg';
 }
 
 function Season(NumberOfEpisodes) {
@@ -48,3 +49,26 @@ let TheOffice = new TvShow("The Office", 10, "The series depicts the everyday li
 
 console.log(TheOffice.title);
 console.log(TheOffice.seasons);
+
+let TvShows = [TheOffice];
+
+for (var i = 0; i < TvShows.length; i++) {
+  AddElement(TvShows[i]);
+}
+
+function AddElement(show) {
+  let p = document.getElementById("test_div");
+  let newElement = document.createElement('content');
+  newElement.setAttribute('id', 'content');
+  // newElement.innerHTML = html;
+
+
+  newElement.innerHTML =
+      '<div class="content">\
+      <h5 class="content-title">' + show.title + '</h5>\
+      <!--<img src="Content/' + show.ImgName + '">-->\
+      <h4 class="content-service netflix">Netflix</h4>\
+      </div>';
+  p.appendChild(newElement);
+  // $("test_div").after(txt3);
+};
