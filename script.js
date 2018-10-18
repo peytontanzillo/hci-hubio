@@ -1,5 +1,3 @@
-console.log("js file starts");
-
 var loginservices = [];
 // get the logged in services
 //
@@ -25,46 +23,41 @@ function sortbyGenre(genre){ // returns results that are the selected genre
 }
 //console.log(results);
 
+$(document).ready(function() {
+    function TvShow(title, rating, description, seasons) {
+      this.title = title;
+      this.rating = rating;
+      this.description = description;
+      this.seasons = seasons;
+      this.ImgName = 'forest.jpg';
+    }
 
-function TvShow(title, rating, description, seasons) {
-  this.title = title;
-  this.rating = rating;
-  this.description = description;
-  this.seasons = seasons;
-  this.ImgName = 'forest.jpg';
-}
+    function Season(NumberOfEpisodes) {
+      this.NumberOfEpisodes = NumberOfEpisodes;
+    }
 
-function Season(NumberOfEpisodes) {
-  this.NumberOfEpisodes = NumberOfEpisodes;
-}
+    function Movie(title, rating, description) {
+      this.title = title;
+      this.rating = rating;
+      this.description = description;
+    }
 
-function Movie(title, rating, description) {
-  this.title = title;
-  this.rating = rating;
-  this.description = description;
-}
+    let OfficeSeasons = [new Season(25), new Season(20), new Season(26), new Season(25)];
+    let TheOffice = new TvShow("The Office", 10, "The series depicts the everyday lives of office employees in the Scranton, Pennsylvania, branch of the fictional Dunder Mifflin Paper Company. To simulate the look of an actual documentary, it was filmed in a single-camera setup, without a studio audience or a laugh track.", OfficeSeasons)
 
-let OfficeSeasons = [new Season(25), new Season(20), new Season(26), new Season(25)];
-let TheOffice = new TvShow("The Office", 10, "The series depicts the everyday lives of office employees in the Scranton, Pennsylvania, branch of the fictional Dunder Mifflin Paper Company. To simulate the look of an actual documentary, it was filmed in a single-camera setup, without a studio audience or a laugh track.", OfficeSeasons)
+    console.log(TheOffice.title);
+    console.log(TheOffice.seasons);
 
-console.log(TheOffice.title);
-console.log(TheOffice.seasons);
+    let TvShows = [TheOffice, TheOffice, TheOffice];
 
-let TvShows = [TheOffice];
+    for (var i = 0; i < TvShows.length; i++) {
+      AddElement(TvShows[i]);
+    }
 
-for (var i = 0; i < TvShows.length; i++) {
-  AddElement(TvShows[i]);
-}
+    function AddElement(show) {
+        let html = "<div class=\"content\"><h5 class=\"content-title\">" + show.title + "</h5><h4 class=\"content-service netflix\">Netflix</h4></div>";
+        $("#test_div").append(html);
+        console.log(html);
+    };
+});
 
-function AddElement(show) {
-  let html =
-      '<div class="content">\
-      <h5 class="content-title">' + show.title + '</h5>\
-      <!--<img src="Content/' + show.ImgName + '">-->\
-      <h4 class="content-service netflix">Netflix</h4>\
-      </div>';
-
-  $("#test_div").append(html);
-};
-
-AddElement(TheOffice);
