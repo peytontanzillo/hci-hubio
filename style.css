@@ -87,9 +87,6 @@
     position: relative;
     width: 288px;
     height: 162px;
-    background: url(Content/forest.jpg);
-    background-position: center;
-    background-size: cover;
     margin: 40px;
     border-radius: 15px;
 }
