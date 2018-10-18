@@ -1,34 +1,62 @@
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="style.css">
-        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-        <script src="script.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700" rel="stylesheet">
-    </head>
-    <body>
-        <div id="header">
-            <img id="hamburger" src="Content/white-hamburger.png">
-            <h3 id="logo">hub.io</h3>
-            <form id="search-form">
-                <input id="search-box" type="text" name="search" placeholder="Search for content...">
-                <button id="submit-button">Go!</button>
-            </form>
-        </div>
-        <div class="page-content">
-            <div class="inner-wrapper">
-                <div class="content-band">
-                    <h2>Recommended</h2>
-                    <div id="recommended" class="content-container">
-                    </div>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700" rel="stylesheet">
+</head>
+
+<body>
+    <div id="header">
+        <img id="hamburger" src="Content/white-hamburger.png">
+        <h3 id="logo">hub.io</h3>
+        <form id="search-form">
+            <input id="search-box" type="text" name="search" placeholder="Search for content...">
+            <button id="submit-button">Go!</button>
+        </form>
+    </div>
+    <div class="page-content">
+        <div class="inner-wrapper">
+            <div class="content-band">
+                <h2>Recommended</h2>
+
+                <div id="recommended-band">
+                    <table>
+                        <tr>
+                            <td>
+                                <div id="recommended-scroll-left" class="scroll-button">
+                                    scroll
+                                </div>
+                            </td>
+                            <td>
+                                <div id="recommended" class="content-container">
+                                </div>
+                            </td>
+                            <td>
+                                <div id="recommended-scroll-right" class="scroll-button">
+                                  scroll
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
-                <div class="content-band">
-                    <h2>Sort by Genre</h2>
-                    <!--Placeholder for dropdown by genre-->
-                    <div id="sortbygenre" class="content-container">
-                    </div>
+
+            </div>
+            <div class="content-band">
+                <h2>Sort by Genre</h2>
+                <select>
+                    <option value="volvo">Drama</option>
+                    <option value="saab">Action</option>
+                    <option value="mercedes">Romance</option>
+                    <option value="audi">Comedy</option>
+                </select>
+                <div id="sortbygenre" class="content-container">
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>
