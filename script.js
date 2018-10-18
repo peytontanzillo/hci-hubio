@@ -60,7 +60,7 @@ $(document).ready(function() {
         });
     }
 
-    function TvShow(title, rating, description, seasons, services, imgPath) {
+    function TvShow(title, rating, description, genre, year, seasons, services, imgPath) {
       this.title = title;
       this.rating = rating;
       this.description = description;

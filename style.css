@@ -165,7 +165,6 @@
 /* === Content Specific Colors === */
 
 .netflix {
-<<<<<<< HEAD
     color: #ff0000;
     text-shadow: 2px 2px 6px #0c0c0c;
 }
@@ -173,27 +172,24 @@
 .hulu {
     color: #00ff00;
     text-shadow: 2px 2px 6px #0c0c0c;
-=======
-    color: #f10000;
-}
-
-.hulu {
-    color: #00cd90;
->>>>>>> master
 }
 
 .hbo {
     color: #ccd2d5;
+    text-shadow: 2px 2px 6px #0c0c0c
 }
 
 .showtime {
     color: #c20000;
+    text-shadow: 2px 2px 6px #0c0c0c
 }
 
 .prime {
     color: #00aae7;
+    text-shadow: 2px 2px 6px #0c0c0c
 }
 
 .crunchyroll {
     color: #ff8500;
+    text-shadow: 2px 2px 6px #0c0c0c
 }
