@@ -116,3 +116,7 @@
 .netflix {
     color: #ff0000;
 }
+
+::-webkit-scrollbar { 
+    display: none; 
+}
