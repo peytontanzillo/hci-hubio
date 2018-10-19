@@ -11,6 +11,7 @@
     height: 50px;
     box-shadow: 0px 4px 6px #0c0c0c;
     position: fixed;
+    z-index: 5;
 }
 
 #header > * {
@@ -57,10 +58,11 @@
 /* === CSS for main page content === */
 .page-content {
     background-color: #1a212d;
+    position: relative;
 }
 
 .inner-wrapper {
-    padding: 1px 40px;
+    padding: 30px 40px;
     height: 100%;
 }
 
@@ -68,9 +70,10 @@
      margin-top: 50px;
      padding-left: 40px;
      padding-right: 40px;
-     width: auto;
+     width: 90%;
      margin-left: auto;
      margin-right: auto;
+    position: relative;
 }
 
 .content-band > h2 {
@@ -84,11 +87,14 @@
 
 .scrollboxes {
     width: inherit;
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .scroll-button {
     display: inline-block;
+    margin: auto;
 }
 
 #recommended-scroll-left, #genre-scroll-left {
