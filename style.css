@@ -139,6 +139,14 @@
   box-shadow: 4px 4px 8px #000000;
 }
 
+.arrow-img {
+  margin-top: auto;
+  margin-bottom: auto;
+  display: inline-block;
+  /* height: 100%; */
+  vertical-align: middle;
+}
+
 .content-container {
   overflow-x: scroll;
   overflow-y: hidden;
