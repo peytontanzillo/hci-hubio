@@ -100,7 +100,7 @@ $(document).ready(function() {
       "The series depicts the everyday lives of office employees in the Scranton, Pennsylvania, branch of the fictional Dunder Mifflin Paper Company. To simulate the look of an actual documentary, it was filmed in a single-camera setup, without a studio audience or a laugh track.",
       [new Season(25), new Season(20), new Season(26), new Season(25)],
       ["Netflix"],
-      "https://cdn1.thr.com/sites/default/files/imagecache/landscape_928x523/2015/03/the_office_season_1_cast.jpg",
+      "Content/theoffice.jpg",
       "the_office");
 
     let SouthPark = new TvShow(
@@ -111,7 +111,7 @@ $(document).ready(function() {
       "The animated series is not for children. In fact, its goal seems to be to offend as many as possible as it presents the adventures of Stan, Kyle, Kenny and Cartman.",
       [new Season(12), new Season(12), new Season(12), new Season(12)],
       ["Hulu"],
-      "http://3.images.southparkstudios.com/default/image.jpg",
+      "Content/southpark.jpg",
       "south_park");
 
     let DragonBallZ = new TvShow(
@@ -133,7 +133,7 @@ $(document).ready(function() {
       "When two children go missing in a small German town, its sinful past is exposed along with the double lives and fractured relationships that exist among four families as they search for the kids.",
       [new Season(12)],
       ["Netflix"],
-      'Content/forest.jpg',
+      'Content/dark.jpg',
       "dark");
 
     let WestWorld = new TvShow(
@@ -144,7 +144,7 @@ $(document).ready(function() {
       "idk.",
       [new Season(10)],
       ["HBO"],
-      'Content/forest.jpg',
+      'Content/westworld.jpg',
       "west_world");
 
     let mithc = new TvShow(
@@ -155,7 +155,7 @@ $(document).ready(function() {
       "idk.",
       [new Season(10)],
       ["Prime Video"],
-      'Content/forest.jpg',
+      'Content/highcastle.png',
       "high_castle");
 
     let TvShows = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, mithc];
