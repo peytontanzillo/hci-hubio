@@ -12,13 +12,7 @@ function openVideo(Title, season, episode){
   // do some stuff where it opens a new page and displays the corresponding video from the database
 }
 
-function sortbyGenre(genre){ // returns results that are the selected genre
-  let results = [];
-  if (show.genre === genre){
-    results.push(show);
-  }
-  return results;
-}
+
 //console.log(results);
 
 $(document).ready(function() {
@@ -64,7 +58,7 @@ $(document).ready(function() {
         });
     }
 
-    function TvShow(title, rating, description, genre, year, seasons, services, imgPath, id) {
+    function TvShow(title, rating, genre, year, description, seasons, services, imgPath, id) {
       this.title = title;
       this.rating = rating;
       this.description = description;
@@ -139,7 +133,7 @@ $(document).ready(function() {
     let WestWorld = new TvShow(
       "West World",
       5,
-      "sci-fi",
+      "sSci-fi",
       "2017",
       "idk.",
       [new Season(10)],
@@ -158,18 +152,28 @@ $(document).ready(function() {
       'Content/highcastle.png',
       "high_castle");
 
-      let spongebob = new TvShow(
-        "Spongebob Squarepants",
-        10,
-        "comedy",
-        "1999",
-        "Spongeboy me bob",
-        [new Season(10), new Season(10), new Season(10), new Season(10)],
-        ["Prime Video"],
-        'Content/forest.jpg',
-        "spongebob");
+    let spongebob = new TvShow(
+      "Spongebob Squarepants",
+      10,
+      "comedy",
+      "1999",
+      "Spongeboy me bob",
+      [new Season(10), new Season(10), new Season(10), new Season(10)],
+      ["Prime Video"],
+      'Content/forest.jpg',
+      "spongebob");
 
     let TvShows = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, mithc, spongebob];
+
+    function sortbyGenre(genre){ // returns results that are the selected genre
+      let results = [];
+      for (var i = 0; i < TvShows.length; i++) {
+        if (TvShows[i].genre === genre){
+          results.push(TvShows[i]);
+        }
+      }
+      return results;
+    }
 
     for (var i = 0; i < TvShows.length; i++) {
       AddElement(TvShows[i], "#recommended");
@@ -197,5 +201,21 @@ $(document).ready(function() {
         document.getElementById('sortbygenre').scrollLeft -= ScrollAmount;
       });
 
+    $('#genre-selector').change(function() {
+        let genre = document.getElementById('genre-selector');
+        let selected = genre.options[genre.selectedIndex].value;
+        console.log(selected);
+
+        var myNode = document.getElementById("sortbygenre");
+        while (myNode.firstChild) {
+            myNode.removeChild(myNode.firstChild);
+        }
+
+        let shows = sortbyGenre(selected);
+        console.log(shows);
+        for (var i = 0; i < shows.length; i++) {
+          AddElement(shows[i], "#sortbygenre");
+        }
+    });
 
 });
