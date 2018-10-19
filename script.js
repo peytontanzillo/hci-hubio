@@ -207,7 +207,7 @@ $(document).ready(function() {
     document.getElementById('sortbygenre').scrollLeft -= ScrollAmount;
   });
 
-  $('#genre-selector').change(function() {
+  function updateGenres() {
     let genre = document.getElementById('genre-selector');
     let selected = genre.options[genre.selectedIndex].value;
     console.log(selected);
@@ -222,6 +222,12 @@ $(document).ready(function() {
     for (var i = 0; i < shows.length; i++) {
       AddElement(shows[i], "#sortbygenre");
     }
+  }
+
+  updateGenres();
+
+  $('#genre-selector').change(function() {
+    updateGenres();
   });
 
 });
