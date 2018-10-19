@@ -129,8 +129,6 @@
 }
 
 .content {
-    overflow-x: scroll;
-    overflow-y: hidden;
     display: inline-block;
     position: relative;
     width: 288px;
@@ -176,6 +174,10 @@ select {
     height: 25px;
     color: black;
     position: absolute;
+}
+
+option {
+    color: black;
 }
 
 /* === All CSS for hamburger === */

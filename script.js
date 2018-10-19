@@ -38,6 +38,7 @@ $(document).ready(function() {
     }
 
     $('.page-content').hide();
+    $('.service-login').hide();
 
     function addButtonListener(buttonid) {
         $(document).on('click', buttonid, function() {
