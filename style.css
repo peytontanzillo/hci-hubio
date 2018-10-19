@@ -61,6 +61,21 @@
     position: relative;
 }
 
+.starting-page {
+    background-color: #1a212d;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    text-align: center;
+}
+
+.starting-text {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-top: 40vh;
+}
+
 .inner-wrapper {
     padding: 30px 40px;
     height: 100%;

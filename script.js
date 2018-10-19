@@ -43,6 +43,8 @@ $(document).ready(function() {
         addButtonListener(buttonid);
     }
 
+    $('.page-content').hide();
+
     function addButtonListener(buttonid) {
         $(document).on('click', buttonid, function() {
             if ($(buttonid).hasClass("login")) {
@@ -50,6 +52,8 @@ $(document).ready(function() {
                 $(buttonid).addClass("logout");
                 $(buttonid).text("Logout");
                 loginServices.add(serviceToLoginID.get(buttonid));
+                $('.page-content').show();
+                $('.starting-page').hide();
             } else {
                 $(buttonid).removeClass("logout");
                 $(buttonid).addClass("login");
