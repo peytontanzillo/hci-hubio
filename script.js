@@ -60,7 +60,7 @@ $(document).ready(function() {
         });
     }
 
-    function TvShow(title, rating, description, genre, year, seasons, services, imgPath) {
+    function TvShow(title, rating, description, genre, year, seasons, services, imgPath, id) {
       this.title = title;
       this.rating = rating;
       this.description = description;
@@ -73,6 +73,8 @@ $(document).ready(function() {
 
       //  Image path
       this.imgPath = imgPath;
+
+      this.id = id;
     }
 
     function Season(NumberOfEpisodes) {
@@ -94,7 +96,8 @@ $(document).ready(function() {
       "The series depicts the everyday lives of office employees in the Scranton, Pennsylvania, branch of the fictional Dunder Mifflin Paper Company. To simulate the look of an actual documentary, it was filmed in a single-camera setup, without a studio audience or a laugh track.",
       [new Season(25), new Season(20), new Season(26), new Season(25)],
       ["Netflix"],
-      "https://cdn1.thr.com/sites/default/files/imagecache/landscape_928x523/2015/03/the_office_season_1_cast.jpg");
+      "https://cdn1.thr.com/sites/default/files/imagecache/landscape_928x523/2015/03/the_office_season_1_cast.jpg",
+      "the_office");
 
     let SouthPark = new TvShow(
       "South Park",
@@ -104,7 +107,8 @@ $(document).ready(function() {
       "The animated series is not for children. In fact, its goal seems to be to offend as many as possible as it presents the adventures of Stan, Kyle, Kenny and Cartman.",
       [new Season(12), new Season(12), new Season(12), new Season(12)],
       ["Hulu"],
-      "http://3.images.southparkstudios.com/default/image.jpg");
+      "http://3.images.southparkstudios.com/default/image.jpg",
+      "south_park");
 
     let DragonBallZ = new TvShow(
       "Dragon Ball Z",
@@ -114,7 +118,8 @@ $(document).ready(function() {
       "Dragon Ball Z follows the adventures of Goku who, along with the Z Warriors, defends the Earth against evil. The action adventures are entertaining and reinforce the concept of good versus evil. Dragon Ball Z teaches valuable character virtues such as teamwork, loyalty, and trustworthiness.",
       [new Season(12), new Season(8), new Season(24), new Season(25)],
       ["Crunchyroll", "Hulu"],
-      './Content/Dragon-Ball-Z.jpg');
+      './Content/Dragon-Ball-Z.jpg',
+      "dragon_ball_z");
 
     let Dark = new TvShow(
       "Dark",
@@ -124,7 +129,8 @@ $(document).ready(function() {
       "When two children go missing in a small German town, its sinful past is exposed along with the double lives and fractured relationships that exist among four families as they search for the kids.",
       [new Season(12)],
       ["Netflix"],
-      'Content/forest.jpg');
+      'Content/forest.jpg',
+      "dark");
 
     let WestWorld = new TvShow(
       "West World",
@@ -133,10 +139,22 @@ $(document).ready(function() {
       "2017",
       "idk.",
       [new Season(10)],
-      ["Prime Video"],
-      'Content/forest.jpg');
+      ["HBO"],
+      'Content/forest.jpg',
+      "west_world");
 
-    let TvShows = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld];
+    let mithc = new TvShow(
+      "Man in the High Castle",
+      6,
+      "sci-fi",
+      "2016",
+      "idk.",
+      [new Season(10)],
+      ["Prime Video"],
+      'Content/forest.jpg',
+      "high_castle");
+
+    let TvShows = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, mithc];
 
     for (var i = 0; i < TvShows.length; i++) {
       AddElement(TvShows[i], "#recommended");
