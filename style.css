@@ -170,6 +170,14 @@
     display: none;
 }
 
+select {
+    display: inline-block;
+    margin: 7px 30px;
+    height: 25px;
+    color: black;
+    position: absolute;
+}
+
 /* === All CSS for hamburger === */
 
 .hamburger-content {
