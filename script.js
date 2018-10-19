@@ -26,12 +26,12 @@ $(document).ready(function() {
   // get the logged in services
 
   let serviceToLoginID = new Map();
-  serviceToLoginID.set("#netflixLogin", "Netflix");
-  serviceToLoginID.set("#huluLogin", "Hulu");
-  serviceToLoginID.set("#hboLogin", "HBO GO");
-  serviceToLoginID.set("#showtimeLogin", "Showtime");
-  serviceToLoginID.set("#primeLogin", "Prime Video");
-  serviceToLoginID.set("#crunchyrollLogin", "Crunchyroll");
+  serviceToLoginID.set("#netflixLogin", ["Netflix", "netflix"]);
+  serviceToLoginID.set("#huluLogin", ["Hulu", "hulu"]);
+  serviceToLoginID.set("#hboLogin", ["HBO GO", "hbo"]);
+  serviceToLoginID.set("#showtimeLogin", ["Showtime", "showtime"]);
+  serviceToLoginID.set("#primeLogin", ["Prime Video", "prime"]);
+  serviceToLoginID.set("#crunchyrollLogin", ["Crunchyroll", "crunchyroll"]);
 
   for (buttonid of serviceToLoginID.keys()) {
     addButtonListener(buttonid);
@@ -43,21 +43,44 @@ $(document).ready(function() {
   function addButtonListener(buttonid) {
     $(document).on('click', buttonid, function() {
       if ($(buttonid).hasClass("login")) {
-        $(buttonid).removeClass("login");
-        $(buttonid).addClass("logout");
-        $(buttonid).text("Logout");
-        loginServices.add(serviceToLoginID.get(buttonid));
-        $('.page-content').show();
+//        $(buttonid).removeClass("login");
+//        $(buttonid).addClass("logout");
+//        $(buttonid).text("Logout");
+//        loginServices.add(serviceToLoginID.get(buttonid)[0]);
+        displayServiceLoginPage(buttonid);
+//          $('.page-content').show();
         $('.starting-page').hide();
       } else {
         $(buttonid).removeClass("logout");
         $(buttonid).addClass("login");
         $(buttonid).text("Login");
-        loginServices.delete(serviceToLoginID.get(buttonid));
+        loginServices.delete(serviceToLoginID.get(buttonid)[0]);
       }
       console.log(loginServices);
     });
   }
+    
+    let loginHamburger = undefined;
+    
+    function displayServiceLoginPage(buttonid) {
+        $('.starting-page').hide();
+        $('.page-content').hide();
+        $('.hamburger-content').hide();
+        $('#login-service-name').removeClass()
+        $('#login-service-name').addClass(serviceToLoginID.get(buttonid)[1])
+        $('#login-service-name').text(serviceToLoginID.get(buttonid)[0])
+        $('.service-login').show();
+        loginHamburger = buttonid;
+    }
+    
+    $(document).on('click', '#login-button', function() {
+        $(loginHamburger).removeClass("login");
+        $(loginHamburger).addClass("logout");
+        $(loginHamburger).text("Logout");
+        loginServices.add(serviceToLoginID.get(loginHamburger)[0]);
+        $('.service-login').hide();
+        $('.page-content').show();
+    });
 
   class TvShow {
     constructor(title, rating, genre, year, description, seasons, services, imgPath, id) {

@@ -11,12 +11,16 @@
   height: 50px;
   box-shadow: 0px 4px 6px #0c0c0c;
   position: fixed;
-  z-index: 5;
+  z-index: 10;
 }
 
-#header>* {
+#header > * {
   display: inline;
   color: white;
+}
+
+.hamburger-content {
+    z-index: 8;
 }
 
 #hamburger {
@@ -63,11 +67,14 @@
 
 .starting-page {
   background-color: #1a212d;
-  position: relative;
+  position: fixed;
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 30px;
   text-align: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
 
 .starting-text {
@@ -164,6 +171,8 @@
     margin: 25px;
     border-radius: 15px;
     transition: all .2s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .content:hover {
@@ -257,6 +266,52 @@ option {
 
 .scroll-button {
   padding: 10px;
+}
+
+/* === Service Login === */
+.service-login {
+    width: 100%;
+    height: 100%;
+    background-color: #1a212d;
+    position: fixed;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    text-align: center;
+    z-index: 1;
+}
+
+.service-login > .inner-wrapper {
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-top: 35vh;
+    height: 100%;
+}
+
+.login-row {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.login-row > * {
+    display: inline-block;
+}
+
+.login-row > input {
+    width: 300px;
+    height: 30px;
+    margin: 20px;
+    color: black;
+    padding: 0px 10px;
+}
+
+#login-button {
+    background-color: limegreen;
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
 }
 
 /* === Content Specific Colors === */
