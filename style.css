@@ -120,10 +120,12 @@
 
 #recommended-scroll-left, #genre-scroll-left {
   float: left;
+
 }
 
 #recommended-scroll-right, #genre-scroll-right {
   float: right;
+
 }
 
 .round {
@@ -139,6 +141,7 @@
   text-align: center;
   box-shadow: 4px 4px 8px #00000022;
   transition: all .2s ease-in-out;
+
 }
 
 .round:hover {
@@ -147,11 +150,9 @@
 }
 
 .arrow-img {
-  margin-top: auto;
-  margin-bottom: auto;
-  display: inline-block;
-  /* height: 100%; */
   vertical-align: middle;
+  display: inline;
+  padding-top: 7px;
 }
 
 .content-container {
