@@ -10,6 +10,7 @@
     background-color: #a814ff;
     height: 50px;
     box-shadow: 0px 4px 6px #0c0c0c;
+    position: fixed;
 }
 
 #header > * {
@@ -59,15 +60,15 @@
 }
 
 .inner-wrapper {
-    padding: 1px 10px;
+    padding: 1px 40px;
     height: 100%;
 }
 
 .content-band {
      margin-top: 50px;
-     padding-left: 5%;
-     padding-right: 5%;
-     width: 100%;
+     padding-left: 40px;
+     padding-right: 40px;
+     width: auto;
      margin-left: auto;
      margin-right: auto;
 }
@@ -78,21 +79,37 @@
     font-size: 30px;
     border-bottom: 1px solid white;
     margin: 20px 0px;
-    width: 87vw;
 
+}
+
+.scrollboxes {
+    width: inherit;
+    display: inline-block;
+}
+
+.scroll-button {
+    display: inline-block;
+}
+
+#recommended-scroll-left, #genre-scroll-left {
+    float: left;
+}
+
+#recommended-scroll-right, #genre-scroll-right {
+    float: right;
 }
 
 .content-container {
     overflow-x: scroll;
     overflow-y: hidden;
+    width: inherit;
     white-space: nowrap;
     height: 202px;
-    width: 80vw;
 }
 
 .content {
-  overflow-x: scroll;
-  overflow-y: hidden;
+    overflow-x: scroll;
+    overflow-y: hidden;
     display: inline-block;
     position: relative;
     width: 288px;
@@ -125,7 +142,7 @@
     right: 0;
     bottom: 0;
     padding: 5px;
-
+    text-shadow: 2px 2px 6px #0c0c0c;
 }
 
 ::-webkit-scrollbar {
@@ -182,30 +199,24 @@
 
 .netflix {
     color: #ff0000;
-    text-shadow: 2px 2px 6px #0c0c0c;
 }
 
 .hulu {
     color: #00ff00;
-    text-shadow: 2px 2px 6px #0c0c0c;
 }
 
 .hbo {
     color: #ccd2d5;
-    text-shadow: 2px 2px 6px #0c0c0c
 }
 
 .showtime {
     color: #c20000;
-    text-shadow: 2px 2px 6px #0c0c0c
 }
 
 .prime {
     color: #00aae7;
-    text-shadow: 2px 2px 6px #0c0c0c
 }
 
 .crunchyroll {
     color: #ff8500;
-    text-shadow: 2px 2px 6px #0c0c0c
 }
