@@ -126,6 +126,7 @@
     width: inherit;
     white-space: nowrap;
     height: 202px;
+    scroll-behavior: smooth;
 }
 
 .content {

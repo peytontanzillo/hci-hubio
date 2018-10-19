@@ -191,7 +191,7 @@ $(document).ready(function() {
     $(location).append(html);
   };
 
-  let ScrollAmount = 300;
+  let ScrollAmount = 500;
 
   $('#recommended-scroll-right').click(function() {
     document.getElementById('recommended').scrollLeft += ScrollAmount;
