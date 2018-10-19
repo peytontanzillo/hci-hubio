@@ -158,7 +158,18 @@ $(document).ready(function() {
       'Content/forest.jpg',
       "high_castle");
 
-    let TvShows = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, mithc];
+      let spongebob = new TvShow(
+        "Spongebob Squarepants",
+        10,
+        "comedy",
+        "1999",
+        "Spongeboy me bob",
+        [new Season(10), new Season(10), new Season(10), new Season(10)],
+        ["Prime Video"],
+        'Content/forest.jpg',
+        "spongebob");
+
+    let TvShows = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, mithc, spongebob];
 
     for (var i = 0; i < TvShows.length; i++) {
       AddElement(TvShows[i], "#recommended");
@@ -185,5 +196,6 @@ $(document).ready(function() {
     $('#genre-scroll-left').click(function() {
         document.getElementById('sortbygenre').scrollLeft -= ScrollAmount;
       });
+
 
 });
