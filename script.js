@@ -211,7 +211,7 @@ $(document).ready(function() {
   }
 
   function AddElement(show, location) {
-    let html = "<div class=\"content\" style=\"background: url(" + show.imgPath + "); background-position: center; background-size: cover;\"><h5 class=\"content-title\">" + show.title + "</h5><h4 class=\"content-service " + show.services[0] + "\">" + show.services[0] + "</h4></div>";
+    let html = "<a href=\"#\" id=\"" + show.id + "\" class=\"content\" style=\"background: url(" + show.imgPath + "); background-position: center; background-size: cover;\"><h5 class=\"content-title\">" + show.title + "</h5><h4 class=\"content-service " + show.services[0] + "\">" + show.services[0] + "</h4></div>";
     $(location).append(html);
   };
 
@@ -253,5 +253,19 @@ $(document).ready(function() {
   $('#genre-selector').change(function() {
     updateGenres();
   });
+
+  $('.content').click(function() {
+    var id = $(this).attr('id');
+    let show = null;
+
+    for (let i = 0; i < TvShows.length; i++) {
+      if (TvShows[i].id === id) {
+        show = TvShows[i];
+      }
+    }
+
+    let html = "<div id=\"show-display\"><h5>" + show.title + "</h5></div>"
+    $(".page-content").append(html);
+  })
 
 });
