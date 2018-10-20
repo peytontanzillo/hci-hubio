@@ -167,7 +167,7 @@ $(document).ready(function() {
     "2017",
     "idk.",
     [new Season(10)],
-    ["HBO Go"],
+    ["HBO GO"],
     'Content/westworld.jpg',
     "west_world");
 
@@ -211,20 +211,20 @@ $(document).ready(function() {
     "2015",
     "throne of games",
     [new Season(10), new Season(10)],
-    ["HBO Go"],
+    ["HBO GO"],
     'Content/gameofthrones.jpg',
     "gameofthrones");
 
-    let shameless = new TvShow(
-      "Shameless",
-      4,
-      "drama",
-      "2017",
-      "no idea what this show is about",
-      [new Season(10), new Season(10)],
-      ["Showtime"],
-      'Content/shameless.jpg',
-      "shameless");
+  let shameless = new TvShow(
+    "Shameless",
+    4,
+    "drama",
+    "2017",
+    "no idea what this show is about",
+    [new Season(10), new Season(10)],
+    ["Showtime"],
+    'Content/shameless.jpg',
+    "shameless");
 
   let TvShows = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, mithc, spongebob, friends, gameofthrones, shameless];
 
@@ -287,6 +287,8 @@ $(document).ready(function() {
     updateGenres();
   });
 
+  $('.tv-show-page').hide();
+
   $('.content').click(function() {
     var id = $(this).attr('id');
     let show = null;
@@ -298,7 +300,10 @@ $(document).ready(function() {
     }
 
     let html = "<div id=\"show-display\"><h5>" + show.title + "</h5></div>"
-    $(".page-content").append(html);
+    $("#show-title").append(show.title);
+    $("#show-description").append(show.description);
+    $('.page-content').hide();
+    $('.tv-show-page').show();
   })
 
 });

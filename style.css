@@ -315,6 +315,16 @@ option {
     font-size: 15px;
 }
 
+.tv-show-page {
+  padding-top: 200px;
+  font-family: "Roboto", sans-serif;
+  background-color: #1a212d;
+}
+
+.tv-show-page > .inner-wrapper > h5 {
+  font-size: 36pt;
+}
+
 /* === Content Specific Colors === */
 .netflix {
   color: #ff0000;
