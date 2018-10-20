@@ -59,9 +59,9 @@ $(document).ready(function() {
       console.log(loginServices);
     });
   }
-    
+
     let loginHamburger = undefined;
-    
+
     function displayServiceLoginPage(buttonid) {
         $('.starting-page').hide();
         $('.page-content').hide();
@@ -72,7 +72,7 @@ $(document).ready(function() {
         $('.service-login').show();
         loginHamburger = buttonid;
     }
-    
+
     $(document).on('click', '#login-button', function() {
         $(loginHamburger).removeClass("login");
         $(loginHamburger).addClass("logout");
@@ -167,7 +167,7 @@ $(document).ready(function() {
     "2017",
     "idk.",
     [new Season(10)],
-    ["HBO"],
+    ["HBO Go"],
     'Content/westworld.jpg',
     "west_world");
 
@@ -190,10 +190,43 @@ $(document).ready(function() {
     "Spongeboy me bob",
     [new Season(10), new Season(10), new Season(10), new Season(10)],
     ["Prime Video"],
-    'Content/forest.jpg',
+    'Content/spongebob.jpg',
     "spongebob");
 
-  let TvShows = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, mithc, spongebob];
+  let friends = new TvShow(
+    "Friends",
+    7,
+    "comedy",
+    "1987",
+    "friends",
+    [new Season(10), new Season(10)],
+    ["Netflix", "Prime Video"],
+    'Content/friends.jpg',
+    "friends");
+
+  let gameofthrones = new TvShow(
+    "Game of Thrones",
+    8,
+    "adventure",
+    "2015",
+    "throne of games",
+    [new Season(10), new Season(10)],
+    ["HBO Go"],
+    'Content/gameofthrones.jpg',
+    "gameofthrones");
+
+    let shameless = new TvShow(
+      "Shameless",
+      4,
+      "drama",
+      "2017",
+      "no idea what this show is about",
+      [new Season(10), new Season(10)],
+      ["Showtime"],
+      'Content/shameless.jpg',
+      "shameless");
+
+  let TvShows = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, mithc, spongebob, friends, gameofthrones, shameless];
 
   function sortbyGenre(genre) { // returns results that are the selected genre
     let results = [];
