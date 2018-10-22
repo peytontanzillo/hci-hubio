@@ -74,12 +74,16 @@ $(document).ready(function() {
     }
 
     $(document).on('click', '#login-button', function() {
+      if ( $('#username-input').val() == 'cat' && $('#password-input').val() == 'dog') {
         $(loginHamburger).removeClass("login");
         $(loginHamburger).addClass("logout");
         $(loginHamburger).text("Logout");
         loginServices.add(serviceToLoginID.get(loginHamburger)[0]);
         $('.service-login').hide();
         $('.page-content').show();
+      } else {
+        alert("Incorrect username or password.");
+      }
     });
 
   class TvShow {
