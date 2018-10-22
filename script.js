@@ -25,6 +25,9 @@ $(document).ready(function() {
   var loginServices = new Set();
   // get the logged in services
 
+  var toggledServices = new Set();
+
+
   let serviceToLoginID = new Map();
   serviceToLoginID.set("#netflixLogin", ["Netflix", "netflix"]);
   serviceToLoginID.set("#huluLogin", ["Hulu", "hulu"]);
@@ -232,6 +235,9 @@ $(document).ready(function() {
     'Content/shameless.jpg',
     "shameless");
 
+  if ( $('#netflix-switch').is(":checked") ) {
+
+  }
   let TvShows = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, mithc, spongebob, friends, gameofthrones, shameless];
 
   function sortbyGenre(genre) { // returns results that are the selected genre
