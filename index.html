@@ -19,10 +19,10 @@
     </div>
     <div class="starting-page">
         <div class="inner-wrapper">
-          <div class="starting-text">
-            <h1>Get Started!</h1>
-            <h3>Log into your favorite streaming services to access all your content</h3>
-          </div>
+            <div class="starting-text">
+                <h1>Get Started!</h1>
+                <h3>Log into your favorite streaming services to access all your content</h3>
+            </div>
         </div>
     </div>
     <div class="page-content">
@@ -64,22 +64,50 @@
     </div>
     <div class="hamburger-content">
         <div class="service-row">
-            <h5 class="service-logo netflix">Netflix</h5><button id="netflixLogin" class="login">Login</button>
+            <h5 class="service-logo netflix">Netflix</h5><label class="switch">
+                <input type="checkbox"  id="netflix-switch">
+                <span class="slider-round"></span>
+            </label><button id="netflixLogin" class="login">Login</button>
         </div>
         <div class="service-row">
-            <h5 class="service-logo hulu">Hulu</h5><button id="huluLogin" class="login">Login</button>
+            <h5 class="service-logo hulu">Hulu</h5>
+            <label class="switch">
+                <input type="checkbox"  id="hulu-switch">
+                <span class="slider-round"></span>
+            </label>
+            <button id="huluLogin" class="login">Login</button>
         </div>
         <div class="service-row">
-            <h5 class="service-logo hbo">HBO GO</h5><button id="hboLogin" class="login">Login</button>
+            <h5 class="service-logo hbo">HBO GO</h5>
+            <label class="switch" id="hbo-switch">
+                <input type="checkbox">
+                <span class="slider-round"></span>
+            </label>
+            <button id="hboLogin" class="login">Login</button>
         </div>
         <div class="service-row">
-            <h5 class="service-logo showtime">Showtime</h5><button id="showtimeLogin" class="login">Login</button>
+            <h5 class="service-logo showtime">Showtime</h5>
+            <label class="switch" id="sho-switch">
+                <input type="checkbox">
+                <span class="slider-round"></span>
+            </label>
+            <button id="showtimeLogin" class="login">Login</button>
         </div>
         <div class="service-row">
-            <h5 class="service-logo prime">Prime Video</h5><button id="primeLogin" class="login">Login</button>
+            <h5 class="service-logo prime">Prime Video</h5>
+            <label class="switch" id="prime-switch">
+                <input type="checkbox">
+                <span class="slider-round"></span>
+            </label>
+            <button id="primeLogin" class="login">Login</button>
         </div>
         <div class="service-row">
-            <h5 class="service-logo crunchyroll">Crunchyroll</h5><button id="crunchyrollLogin" class="login">Login</button>
+            <h5 class="service-logo crunchyroll">Crunchyroll</h5>
+            <label class="switch" id="crunchy-switch">
+                <input type="checkbox">
+                <span class="slider-round"></span>
+            </label>
+            <button id="crunchyrollLogin" class="login">Login</button>
         </div>
     </div>
     <div class="service-login">
@@ -97,12 +125,12 @@
         </div>
     </div>
     <div class="tv-show-page">
-      <div class="inner-wrapper">
-        <h5 id="show-title"></h5>
-        <p id="show-description"></p>
-        <img src="/Content/theoffice.jpg">
+        <div class="inner-wrapper">
+            <h5 id="show-title"></h5>
+            <p id="show-description"></p>
+            <img src="/Content/theoffice.jpg">
 
-      </div>
+        </div>
     </div>
 </body>
 
