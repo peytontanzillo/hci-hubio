@@ -260,6 +260,7 @@ option {
   float: right;
   width: 60px;
   border: none;
+  cursor: pointer;
 }
 
 .login {
@@ -318,6 +319,7 @@ option {
     border: none;
     border-radius: 10px;
     font-size: 15px;
+    cursor: pointer;
 }
 
 .tv-show-page {
