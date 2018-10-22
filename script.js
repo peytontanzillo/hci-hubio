@@ -81,6 +81,8 @@ $(document).ready(function() {
         loginServices.add(serviceToLoginID.get(loginHamburger)[0]);
         $('.service-login').hide();
         $('.page-content').show();
+        $('#username-input').val('');
+        $('#password-input').val('');
       } else {
         alert("Incorrect username or password.");
       }
