@@ -300,8 +300,8 @@ $(document).ready(function() {
     }
 
     let html = "<div id=\"show-display\"><h5>" + show.title + "</h5></div>"
-    $("#show-title").append(show.title);
-    $("#show-description").append(show.description);
+    $("#show-title").empty().append(show.title);
+    $("#show-description").empty().append(show.description);
     $('.page-content').hide();
     $('.tv-show-page').show();
   })
