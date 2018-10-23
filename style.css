@@ -51,12 +51,24 @@
   width: 80%;
   color: gray;
   height: 30px;
+  border-radius: 20px;
+  border-width: 0;
+  padding: 10px;
+  box-shadow: 2px 2px 2px gray;
 }
 
 #submit-button {
   width: 15%;
   height: 30px;
   color: black;
+  border-radius: 20px;
+  border-width: 0;
+  box-shadow: 2px 2px 2px gray;
+  cursor: pointer;
+}
+
+#submit-button:hover {
+  background-color: white;
 }
 
 /* === CSS for main page content === */
@@ -238,6 +250,10 @@ option {
   font-weight: 500;
   font-size: 30px;
   transition: all .2s ease-in-out;
+}
+
+#hamburger {
+  cursor: pointer;
 }
 
 .service-logo {
