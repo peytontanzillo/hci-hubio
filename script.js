@@ -331,13 +331,16 @@ $(document).ready(function() {
     $("#show-description").empty().append(show.description);
     $(".show-img-container").empty().append("<img src=\"" + show.imgPath + "\">");
     $("#show-rating-year").empty().append("X Stars - 20XX");
-    $('.page-content').hide();
-    $('.tv-show-page').show();
+    $('.page-content').slideUp(300);
+    
+        $('.tv-show-page').show();
   })
     
     $(document).on('click', '#show-back-arrow', function() {
-        $('.tv-show-page').hide();
-        $('.page-content').show();
+        $('.page-content').slideDown();
+        setTimeout(function() {
+            $('.tv-show-page').hide();
+        }, 400);
     });
         
 });

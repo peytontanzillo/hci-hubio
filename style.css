@@ -75,6 +75,7 @@
 .page-content {
   background-color: #1a212d;
   position: relative;
+    z-index: 1;
 }
 
 .starting-page {
@@ -448,7 +449,7 @@ input:checked + .slider-round:before {
     background-color: #1a212d;
     position: fixed;
     text-align: center;
-    z-index: 1;
+    z-index: 2;
     padding-top: 40px;
 }
 
@@ -488,5 +489,12 @@ input:checked + .slider-round:before {
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     font-size: 25px;
-    padding: 10px;
+    padding-bottom: 20px;
+}
+
+#show-back-arrow {
+    width: 45px;
+    height: 50px;
+    float: left;
+    cursor: pointer;
 }
