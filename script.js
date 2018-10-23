@@ -25,7 +25,20 @@ $(document).ready(function() {
   var loginServices = new Set();
   // get the logged in services
 
-  var toggledServices = new Set();
+  var services = new Set(['netflix', 'hulu', 'hbo', 'showtime', 'prime', 'crunchyroll']);
+  var activeServices = new Set(['netflix', 'hulu', 'hbo', 'showtime', 'prime', 'crunchyroll']);
+
+  for (service of services) {
+    $(document).on('click', '#' + service + '-switch', function() {
+      if ($('#' + service + '-switch').val() === 'on') {
+        activeServices.delete('' + service + '');
+        $('#' + service + '-switch').val('off');
+      } else {
+        activeServices.add('' + service + '');
+        $('#' + service + '-switch').val('on');
+      }
+    });
+  }
 
 
   let serviceToLoginID = new Map();
