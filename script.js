@@ -327,6 +327,8 @@ $(document).ready(function() {
     let html = "<div id=\"show-display\"><h5>" + show.title + "</h5></div>"
     $("#show-title").empty().append(show.title);
     $("#show-description").empty().append(show.description);
+    $("#show-description").empty().append(show.description);
+    $(".show-img-container").empty().append("<img src=\"" + show.imgPath + "\">");
     $('.page-content').hide();
     $('.tv-show-page').show();
   })
