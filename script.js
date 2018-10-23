@@ -82,6 +82,7 @@ $(document).ready(function() {
         $('.starting-page').hide();
         $('.page-content').hide();
         $('.hamburger-content').hide();
+        $('.tv-show-page').hide();
         $('#login-service-name').removeClass()
         $('#login-service-name').addClass(serviceToLoginID.get(buttonid)[1])
         $('#login-service-name').text(serviceToLoginID.get(buttonid)[0])
@@ -329,8 +330,14 @@ $(document).ready(function() {
     $("#show-description").empty().append(show.description);
     $("#show-description").empty().append(show.description);
     $(".show-img-container").empty().append("<img src=\"" + show.imgPath + "\">");
+    $("#show-rating-year").empty().append("X Stars - 20XX");
     $('.page-content').hide();
     $('.tv-show-page').show();
   })
-
+    
+    $(document).on('click', '#show-back-arrow', function() {
+        $('.tv-show-page').hide();
+        $('.page-content').show();
+    });
+        
 });
