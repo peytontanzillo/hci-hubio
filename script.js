@@ -25,17 +25,27 @@ $(document).ready(function() {
   var loginServices = new Set();
   // get the logged in services
 
-  var services = new Set(['netflix', 'hulu', 'hbo', 'showtime', 'prime', 'crunchyroll']);
-  var activeServices = new Set(['netflix', 'hulu', 'hbo', 'showtime', 'prime', 'crunchyroll']);
+  var services = ['netflix', 'hulu', 'hbo', 'showtime', 'prime', 'crunchyroll'];
+  var activeServices = ['netflix', 'hulu', 'hbo', 'showtime', 'prime', 'crunchyroll'];
 
   for (service of services) {
     $(document).on('click', '#' + service + '-switch', function() {
       if ($('#' + service + '-switch').val() === 'on') {
-        activeServices.delete('' + service + '');
+        // activeServices.delete(service);
+        for (let i = 0; i < activeServices.length; i++) {
+          if (activeServices[i] === service) {
+            activeServices.splice(i, 1);
+          }
+        }
+        //activeServices.splice(activeServices.indexOf(service), 1);
         $('#' + service + '-switch').val('off');
+        console.log(activeServices);
+        updateList();
       } else {
-        activeServices.add('' + service + '');
+        activeServices.push(service);
         $('#' + service + '-switch').val('on');
+        console.log(activeServices);
+        updateList();
       }
     });
   }
@@ -72,7 +82,6 @@ $(document).ready(function() {
         $(buttonid).text("Login");
         loginServices.delete(serviceToLoginID.get(buttonid)[0]);
       }
-      console.log(loginServices);
     });
   }
 
@@ -263,10 +272,16 @@ $(document).ready(function() {
     return results;
   }
 
-  for (var i = 0; i < TvShows.length; i++) {
-    AddElement(TvShows[i], "#recommended");
-    AddElement(TvShows[TvShows.length - (i + 1)], "#sortbygenre");
+  function updateList() {
+    for (var i = 0; i < TvShows.length; i++) {
+      if (TvShows[i].services[0] in activeServices) {
+        AddElement(TvShows[i], "#recommended");
+      }
+      updateGenres();
+    }
   }
+
+  updateList();
 
   function AddElement(show, location) {
     let html = "<a href=\"#\" id=\"" + show.id + "\" class=\"content\" style=\"background: url(" + show.imgPath + "); background-position: center; background-size: cover;\"><h5 class=\"content-title\">" + show.title + "</h5><h4 class=\"content-service " + show.services[0] + "\">" + show.services[0] + "</h4></div>";
@@ -292,7 +307,6 @@ $(document).ready(function() {
   function updateGenres() {
     let genre = document.getElementById('genre-selector');
     let selected = genre.options[genre.selectedIndex].value;
-    console.log(selected);
 
     var myNode = document.getElementById("sortbygenre");
     while (myNode.firstChild) {
@@ -300,7 +314,6 @@ $(document).ready(function() {
     }
 
     let shows = sortbyGenre(selected);
-    console.log(shows);
     for (var i = 0; i < shows.length; i++) {
       AddElement(shows[i], "#sortbygenre");
     }
