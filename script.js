@@ -275,9 +275,9 @@ $(document).ready(function() {
 
   function updateList() {
     for (var i = 0; i < TvShows.length; i++) {
-      if (TvShows[i].services[0] in activeServices) {
+      // if (TvShows[i].services[0] in activeServices) {
         AddElement(TvShows[i], "#recommended");
-      }
+      // }
       updateGenres();
     }
   }
@@ -347,12 +347,12 @@ $(document).ready(function() {
     $('.page-content').slideUp(300);
     $('.tv-show-page').show();
   })
-    
+
     $(document).on('click', '#show-back-arrow', function() {
         $('.page-content').slideDown();
         setTimeout(function() {
             $('.tv-show-page').toggle();
         }, 400);
     });
-        
+
 });

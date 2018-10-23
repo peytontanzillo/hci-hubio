@@ -55,6 +55,7 @@
   border-width: 0;
   padding: 10px;
   box-shadow: 2px 2px 2px gray;
+  transition: all .2s ease-in-out;
 }
 
 #submit-button {
@@ -65,10 +66,12 @@
   border-width: 0;
   box-shadow: 2px 2px 2px gray;
   cursor: pointer;
+  transition: all .2s ease-in-out;
 }
 
-#submit-button:hover {
+#submit-button:hover, #search-box:hover {
   background-color: white;
+  box-shadow: 2px 2px 4px #1a212d;
 }
 
 /* === CSS for main page content === */
