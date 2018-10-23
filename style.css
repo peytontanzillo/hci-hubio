@@ -360,10 +360,11 @@ option {
 /* === For the toggles === */
 /* The switch - the box around the slider */
 .switch {
-  position: relative;
+  position: absolute;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 56px;
+  height: 30px;
+  margin-left: 45px;
 }
 
 /* Hide default HTML checkbox */
@@ -392,8 +393,8 @@ option {
 .slider-round:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
+  height: 22px;
+  width: 22px;
   left: 4px;
   bottom: 4px;
   background-color: white;
