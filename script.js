@@ -25,29 +25,20 @@ $(document).ready(function() {
   var loginServices = new Set();
   // get the logged in services
 
-  var services = new Set(['netflix', 'hulu', 'hbo', 'showtime', 'prime', 'crunchyroll']);
-  var activeServices = new Set(['netflix', 'hulu', 'hbo', 'showtime', 'prime', 'crunchyroll']);
+  var services = ['netflix', 'hulu', 'hbo', 'showtime', 'prime', 'crunchyroll'];
 
   for (service of services) {
     console.log(service);
     $(document).on('click', '#' + service + '-switch', function() {
-      if ($('#' + service + '-switch').val() === 'on') {
-        activeServices.delete(service);
-        // for (let i = 0; i < activeServices.length; i++) {
-        //   if (activeServices[i] === service) {
-        //     activeServices.splice(i, 1);
-        //   }
-        // }
-        //activeServices.splice(activeServices.indexOf(service), 1);
-        $('#' + service + '-switch').val('off');
-        console.log(activeServices);
-        updateList();
-      } else {
-        activeServices.add(service);
-        $('#' + service + '-switch').val('on');
-        console.log(activeServices);
-        updateList();
-      }
+      $('#' + service + '-switch').not(':checked').prop("checked", true);
+      updateList();
+      // if ($('#' + service + '-switch').val() === 'on') {
+      //   $('#' + service + '-switch').val('off');
+      //   updateList();
+      // } else {
+      //   $('#' + service + '-switch').val('on');
+      //   updateList();
+      // }
     });
   }
 
@@ -276,19 +267,28 @@ $(document).ready(function() {
   }
 
   function updateList() {
+    let activeServices = [];
+    for (service of services) {
+      if ($('#' + service + '-switch').val() === 'on') {
+        console.log($('#' + service + '-switch').val());
+        console.log('#' + service + '-switch');
+        activeServices.push(service);
+      }
+    }
+    console.log(activeServices);
     for (var i = 0; i < TvShows.length; i++) {
-      // if (activeServices.has(TvShows[i].services[0])) {
+      if (TvShows[i].services[0].includes(activeServices)) {
         AddElement(TvShows[i], "#recommended");
         console.log('yeet');
-      // }
-      updateGenres();
+        updateGenres();
+      }
     }
   }
 
   updateList();
 
     let cameFromSearch = false;
-    
+
   function AddElement(show, location) {
     let html = "<a href=\"#\" id=\"" + show.id + "\" class=\"content\" style=\"background: url(" + show.imgPath + "); background-position: center; background-size: cover;\"><h5 class=\"content-title\">" + show.title + "</h5><h4 class=\"content-service " + show.services[0] + "\">" + show.services[0] + "</h4></div>";
     $(location).append(html);
@@ -317,6 +317,7 @@ function addContentListener(show) {
     console.log('Added Element ' + show.title + " to " + location + ".");
 }
 
+
   let ScrollAmount = 500;
 
   $('#recommended-scroll-right').click(function() {
@@ -332,7 +333,7 @@ function addContentListener(show) {
   $('#genre-scroll-left').click(function() {
     document.getElementById('sortbygenre').scrollLeft -= ScrollAmount;
   });
-    
+
   $('#results-scroll-right').click(function() {
     document.getElementById('results').scrollLeft += ScrollAmount;
   });
@@ -375,12 +376,12 @@ function addContentListener(show) {
             }, 400);
         }
     });
-    
+
     $(document).on('click', '#search-back-arrow', function() {
         $('.search-content').hide();
         $('.page-content').show();
     });
-    
+
     $("#search-form").submit(function(e) {
         let foundShow = false;
         const showsToAdd = [];
