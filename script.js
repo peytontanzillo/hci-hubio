@@ -27,7 +27,9 @@ $(document).ready(function() {
 
   var services = ['netflix', 'hulu', 'hbo', 'showtime', 'prime', 'crunchyroll'];
 
-  function checkTheToggles(service) {
+  for (service of services) {
+    console.log(service);
+    $(document).on('click', '#' + service + '-switch', function() {
       // $('#' + service + '-switch').not(':checked').prop("checked", true);
       // updateList();
       if ($('#' + service + '-switch').val() === 'on') {
@@ -39,11 +41,9 @@ $(document).ready(function() {
         updateList();
         console.log('jeepers');
       }
+    });
   }
 
-  for (service of services) {
-    $('#' + service + '-switch').addEventListener("click", checkTheToggles(service));
-  }
 
   let serviceToLoginID = new Map();
   serviceToLoginID.set("#netflixLogin", ["Netflix", "netflix"]);
@@ -294,31 +294,34 @@ $(document).ready(function() {
   function AddElement(show, location) {
     let html = "<a href=\"#\" id=\"" + show.id + "\" class=\"content\" style=\"background: url(" + show.imgPath + "); background-position: center; background-size: cover;\"><h5 class=\"content-title\">" + show.title + "</h5><h4 class=\"content-service " + show.services[0] + "\">" + show.services[0] + "</h4></div>";
     $(location).append(html);
-    addContentListener(show);
-  }
-    
-function addContentListener(show) {
-    $(document).on('click', '#' + show.id, function() {
-        console.log('yite');
-        let html = "<div id=\"show-display\"><h5>" + show.title + "</h5></div>"
-        $("#show-title").empty().append(show.title);
-        $("#show-description").empty().append(show.description);
-        $("#show-description").empty().append(show.description);
-        $(".show-img-container").empty().append("<img src=\"" + show.imgPath + "\">");
-        $("#show-rating-year").empty().append("X Stars - 20XX");
-        if ($('.page-content').is(':visible')) {
-            $('.page-content').slideUp(300);
-            cameFromSearch = false;
-        } else {
-            $('.search-content').hide() 
-            cameFromSearch = true;
-        }
-        $('.tv-show-page').show();
-    });
-      
-    console.log('Added Element ' + show.title + " to " + location + ".");
-}
 
+    $('#' + show.id).click(function() {
+    //var id = $(this).attr('id');
+    //let show = null;
+
+//    for (let i = 0; i < TvShows.length; i++) {
+//      if (TvShows[i].id === id) {
+//        show = TvShows[i];
+//      }
+//    }
+
+    let html = "<div id=\"show-display\"><h5>" + show.title + "</h5></div>"
+    $("#show-title").empty().append(show.title);
+    $("#show-description").empty().append(show.description);
+    $("#show-description").empty().append(show.description);
+    $(".show-img-container").empty().append("<img src=\"" + show.imgPath + "\">");
+    $("#show-rating-year").empty().append("X Stars - 20XX");
+    if ($('.page-content').is(':visible')) {
+        $('.page-content').slideUp(300);
+        cameFromSearch = false;
+    } else {
+        $('.search-content').hide()
+        cameFromSearch = true;
+    }
+    $('.tv-show-page').show();
+  });
+
+  };
 
   let ScrollAmount = 500;
 
