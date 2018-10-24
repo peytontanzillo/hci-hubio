@@ -32,7 +32,7 @@ $(document).ready(function() {
     console.log(service);
     $(document).on('click', '#' + service + '-switch', function() {
       if ($('#' + service + '-switch').val() === 'on') {
-        activeServices.delete('' + service);
+        activeServices.delete(service);
         // for (let i = 0; i < activeServices.length; i++) {
         //   if (activeServices[i] === service) {
         //     activeServices.splice(i, 1);
@@ -70,12 +70,12 @@ $(document).ready(function() {
   function addButtonListener(buttonid) {
     $(document).on('click', buttonid, function() {
       if ($(buttonid).hasClass("login")) {
-//        $(buttonid).removeClass("login");
-//        $(buttonid).addClass("logout");
-//        $(buttonid).text("Logout");
-//        loginServices.add(serviceToLoginID.get(buttonid)[0]);
+        //        $(buttonid).removeClass("login");
+        //        $(buttonid).addClass("logout");
+        //        $(buttonid).text("Logout");
+        //        loginServices.add(serviceToLoginID.get(buttonid)[0]);
         displayServiceLoginPage(buttonid);
-//          $('.page-content').show();
+        //          $('.page-content').show();
         $('.starting-page').hide();
       } else {
         $(buttonid).removeClass("logout");
@@ -86,34 +86,34 @@ $(document).ready(function() {
     });
   }
 
-    let loginHamburger = undefined;
+  let loginHamburger = undefined;
 
-    function displayServiceLoginPage(buttonid) {
-        $('.starting-page').hide();
-        $('.page-content').hide();
-        $('.hamburger-content').hide();
-        $('.tv-show-page').hide();
-        $('#login-service-name').removeClass()
-        $('#login-service-name').addClass(serviceToLoginID.get(buttonid)[1])
-        $('#login-service-name').text(serviceToLoginID.get(buttonid)[0])
-        $('.service-login').show();
-        loginHamburger = buttonid;
+  function displayServiceLoginPage(buttonid) {
+    $('.starting-page').hide();
+    $('.page-content').hide();
+    $('.hamburger-content').hide();
+    $('.tv-show-page').hide();
+    $('#login-service-name').removeClass()
+    $('#login-service-name').addClass(serviceToLoginID.get(buttonid)[1])
+    $('#login-service-name').text(serviceToLoginID.get(buttonid)[0])
+    $('.service-login').show();
+    loginHamburger = buttonid;
+  }
+
+  $(document).on('click', '#login-button', function() {
+    if ($('#username-input').val() == 'cat' && $('#password-input').val() == 'dog') {
+      $(loginHamburger).removeClass("login");
+      $(loginHamburger).addClass("logout");
+      $(loginHamburger).text("Logout");
+      loginServices.add(serviceToLoginID.get(loginHamburger)[0]);
+      $('.service-login').hide();
+      $('.page-content').show();
+      $('#username-input').val('');
+      $('#password-input').val('');
+    } else {
+      alert("Incorrect username or password.");
     }
-
-    $(document).on('click', '#login-button', function() {
-      if ( $('#username-input').val() == 'cat' && $('#password-input').val() == 'dog') {
-        $(loginHamburger).removeClass("login");
-        $(loginHamburger).addClass("logout");
-        $(loginHamburger).text("Logout");
-        loginServices.add(serviceToLoginID.get(loginHamburger)[0]);
-        $('.service-login').hide();
-        $('.page-content').show();
-        $('#username-input').val('');
-        $('#password-input').val('');
-      } else {
-        alert("Incorrect username or password.");
-      }
-    });
+  });
 
   class TvShow {
     constructor(title, rating, genre, year, description, seasons, services, imgPath, id) {
@@ -259,7 +259,7 @@ $(document).ready(function() {
     'Content/shameless.jpg',
     "shameless");
 
-  if ( $('#netflix-switch').is(":checked") ) {
+  if ($('#netflix-switch').is(":checked")) {
 
   }
   let TvShows = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, mithc, spongebob, friends, gameofthrones, shameless];
@@ -350,11 +350,11 @@ $(document).ready(function() {
     $('.tv-show-page').show();
   })
 
-    $(document).on('click', '#show-back-arrow', function() {
-        $('.page-content').slideDown();
-        setTimeout(function() {
-            $('.tv-show-page').toggle();
-        }, 400);
-    });
+  $(document).on('click', '#show-back-arrow', function() {
+    $('.page-content').slideDown();
+    setTimeout(function() {
+      $('.tv-show-page').toggle();
+    }, 400);
+  });
 
 });
