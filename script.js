@@ -215,6 +215,7 @@ $(document).ready(function() {
     function displayServiceLoginPage(buttonid) {
         $('.starting-page').hide();
         $('.page-content').hide();
+        $('.search-content').hide();
         $('.hamburger-content').hide();
         $('.tv-show-page').hide();
         $('#login-service-name').removeClass()
@@ -398,16 +399,19 @@ $(document).ready(function() {
             }
         }
         $('#search-box').val('');
+        $('.page-content').hide();
+        $('.tv-show-page').hide();
+        $('.service-login').hide();
+        $('.starting-page').hide();
+        $('.hamburger-content').hide();
+        $('.search-content').show();
         if (!foundShow) {
-            alert('Show not found.');
+            $('#not-found').show()
+            $('#search-content-band').hide();
         } else {
             $('#results').empty();
-            $('.search-content').show();
-            $('.page-content').hide();
-            $('.tv-show-page').hide();
-            $('.service-login').hide();
-            $('.starting-page').hide();
-            $('.hamburger-content').hide();
+            $('#not-found').hide();
+            $('#search-content-band').show();
             for (show of showsToAdd) {
                 AddElement(show, '#results');
             }
