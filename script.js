@@ -1,38 +1,149 @@
-class TvShow {
+//
+// show content on homescreen from the logged in services
+// var content = [];
+// for (service in loginservices){
+//  if (tvshow.service === service){
+//    content.push(tvshow);
+//  }
+//}
+
+
+function openVideo(Title, season, episode) {
+  // do some stuff where it opens a new page and displays the corresponding video from the database
+}
+
+
+//console.log(results);
+
+$(document).ready(function() {
+  //Code when hamburger is clicked
+  $('.hamburger-content').hide();
+  $(document).on('click', '#hamburger', function() {
+    $('.hamburger-content').toggle();
+  });
+
+  var loginServices = new Set();
+  // get the logged in services
+
+  var services = ['netflix', 'hulu', 'hbo', 'showtime', 'prime', 'crunchyroll'];
+
+  for (service of services) {
+    console.log(service);
+    $(document).on('click', '#' + service + '-switch', function() {
+      // $('#' + service + '-switch').not(':checked').prop("checked", true);
+      // updateList();
+      if ($('#' + service + '-switch').val() === 'on') {
+        $('#' + service + '-switch').val('off');
+        updateList();
+        console.log('yikes');
+      } else {
+        $('#' + service + '-switch').val('on');
+        updateList();
+        console.log('jeepers');
+      }
+    });
+  }
+
+
+  let serviceToLoginID = new Map();
+  serviceToLoginID.set("#netflixLogin", ["Netflix", "netflix"]);
+  serviceToLoginID.set("#huluLogin", ["Hulu", "hulu"]);
+  serviceToLoginID.set("#hboLogin", ["HBO GO", "hbo"]);
+  serviceToLoginID.set("#showtimeLogin", ["Showtime", "showtime"]);
+  serviceToLoginID.set("#primeLogin", ["Prime Video", "prime"]);
+  serviceToLoginID.set("#crunchyrollLogin", ["Crunchyroll", "crunchyroll"]);
+
+  for (buttonid of serviceToLoginID.keys()) {
+    addButtonListener(buttonid);
+  }
+
+  $('.page-content').hide();
+  $('.service-login').hide();
+  $('.search-content').hide();
+
+  function addButtonListener(buttonid) {
+    $(document).on('click', buttonid, function() {
+      if ($(buttonid).hasClass("login")) {
+        //        $(buttonid).removeClass("login");
+        //        $(buttonid).addClass("logout");
+        //        $(buttonid).text("Logout");
+        //        loginServices.add(serviceToLoginID.get(buttonid)[0]);
+        displayServiceLoginPage(buttonid);
+        //          $('.page-content').show();
+        $('.starting-page').hide();
+      } else {
+        $(buttonid).removeClass("logout");
+        $(buttonid).addClass("login");
+        $(buttonid).text("Login");
+        loginServices.delete(serviceToLoginID.get(buttonid)[0]);
+      }
+    });
+  }
+
+  let loginHamburger = undefined;
+
+  function displayServiceLoginPage(buttonid) {
+    $('.starting-page').hide();
+    $('.page-content').hide();
+    $('.hamburger-content').hide();
+    $('.tv-show-page').hide();
+    $('#login-service-name').removeClass()
+    $('#login-service-name').addClass(serviceToLoginID.get(buttonid)[1])
+    $('#login-service-name').text(serviceToLoginID.get(buttonid)[0])
+    $('.service-login').show();
+    loginHamburger = buttonid;
+  }
+
+  $(document).on('click', '#login-button', function() {
+    if ($('#username-input').val() == 'cat' && $('#password-input').val() == 'dog') {
+      $(loginHamburger).removeClass("login");
+      $(loginHamburger).addClass("logout");
+      $(loginHamburger).text("Logout");
+      loginServices.add(serviceToLoginID.get(loginHamburger)[0]);
+      $('.service-login').hide();
+      $('.page-content').show();
+      $('#username-input').val('');
+      $('#password-input').val('');
+    } else {
+      alert("Incorrect username or password.");
+    }
+  });
+
+  class TvShow {
     constructor(title, rating, genre, year, description, seasons, services, imgPath, id) {
-        this.title = title;
-        this.rating = rating;
-        this.description = description;
-        this.genre = genre;
-        this.year = year;
+      this.title = title;
+      this.rating = rating;
+      this.description = description;
+      this.genre = genre;
+      this.year = year;
 
-        // Arrays
-        this.seasons = seasons;
-        this.services = services;
+      // Arrays
+      this.seasons = seasons;
+      this.services = services;
 
-        //  Image path
-        this.imgPath = imgPath;
+      //  Image path
+      this.imgPath = imgPath;
 
-        this.id = id;
+      this.id = id;
     }
-}
+  }
 
-class Season {
+  class Season {
     constructor(NumberOfEpisodes) {
-        this.NumberOfEpisodes = NumberOfEpisodes;
+      this.NumberOfEpisodes = NumberOfEpisodes;
     }
-}
+  }
 
-class Movie {
+  class Movie {
     constructor(title, rating, description, services) {
-        this.title = title;
-        this.rating = rating;
-        this.description = description;
-        this.services = services;
+      this.title = title;
+      this.rating = rating;
+      this.description = description;
+      this.services = services;
     }
-}
+  }
 
-let TheOffice = new TvShow(
+  let TheOffice = new TvShow(
     "The Office",
     10,
     "comedy",
@@ -43,7 +154,7 @@ let TheOffice = new TvShow(
     "Content/theoffice.jpg",
     "the_office");
 
-let SouthPark = new TvShow(
+  let SouthPark = new TvShow(
     "South Park",
     8,
     "comedy",
@@ -54,7 +165,7 @@ let SouthPark = new TvShow(
     "Content/southpark.jpg",
     "south_park");
 
-let DragonBallZ = new TvShow(
+  let DragonBallZ = new TvShow(
     "Dragon Ball Z",
     7,
     "action",
@@ -65,7 +176,7 @@ let DragonBallZ = new TvShow(
     './Content/Dragon-Ball-Z.jpg',
     "dragon_ball_z");
 
-let Dark = new TvShow(
+  let Dark = new TvShow(
     "Dark",
     10,
     "sci-fi",
@@ -76,7 +187,7 @@ let Dark = new TvShow(
     'Content/dark.jpg',
     "dark");
 
-let WestWorld = new TvShow(
+  let WestWorld = new TvShow(
     "West World",
     5,
     "sci-fi",
@@ -87,7 +198,7 @@ let WestWorld = new TvShow(
     'Content/westworld.jpg',
     "west_world");
 
-let mithc = new TvShow(
+  let mithc = new TvShow(
     "Man in the High Castle",
     6,
     "sci-fi",
@@ -98,7 +209,7 @@ let mithc = new TvShow(
     'Content/highcastle.png',
     "high_castle");
 
-let spongebob = new TvShow(
+  let spongebob = new TvShow(
     "Spongebob Squarepants",
     10,
     "comedy",
@@ -109,7 +220,7 @@ let spongebob = new TvShow(
     'Content/spongebob.jpg',
     "spongebob");
 
-let friends = new TvShow(
+  let friends = new TvShow(
     "Friends",
     7,
     "comedy",
@@ -120,7 +231,7 @@ let friends = new TvShow(
     'Content/friends.jpg',
     "friends");
 
-let gameofthrones = new TvShow(
+  let gameofthrones = new TvShow(
     "Game of Thrones",
     8,
     "adventure",
@@ -131,7 +242,7 @@ let gameofthrones = new TvShow(
     'Content/gameofthrones.jpg',
     "gameofthrones");
 
-let shameless = new TvShow(
+  let shameless = new TvShow(
     "Shameless",
     4,
     "drama",
@@ -142,248 +253,122 @@ let shameless = new TvShow(
     'Content/shameless.jpg',
     "shameless");
 
-let TvShows = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, mithc, spongebob, friends, gameofthrones, shameless];
+  if ($('#netflix-switch').is(":checked")) {
 
+  }
+  let TvShows = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, mithc, spongebob, friends, gameofthrones, shameless];
 
-$(document).ready(function() {
-    //Code when hamburger is clicked
-    $('.hamburger-content').hide();
-    $(document).on('click', '#hamburger', function() {
-        $('.hamburger-content').toggle();
-    });
+  function sortbyGenre(genre) { // returns results that are the selected genre
+    let results = [];
+    for (var i = 0; i < TvShows.length; i++) {
+      if (TvShows[i].genre === genre) {
+        results.push(TvShows[i]);
+      }
+    }
+    return results;
+  }
 
-    var loginServices = new Set();
-    // get the logged in services
-
-    var services = ['netflix', 'hulu', 'hbo', 'showtime', 'prime', 'crunchyroll'];
-
+  function updateList() {
+    let activeServices = [];
     for (service of services) {
-        console.log(service);
-        $(document).on('click', '#' + service + '-switch', function() {
-            // $('#' + service + '-switch').not(':checked').prop("checked", true);
-            // updateList();
-            if ($('#' + service + '-switch').val() === 'on') {
-                $('#' + service + '-switch').val('off');
-                updateList();
-                console.log('yikes');
-            } else {
-                $('#' + service + '-switch').val('on');
-                updateList();
-                console.log('jeepers');
-            }
-        });
+      console.log($('#' + service + '-switch').val());
+      console.log('#' + service + '-switch');
+      if ($('#' + service + '-switch').val() === 'on') {
+        activeServices.push(service);
+      }
     }
-
-
-    let serviceToLoginID = new Map();
-    serviceToLoginID.set("#netflixLogin", ["Netflix", "netflix"]);
-    serviceToLoginID.set("#huluLogin", ["Hulu", "hulu"]);
-    serviceToLoginID.set("#hboLogin", ["HBO GO", "hbo"]);
-    serviceToLoginID.set("#showtimeLogin", ["Showtime", "showtime"]);
-    serviceToLoginID.set("#primeLogin", ["Prime Video", "prime"]);
-    serviceToLoginID.set("#crunchyrollLogin", ["Crunchyroll", "crunchyroll"]);
-
-    for (buttonid of serviceToLoginID.keys()) {
-        addButtonListener(buttonid);
+    console.log(activeServices);
+    for (var i = 0; i < TvShows.length; i++) {
+      if (TvShows[i].services[0].includes(activeServices)) {
+        AddElement(TvShows[i], "#recommended");
+        console.log('yeet');
+        updateGenres();
+      }
     }
+  }
 
-    $('.page-content').hide();
-    $('.service-login').hide();
-    $('.search-content').hide();
-
-    function addButtonListener(buttonid) {
-        $(document).on('click', buttonid, function() {
-            if ($(buttonid).hasClass("login")) {
-                //        $(buttonid).removeClass("login");
-                //        $(buttonid).addClass("logout");
-                //        $(buttonid).text("Logout");
-                //        loginServices.add(serviceToLoginID.get(buttonid)[0]);
-                displayServiceLoginPage(buttonid);
-                //          $('.page-content').show();
-                $('.starting-page').hide();
-            } else {
-                $(buttonid).removeClass("logout");
-                $(buttonid).addClass("login");
-                $(buttonid).text("Login");
-                loginServices.delete(serviceToLoginID.get(buttonid)[0]);
-            }
-        });
-    }
-
-    let loginHamburger = undefined;
-
-    function displayServiceLoginPage(buttonid) {
-        $('.starting-page').hide();
-        $('.page-content').hide();
-        $('.hamburger-content').hide();
-        $('.tv-show-page').hide();
-        $('#login-service-name').removeClass()
-        $('#login-service-name').addClass(serviceToLoginID.get(buttonid)[1])
-        $('#login-service-name').text(serviceToLoginID.get(buttonid)[0])
-        $('.service-login').show();
-        loginHamburger = buttonid;
-    }
-
-    $(document).on('click', '#login-button', function() {
-        if ($('#username-input').val() == 'cat' && $('#password-input').val() == 'dog') {
-            $(loginHamburger).removeClass("login");
-            $(loginHamburger).addClass("logout");
-            $(loginHamburger).text("Logout");
-            loginServices.add(serviceToLoginID.get(loginHamburger)[0]);
-            $('.service-login').hide();
-            $('.page-content').show();
-            $('#username-input').val('');
-            $('#password-input').val('');
-        } else {
-            alert("Incorrect username or password.");
-        }
-    });
-
-    class TvShow {
-        constructor(title, rating, genre, year, description, seasons, services, imgPath, id) {
-            this.title = title;
-            this.rating = rating;
-            this.description = description;
-            this.genre = genre;
-            this.year = year;
-
-            // Arrays
-            this.seasons = seasons;
-            this.services = services;
-
-            //  Image path
-            this.imgPath = imgPath;
-
-            this.id = id;
-        }
-    }
-
-    class Season {
-        constructor(NumberOfEpisodes) {
-            this.NumberOfEpisodes = NumberOfEpisodes;
-        }
-    }
-
-    class Movie {
-        constructor(title, rating, description, services) {
-            this.title = title;
-            this.rating = rating;
-            this.description = description;
-            this.services = services;
-        }
-    }
-
-    function sortbyGenre(genre) { // returns results that are the selected genre
-        let results = [];
-        for (var i = 0; i < TvShows.length; i++) {
-            if (TvShows[i].genre === genre) {
-                results.push(TvShows[i]);
-            }
-        }
-        return results;
-    }
-
-    function updateList() {
-        let activeServices = [];
-        for (service of services) {
-            console.log($('#' + service + '-switch').val());
-            console.log('#' + service + '-switch');
-            if ($('#' + service + '-switch').val() === 'on') {
-                activeServices.push(service);
-            }
-        }
-        console.log(activeServices);
-        for (var i = 0; i < TvShows.length; i++) {
-            if (TvShows[i].services[0].includes(activeServices)) {
-                AddElement(TvShows[i], "#recommended");
-                console.log('yeet');
-                updateGenres();
-            }
-        }
-    }
-
-    updateList();
+  updateList();
 
     let cameFromSearch = false;
 
-    function AddElement(show, location) {
-        let html = "<a href=\"#\" id=\"" + show.id + "\" class=\"content\" style=\"background: url(" + show.imgPath + "); background-position: center; background-size: cover;\"><h5 class=\"content-title\">" + show.title + "</h5><h4 class=\"content-service " + show.services[0] + "\">" + show.services[0] + "</h4></div>";
-        $(location).append(html);
+  function AddElement(show, location) {
+    let html = "<a href=\"#\" id=\"" + show.id + "\" class=\"content\" style=\"background: url(" + show.imgPath + "); background-position: center; background-size: cover;\"><h5 class=\"content-title\">" + show.title + "</h5><h4 class=\"content-service " + show.services[0] + "\">" + show.services[0] + "</h4></div>";
+    $(location).append(html);
 
-        $('#' + show.id).click(function() {
-            //var id = $(this).attr('id');
-            //let show = null;
+    $('#' + show.id).click(function() {
+    //var id = $(this).attr('id');
+    //let show = null;
 
-            //    for (let i = 0; i < TvShows.length; i++) {
-            //      if (TvShows[i].id === id) {
-            //        show = TvShows[i];
-            //      }
-            //    }
+//    for (let i = 0; i < TvShows.length; i++) {
+//      if (TvShows[i].id === id) {
+//        show = TvShows[i];
+//      }
+//    }
 
-            let html = "<div id=\"show-display\"><h5>" + show.title + "</h5></div>"
-            $("#show-title").empty().append(show.title);
-            $("#show-description").empty().append(show.description);
-            $("#show-description").empty().append(show.description);
-            $(".show-img-container").empty().append("<img src=\"" + show.imgPath + "\">");
-            $("#show-rating-year").empty().append("X Stars - 20XX");
-            if ($('.page-content').is(':visible')) {
-                $('.page-content').slideUp(300);
-                cameFromSearch = false;
-            } else {
-                $('.search-content').hide()
-                cameFromSearch = true;
-            }
-            $('.tv-show-page').show();
-        });
+    let html = "<div id=\"show-display\"><h5>" + show.title + "</h5></div>"
+    $("#show-title").empty().append(show.title);
+    $("#show-description").empty().append(show.description);
+    $("#show-description").empty().append(show.description);
+    $(".show-img-container").empty().append("<img src=\"" + show.imgPath + "\">");
+    $("#show-rating-year").empty().append("X Stars - 20XX");
+    if ($('.page-content').is(':visible')) {
+        $('.page-content').slideUp(300);
+        cameFromSearch = false;
+    } else {
+        $('.search-content').hide()
+        cameFromSearch = true;
+    }
+    $('.tv-show-page').show();
+  });
 
-    };
+  };
 
-    let ScrollAmount = 500;
+  let ScrollAmount = 500;
 
-    $('#recommended-scroll-right').click(function() {
-        document.getElementById('recommended').scrollLeft += ScrollAmount;
-    });
-    $('#recommended-scroll-left').click(function() {
-        document.getElementById('recommended').scrollLeft -= ScrollAmount;
-    });
+  $('#recommended-scroll-right').click(function() {
+    document.getElementById('recommended').scrollLeft += ScrollAmount;
+  });
+  $('#recommended-scroll-left').click(function() {
+    document.getElementById('recommended').scrollLeft -= ScrollAmount;
+  });
 
-    $('#genre-scroll-right').click(function() {
-        document.getElementById('sortbygenre').scrollLeft += ScrollAmount;
-    });
-    $('#genre-scroll-left').click(function() {
-        document.getElementById('sortbygenre').scrollLeft -= ScrollAmount;
-    });
+  $('#genre-scroll-right').click(function() {
+    document.getElementById('sortbygenre').scrollLeft += ScrollAmount;
+  });
+  $('#genre-scroll-left').click(function() {
+    document.getElementById('sortbygenre').scrollLeft -= ScrollAmount;
+  });
 
-    $('#results-scroll-right').click(function() {
-        document.getElementById('results').scrollLeft += ScrollAmount;
-    });
-    $('#results-scroll-left').click(function() {
-        document.getElementById('results').scrollLeft -= ScrollAmount;
-    });
+  $('#results-scroll-right').click(function() {
+    document.getElementById('results').scrollLeft += ScrollAmount;
+  });
+  $('#results-scroll-left').click(function() {
+    document.getElementById('results').scrollLeft -= ScrollAmount;
+  });
 
 
-    function updateGenres() {
-        let genre = document.getElementById('genre-selector');
-        let selected = genre.options[genre.selectedIndex].value;
+  function updateGenres() {
+    let genre = document.getElementById('genre-selector');
+    let selected = genre.options[genre.selectedIndex].value;
 
-        var myNode = document.getElementById("sortbygenre");
-        while (myNode.firstChild) {
-            myNode.removeChild(myNode.firstChild);
-        }
-
-        let shows = sortbyGenre(selected);
-        for (var i = 0; i < shows.length; i++) {
-            AddElement(shows[i], "#sortbygenre");
-        }
+    var myNode = document.getElementById("sortbygenre");
+    while (myNode.firstChild) {
+      myNode.removeChild(myNode.firstChild);
     }
 
+    let shows = sortbyGenre(selected);
+    for (var i = 0; i < shows.length; i++) {
+      AddElement(shows[i], "#sortbygenre");
+    }
+  }
+
+  updateGenres();
+
+  $('#genre-selector').change(function() {
     updateGenres();
+  });
 
-    $('#genre-selector').change(function() {
-        updateGenres();
-    });
-
-    $('.tv-show-page').hide();
+  $('.tv-show-page').hide();
 
     $(document).on('click', '#show-back-arrow', function() {
         if (cameFromSearch) {
