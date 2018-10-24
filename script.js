@@ -1,19 +1,141 @@
-//
-// show content on homescreen from the logged in services
-// var content = [];
-// for (service in loginservices){
-//  if (tvshow.service === service){
-//    content.push(tvshow);
-//  }
-//}
+class Media {
+  constructor(title, rating, genre, year, description, seasons, services, imgPath, id) {
+    this.title = title;
+    this.rating = rating;
+    this.description = description;
+    this.genre = genre;
+    this.year = year;
 
+    // Arrays
+    this.seasons = seasons;
+    this.services = services;
 
-function openVideo(Title, season, episode) {
-  // do some stuff where it opens a new page and displays the corresponding video from the database
+    //  Image path
+    this.imgPath = imgPath;
+
+    this.id = id;
+  }
 }
 
+class Season {
+  constructor(NumberOfEpisodes) {
+    this.NumberOfEpisodes = NumberOfEpisodes;
+  }
+}
 
-//console.log(results);
+// === Tv Shows === //
+
+let TheOffice = new Media(
+  "The Office",
+  10,
+  "comedy",
+  "2005",
+  "The series depicts the everyday lives of office employees in the Scranton, Pennsylvania, branch of the fictional Dunder Mifflin Paper Company. To simulate the look of an actual documentary, it was filmed in a single-camera setup, without a studio audience or a laugh track.",
+  [new Season(25), new Season(20), new Season(26), new Season(25)],
+  ["Netflix"],
+  "Content/theoffice.jpg",
+  "the_office");
+
+let SouthPark = new Media(
+  "South Park",
+  8,
+  "comedy",
+  "1997",
+  "The animated series is not for children. In fact, its goal seems to be to offend as many as possible as it presents the adventures of Stan, Kyle, Kenny and Cartman.",
+  [new Season(12), new Season(12), new Season(12), new Season(12)],
+  ["Hulu"],
+  "Content/southpark.jpg",
+  "south_park");
+
+let DragonBallZ = new Media(
+  "Dragon Ball Z",
+  7,
+  "action",
+  "1989",
+  "Dragon Ball Z follows the adventures of Goku who, along with the Z Warriors, defends the Earth against evil. The action adventures are entertaining and reinforce the concept of good versus evil. Dragon Ball Z teaches valuable character virtues such as teamwork, loyalty, and trustworthiness.",
+  [new Season(12), new Season(8), new Season(24), new Season(25)],
+  ["Crunchyroll", "Hulu"],
+  './Content/Dragon-Ball-Z.jpg',
+  "dragon_ball_z");
+
+let Dark = new Media(
+  "Dark",
+  10,
+  "sci-fi",
+  "2018",
+  "When two children go missing in a small German town, its sinful past is exposed along with the double lives and fractured relationships that exist among four families as they search for the kids.",
+  [new Season(12)],
+  ["Netflix"],
+  'Content/dark.jpg',
+  "dark");
+
+let WestWorld = new Media(
+  "West World",
+  5,
+  "sci-fi",
+  "2017",
+  "idk.",
+  [new Season(10)],
+  ["HBO GO"],
+  'Content/westworld.jpg',
+  "west_world");
+
+let mithc = new Media(
+  "Man in the High Castle",
+  6,
+  "sci-fi",
+  "2016",
+  "idk.",
+  [new Season(10)],
+  ["Prime Video"],
+  'Content/highcastle.png',
+  "high_castle");
+
+let spongebob = new Media(
+  "Spongebob Squarepants",
+  10,
+  "comedy",
+  "1999",
+  "Spongeboy me bob",
+  [new Season(10), new Season(10), new Season(10), new Season(10)],
+  ["Prime Video"],
+  'Content/spongebob.jpg',
+  "spongebob");
+
+let friends = new Media(
+  "Friends",
+  7,
+  "comedy",
+  "1987",
+  "friends",
+  [new Season(10), new Season(10)],
+  ["Netflix", "Prime Video"],
+  'Content/friends.jpg',
+  "friends");
+
+let gameofthrones = new Media(
+  "Game of Thrones",
+  8,
+  "adventure",
+  "2015",
+  "throne of games",
+  [new Season(10), new Season(10)],
+  ["HBO GO"],
+  'Content/gameofthrones.jpg',
+  "gameofthrones");
+
+let shameless = new Media(
+  "Shameless",
+  4,
+  "drama",
+  "2017",
+  "no idea what this show is about",
+  [new Season(10), new Season(10)],
+  ["Showtime"],
+  'Content/shameless.jpg',
+  "shameless");
+
+  let Medias = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, mithc, spongebob, friends, gameofthrones, shameless];
 
 $(document).ready(function() {
   //Code when hamburger is clicked
@@ -31,7 +153,7 @@ $(document).ready(function() {
     console.log(service);
       addTogglerListener(service);
   }
-    
+
     function addTogglerListener(service) {
     $(document).on('click', '#' + service + '-switch', function() {
       // $('#' + service + '-switch').not(':checked').prop("checked", true);
@@ -47,7 +169,7 @@ $(document).ready(function() {
       }
     });
     }
-    
+
 
 
   let serviceToLoginID = new Map();
@@ -114,160 +236,12 @@ $(document).ready(function() {
     }
   });
 
-  class TvShow {
-    constructor(title, rating, genre, year, description, seasons, services, imgPath, id) {
-      this.title = title;
-      this.rating = rating;
-      this.description = description;
-      this.genre = genre;
-      this.year = year;
-
-      // Arrays
-      this.seasons = seasons;
-      this.services = services;
-
-      //  Image path
-      this.imgPath = imgPath;
-
-      this.id = id;
-    }
-  }
-
-  class Season {
-    constructor(NumberOfEpisodes) {
-      this.NumberOfEpisodes = NumberOfEpisodes;
-    }
-  }
-
-  class Movie {
-    constructor(title, rating, description, services) {
-      this.title = title;
-      this.rating = rating;
-      this.description = description;
-      this.services = services;
-    }
-  }
-
-  let TheOffice = new TvShow(
-    "The Office",
-    10,
-    "comedy",
-    "2005",
-    "The series depicts the everyday lives of office employees in the Scranton, Pennsylvania, branch of the fictional Dunder Mifflin Paper Company. To simulate the look of an actual documentary, it was filmed in a single-camera setup, without a studio audience or a laugh track.",
-    [new Season(25), new Season(20), new Season(26), new Season(25)],
-    ["Netflix"],
-    "Content/theoffice.jpg",
-    "the_office");
-
-  let SouthPark = new TvShow(
-    "South Park",
-    8,
-    "comedy",
-    "1997",
-    "The animated series is not for children. In fact, its goal seems to be to offend as many as possible as it presents the adventures of Stan, Kyle, Kenny and Cartman.",
-    [new Season(12), new Season(12), new Season(12), new Season(12)],
-    ["Hulu"],
-    "Content/southpark.jpg",
-    "south_park");
-
-  let DragonBallZ = new TvShow(
-    "Dragon Ball Z",
-    7,
-    "action",
-    "1989",
-    "Dragon Ball Z follows the adventures of Goku who, along with the Z Warriors, defends the Earth against evil. The action adventures are entertaining and reinforce the concept of good versus evil. Dragon Ball Z teaches valuable character virtues such as teamwork, loyalty, and trustworthiness.",
-    [new Season(12), new Season(8), new Season(24), new Season(25)],
-    ["Crunchyroll", "Hulu"],
-    './Content/Dragon-Ball-Z.jpg',
-    "dragon_ball_z");
-
-  let Dark = new TvShow(
-    "Dark",
-    10,
-    "sci-fi",
-    "2018",
-    "When two children go missing in a small German town, its sinful past is exposed along with the double lives and fractured relationships that exist among four families as they search for the kids.",
-    [new Season(12)],
-    ["Netflix"],
-    'Content/dark.jpg',
-    "dark");
-
-  let WestWorld = new TvShow(
-    "West World",
-    5,
-    "sci-fi",
-    "2017",
-    "idk.",
-    [new Season(10)],
-    ["HBO GO"],
-    'Content/westworld.jpg',
-    "west_world");
-
-  let mithc = new TvShow(
-    "Man in the High Castle",
-    6,
-    "sci-fi",
-    "2016",
-    "idk.",
-    [new Season(10)],
-    ["Prime Video"],
-    'Content/highcastle.png',
-    "high_castle");
-
-  let spongebob = new TvShow(
-    "Spongebob Squarepants",
-    10,
-    "comedy",
-    "1999",
-    "Spongeboy me bob",
-    [new Season(10), new Season(10), new Season(10), new Season(10)],
-    ["Prime Video"],
-    'Content/spongebob.jpg',
-    "spongebob");
-
-  let friends = new TvShow(
-    "Friends",
-    7,
-    "comedy",
-    "1987",
-    "friends",
-    [new Season(10), new Season(10)],
-    ["Netflix", "Prime Video"],
-    'Content/friends.jpg',
-    "friends");
-
-  let gameofthrones = new TvShow(
-    "Game of Thrones",
-    8,
-    "adventure",
-    "2015",
-    "throne of games",
-    [new Season(10), new Season(10)],
-    ["HBO GO"],
-    'Content/gameofthrones.jpg',
-    "gameofthrones");
-
-  let shameless = new TvShow(
-    "Shameless",
-    4,
-    "drama",
-    "2017",
-    "no idea what this show is about",
-    [new Season(10), new Season(10)],
-    ["Showtime"],
-    'Content/shameless.jpg',
-    "shameless");
-
-  if ($('#netflix-switch').is(":checked")) {
-
-  }
-  let TvShows = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, mithc, spongebob, friends, gameofthrones, shameless];
 
   function sortbyGenre(genre) { // returns results that are the selected genre
     let results = [];
-    for (var i = 0; i < TvShows.length; i++) {
-      if (TvShows[i].genre === genre) {
-        results.push(TvShows[i]);
+    for (var i = 0; i < Medias.length; i++) {
+      if (Medias[i].genre === genre) {
+        results.push(Medias[i]);
       }
     }
     return results;
@@ -283,9 +257,9 @@ $(document).ready(function() {
       }
     }
     console.log(activeServices);
-    for (var i = 0; i < TvShows.length; i++) {
-      if (TvShows[i].services[0].includes(activeServices)) {
-        AddElement(TvShows[i], "#recommended");
+    for (var i = 0; i < Medias.length; i++) {
+      if (Medias[i].services[0].includes(activeServices)) {
+        AddElement(Medias[i], "#recommended");
         console.log('yeet');
         updateGenres();
       }
@@ -304,9 +278,9 @@ $(document).ready(function() {
     //var id = $(this).attr('id');
     //let show = null;
 
-//    for (let i = 0; i < TvShows.length; i++) {
-//      if (TvShows[i].id === id) {
-//        show = TvShows[i];
+//    for (let i = 0; i < Medias.length; i++) {
+//      if (Medias[i].id === id) {
+//        show = Medias[i];
 //      }
 //    }
 
@@ -396,7 +370,7 @@ $(document).ready(function() {
         let foundShow = false;
         const showsToAdd = [];
         e.preventDefault();
-        for (show of TvShows) {
+        for (show of Medias) {
             if (show.title.toLowerCase().includes($('#search-box').val().toLowerCase())) {
                 showsToAdd.push(show)
                 foundShow = true;
