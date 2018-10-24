@@ -25,24 +25,25 @@ $(document).ready(function() {
   var loginServices = new Set();
   // get the logged in services
 
-  var services = ['netflix', 'hulu', 'hbo', 'showtime', 'prime', 'crunchyroll'];
-  var activeServices = ['netflix', 'hulu', 'hbo', 'showtime', 'prime', 'crunchyroll'];
+  var services = new Set(['netflix', 'hulu', 'hbo', 'showtime', 'prime', 'crunchyroll']);
+  var activeServices = new Set(['netflix', 'hulu', 'hbo', 'showtime', 'prime', 'crunchyroll']);
 
   for (service of services) {
+    console.log(service);
     $(document).on('click', '#' + service + '-switch', function() {
       if ($('#' + service + '-switch').val() === 'on') {
-        // activeServices.delete(service);
-        for (let i = 0; i < activeServices.length; i++) {
-          if (activeServices[i] === service) {
-            activeServices.splice(i, 1);
-          }
-        }
+        activeServices.delete('' + service);
+        // for (let i = 0; i < activeServices.length; i++) {
+        //   if (activeServices[i] === service) {
+        //     activeServices.splice(i, 1);
+        //   }
+        // }
         //activeServices.splice(activeServices.indexOf(service), 1);
         $('#' + service + '-switch').val('off');
         console.log(activeServices);
         updateList();
       } else {
-        activeServices.push(service);
+        activeServices.add(service);
         $('#' + service + '-switch').val('on');
         console.log(activeServices);
         updateList();
@@ -276,9 +277,10 @@ $(document).ready(function() {
 
   function updateList() {
     for (var i = 0; i < TvShows.length; i++) {
-      // if (TvShows[i].services[0] in activeServices) {
+      if (activeServices.has(TvShows[i].services[0])) {
         AddElement(TvShows[i], "#recommended");
-      // }
+        console.log('yeet');
+      }
       updateGenres();
     }
   }
