@@ -65,6 +65,7 @@ $(document).ready(function() {
 
   $('.page-content').hide();
   $('.service-login').hide();
+  $('.search-content').hide();
 
   function addButtonListener(buttonid) {
     $(document).on('click', buttonid, function() {
@@ -353,6 +354,24 @@ $(document).ready(function() {
         setTimeout(function() {
             $('.tv-show-page').toggle();
         }, 400);
+    });
+    
+    $("#search-form").submit(function(e) {
+        $('.search-content').show();
+        $('.page-content').hide();
+        $('.tv-show-page').hide();
+        $('.service-login').hide();
+        $('.starting-page').hide();
+        $('.hamburger-content').hide();
+        e.preventDefault();
+        $('#results').empty();
+        for (show of TvShows) {
+            if (show.title.toLowerCase().includes($('#search-box').val().toLowerCase())) {
+                AddElement(show, '#results')
+                console.log('itworks');
+            }
+        }
+        $('#search-box').val('');
     });
 
 });
