@@ -507,7 +507,7 @@ input:checked + .slider-round:before {
 .search-content {
   background-color: #1a212d;
   position: relative;
-    z-index: 1;
+    z-index: 3;
 }
 
 #search-back-arrow {
@@ -524,9 +524,6 @@ input:checked + .slider-round:before {
     margin-top: 200px;
     position: relative;
     text-align: center;
-}
-
-#not-found {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 40px;

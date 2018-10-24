@@ -324,7 +324,7 @@ $(document).ready(function() {
                 $('.page-content').slideUp(300);
                 cameFromSearch = false;
             } else {
-                $('.search-content').hide()
+                $('.search-content').slideUp(300);
                 cameFromSearch = true;
             }
             $('.tv-show-page').show();
@@ -381,8 +381,10 @@ $(document).ready(function() {
 
     $(document).on('click', '#show-back-arrow', function() {
         if (cameFromSearch) {
-            $('.search-content').show();
-            $('.tv-show-page').hide();
+            $('.search-content').slideDown();
+            setTimeout(function() {
+                $('.tv-show-page').toggle();
+            }, 400);
         } else {
             $('.page-content').slideDown();
             setTimeout(function() {
