@@ -134,12 +134,12 @@
   margin: auto;
 }
 
-#recommended-scroll-left, #genre-scroll-left {
+#recommended-scroll-left, #genre-scroll-left, #results-scroll-left {
   float: left;
 
 }
 
-#recommended-scroll-right, #genre-scroll-right {
+#recommended-scroll-right, #genre-scroll-right, #results-scroll-right {
   float: right;
 
 }
@@ -500,4 +500,12 @@ input:checked + .slider-round:before {
     height: 50px;
     float: left;
     cursor: pointer;
+}
+
+/* Search CSS */
+
+.search-content {
+  background-color: #1a212d;
+  position: relative;
+    z-index: 1;
 }
