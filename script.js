@@ -22,13 +22,17 @@ $(document).ready(function() {
     $('.hamburger-content').toggle();
   });
 
-  var loginServices = new Set();
+  let loginServices = new Set();
   // get the logged in services
 
-  var services = ['netflix', 'hulu', 'hbo', 'showtime', 'prime', 'crunchyroll'];
+  let services = ['netflix', 'hulu', 'hbo', 'showtime', 'prime', 'crunchyroll'];
 
   for (service of services) {
     console.log(service);
+      addTogglerListener(service);
+  }
+    
+    function addTogglerListener(service) {
     $(document).on('click', '#' + service + '-switch', function() {
       // $('#' + service + '-switch').not(':checked').prop("checked", true);
       // updateList();
@@ -42,7 +46,8 @@ $(document).ready(function() {
         console.log('jeepers');
       }
     });
-  }
+    }
+    
 
 
   let serviceToLoginID = new Map();
