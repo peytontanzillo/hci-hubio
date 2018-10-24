@@ -311,13 +311,13 @@ $(document).ready(function() {
             $(".show-img-container").empty().append("<img src=\"" + show.imgPath + "\">");
             $("#show-rating-year").empty();
             for (let i = 0; i < Math.floor(show.rating/2); i++) {
-              $("#show-rating-year").append("+")
+              $("#show-rating-year").append("<img src=\"./Content/good.png\">")
             }
             if (show.rating % 2 === 1) {
-              $("#show-rating-year").append("±")
+              $("#show-rating-year").append("<img src=\"./Content/half.png\">")
             }
             for (let i = 5; i > Math.ceil(show.rating/2); i--) {
-              $("#show-rating-year").append("-")
+              $("#show-rating-year").append("<img src=\"./Content/bad.png\">")
             }
             $("#show-rating-year").append("      " + show.year);
             if ($('.page-content').is(':visible')) {
