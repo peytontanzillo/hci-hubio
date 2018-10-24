@@ -277,10 +277,10 @@ $(document).ready(function() {
 
   function updateList() {
     for (var i = 0; i < TvShows.length; i++) {
-      if (activeServices.has(TvShows[i].services[0])) {
+      // if (activeServices.has(TvShows[i].services[0])) {
         AddElement(TvShows[i], "#recommended");
         console.log('yeet');
-      }
+      // }
       updateGenres();
     }
   }
