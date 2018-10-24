@@ -307,6 +307,14 @@ $(document).ready(function() {
   $('#genre-scroll-left').click(function() {
     document.getElementById('sortbygenre').scrollLeft -= ScrollAmount;
   });
+    
+  $('#results-scroll-right').click(function() {
+    document.getElementById('results').scrollLeft += ScrollAmount;
+  });
+  $('#results-scroll-left').click(function() {
+    document.getElementById('results').scrollLeft -= ScrollAmount;
+  });
+
 
   function updateGenres() {
     let genre = document.getElementById('genre-selector');
@@ -357,23 +365,36 @@ $(document).ready(function() {
             $('.tv-show-page').toggle();
         }, 400);
     });
-
+    
+    $(document).on('click', '#search-back-arrow', function() {
+        $('.search-content').hide();
+        $('.page-content').show();
+    });
+    
     $("#search-form").submit(function(e) {
-        $('.search-content').show();
-        $('.page-content').hide();
-        $('.tv-show-page').hide();
-        $('.service-login').hide();
-        $('.starting-page').hide();
-        $('.hamburger-content').hide();
+        let foundShow = false;
+        const showsToAdd = [];
         e.preventDefault();
-        $('#results').empty();
         for (show of TvShows) {
             if (show.title.toLowerCase().includes($('#search-box').val().toLowerCase())) {
-                AddElement(show, '#results')
-                console.log('itworks');
+                showsToAdd.push(show)
+                foundShow = true;
             }
         }
         $('#search-box').val('');
+        if (!foundShow) {
+            alert('Show not found.');
+        } else {
+            $('#results').empty();
+            $('.search-content').show();
+            $('.page-content').hide();
+            $('.tv-show-page').hide();
+            $('.service-login').hide();
+            $('.starting-page').hide();
+            $('.hamburger-content').hide();
+            for (show of showsToAdd) {
+                AddElement(show, '#results');
+            }
+        }
     });
-
 });
