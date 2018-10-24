@@ -174,13 +174,17 @@ $(document).ready(function() {
             // updateList();
             if ($('#' + service + '-switch').val() === 'on') {
                 $('#' + service + '-switch').val('off');
+                if ($('.search-content').is(':visible')) {
+                    updateSearch();
+                }
                 updateList();
-                updateSearch();
                 console.log('yikes');
             } else {
                 $('#' + service + '-switch').val('on');
+                if ($('.search-content').is(':visible')) {
+                    updateSearch();
+                }
                 updateList();
-                updateSearch();
                 console.log('jeepers');
             }
         });
@@ -267,16 +271,10 @@ $(document).ready(function() {
     function updateList() {
         $('#recommended').empty();
         let activeServices = findActiveServices();
-        //        for (service of services) {
-        //            if ($('#' + service + '-switch').val() === 'on') {
-        //                activeServices.push(service);
-        //            }
-        //        }
         for (var i = 0; i < Medias.length; i++) {
             for (service of activeServices) {
                 if (Medias[i].services[0].toLowerCase().replace(/\s+/g, '') === service) {
                     AddElement(Medias[i], "#recommended");
-                    console.log('yeet');
                 }
             }
         }
