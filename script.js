@@ -311,7 +311,17 @@ $(document).ready(function() {
             $("#show-description").empty().append(show.description);
             $("#show-description").empty().append(show.description);
             $(".show-img-container").empty().append("<img src=\"" + show.imgPath + "\">");
-            $("#show-rating-year").empty().append("X Stars" + " - " + show.year);
+            $("#show-rating-year").empty();
+            for (let i = 0; i < Math.floor(show.rating/2); i++) {
+              $("#show-rating-year").append("+")
+            }
+            if (show.rating % 2 === 1) {
+              $("#show-rating-year").append("±")
+            }
+            for (let i = 5; i > Math.ceil(show.rating/2); i--) {
+              $("#show-rating-year").append("-")
+            }
+            $("#show-rating-year").append("      " + show.year);
             if ($('.page-content').is(':visible')) {
                 $('.page-content').slideUp(300);
                 cameFromSearch = false;
