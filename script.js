@@ -27,21 +27,23 @@ $(document).ready(function() {
 
   var services = ['netflix', 'hulu', 'hbo', 'showtime', 'prime', 'crunchyroll'];
 
-  for (service of services) {
-    console.log(service);
-    $(document).on('click', '#' + service + '-switch', function() {
-      $('#' + service + '-switch').not(':checked').prop("checked", true);
-      updateList();
-      // if ($('#' + service + '-switch').val() === 'on') {
-      //   $('#' + service + '-switch').val('off');
-      //   updateList();
-      // } else {
-      //   $('#' + service + '-switch').val('on');
-      //   updateList();
-      // }
-    });
+  function checkTheToggles(service) {
+      // $('#' + service + '-switch').not(':checked').prop("checked", true);
+      // updateList();
+      if ($('#' + service + '-switch').val() === 'on') {
+        $('#' + service + '-switch').val('off');
+        updateList();
+        console.log('yikes');
+      } else {
+        $('#' + service + '-switch').val('on');
+        updateList();
+        console.log('jeepers');
+      }
   }
 
+  for (service of services) {
+    $('#' + service + '-switch').addEventListener("click", checkTheToggles(service));
+  }
 
   let serviceToLoginID = new Map();
   serviceToLoginID.set("#netflixLogin", ["Netflix", "netflix"]);
@@ -269,9 +271,9 @@ $(document).ready(function() {
   function updateList() {
     let activeServices = [];
     for (service of services) {
+      console.log($('#' + service + '-switch').val());
+      console.log('#' + service + '-switch');
       if ($('#' + service + '-switch').val() === 'on') {
-        console.log($('#' + service + '-switch').val());
-        console.log('#' + service + '-switch');
         activeServices.push(service);
       }
     }
