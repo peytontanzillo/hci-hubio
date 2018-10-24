@@ -162,10 +162,12 @@ $(document).ready(function() {
             if ($('#' + service + '-switch').val() === 'on') {
                 $('#' + service + '-switch').val('off');
                 updateList();
+                updateSearch();
                 console.log('yikes');
             } else {
                 $('#' + service + '-switch').val('on');
                 updateList();
+                updateSearch();
                 console.log('jeepers');
             }
         });
@@ -250,12 +252,12 @@ $(document).ready(function() {
 
     function updateList() {
       $('#recommended').empty();
-        let activeServices = [];
-        for (service of services) {
-            if ($('#' + service + '-switch').val() === 'on') {
-                activeServices.push(service);
-            }
-        }
+        let activeServices = findActiveServices();
+//        for (service of services) {
+//            if ($('#' + service + '-switch').val() === 'on') {
+//                activeServices.push(service);
+//            }
+//        }
         for (var i = 0; i < Medias.length; i++) {
             for (service of activeServices) {
                 if (Medias[i].services[0].toLowerCase().replace(/\s+/g, '') === service) {
@@ -268,6 +270,16 @@ $(document).ready(function() {
     }
 
     updateList();
+    
+    function findActiveServices() {
+        let activeServices = [];
+        for (service of services) {
+            if ($('#' + service + '-switch').val() === 'on') {
+                activeServices.push(service);
+            }
+        }
+        return activeServices;
+    }
 
     let cameFromSearch = false;
 
@@ -362,14 +374,27 @@ $(document).ready(function() {
         $('.page-content').show();
     });
 
+    let lastSearch = '';
+    
     $("#search-form").submit(function(e) {
-        let foundShow = false;
-        const showsToAdd = [];
         e.preventDefault();
+        lastSearch = $('#search-box').val();
+        updateSearch();
+        console.log('yowch');
+    });
+    
+    function updateSearch() {
+        const showsToAdd = []; 
+        let foundShow = false;
+        let activeServices = findActiveServices();
         for (show of Medias) {
-            if (show.title.toLowerCase().includes($('#search-box').val().toLowerCase())) {
-                showsToAdd.push(show)
-                foundShow = true;
+            if (show.title.toLowerCase().includes(lastSearch.toLowerCase())) {
+                for (service of activeServices) {
+                    if (show.services[0].toLowerCase().replace(/\s+/g, '') === service) {
+                        showsToAdd.push(show);
+                        foundShow = true;
+                    }
+                }
             }
         }
         $('#search-box').val('');
@@ -387,5 +412,5 @@ $(document).ready(function() {
                 AddElement(show, '#results');
             }
         }
-    });
+    }
 });
