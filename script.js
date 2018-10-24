@@ -25,29 +25,20 @@ $(document).ready(function() {
   var loginServices = new Set();
   // get the logged in services
 
-  var services = new Set(['netflix', 'hulu', 'hbo', 'showtime', 'prime', 'crunchyroll']);
-  var activeServices = new Set(['netflix', 'hulu', 'hbo', 'showtime', 'prime', 'crunchyroll']);
+  var services = ['netflix', 'hulu', 'hbo', 'showtime', 'prime', 'crunchyroll'];
 
   for (service of services) {
     console.log(service);
     $(document).on('click', '#' + service + '-switch', function() {
-      if ($('#' + service + '-switch').val() === 'on') {
-        activeServices.delete(service);
-        // for (let i = 0; i < activeServices.length; i++) {
-        //   if (activeServices[i] === service) {
-        //     activeServices.splice(i, 1);
-        //   }
-        // }
-        //activeServices.splice(activeServices.indexOf(service), 1);
-        $('#' + service + '-switch').val('off');
-        console.log(activeServices);
-        updateList();
-      } else {
-        activeServices.add(service);
-        $('#' + service + '-switch').val('on');
-        console.log(activeServices);
-        updateList();
-      }
+      $('#' + service + '-switch').not(':checked').prop("checked", true);
+      updateList();
+      // if ($('#' + service + '-switch').val() === 'on') {
+      //   $('#' + service + '-switch').val('off');
+      //   updateList();
+      // } else {
+      //   $('#' + service + '-switch').val('on');
+      //   updateList();
+      // }
     });
   }
 
@@ -276,12 +267,21 @@ $(document).ready(function() {
   }
 
   function updateList() {
+    let activeServices = [];
+    for (service of services) {
+      if ($('#' + service + '-switch').val() === 'on') {
+        console.log($('#' + service + '-switch').val());
+        console.log('#' + service + '-switch');
+        activeServices.push(service);
+      }
+    }
+    console.log(activeServices);
     for (var i = 0; i < TvShows.length; i++) {
-      // if (activeServices.has(TvShows[i].services[0])) {
+      if (TvShows[i].services[0].includes(activeServices)) {
         AddElement(TvShows[i], "#recommended");
         console.log('yeet');
-      // }
-      updateGenres();
+        updateGenres();
+      }
     }
   }
 
@@ -307,7 +307,7 @@ $(document).ready(function() {
   $('#genre-scroll-left').click(function() {
     document.getElementById('sortbygenre').scrollLeft -= ScrollAmount;
   });
-    
+
   $('#results-scroll-right').click(function() {
     document.getElementById('results').scrollLeft += ScrollAmount;
   });
@@ -359,42 +359,42 @@ $(document).ready(function() {
     $('.tv-show-page').show();
   })
 
-    $(document).on('click', '#show-back-arrow', function() {
-        $('.page-content').slideDown();
-        setTimeout(function() {
-            $('.tv-show-page').toggle();
-        }, 400);
-    });
-    
-    $(document).on('click', '#search-back-arrow', function() {
-        $('.search-content').hide();
-        $('.page-content').show();
-    });
-    
-    $("#search-form").submit(function(e) {
-        let foundShow = false;
-        const showsToAdd = [];
-        e.preventDefault();
-        for (show of TvShows) {
-            if (show.title.toLowerCase().includes($('#search-box').val().toLowerCase())) {
-                showsToAdd.push(show)
-                foundShow = true;
-            }
-        }
-        $('#search-box').val('');
-        if (!foundShow) {
-            alert('Show not found.');
-        } else {
-            $('#results').empty();
-            $('.search-content').show();
-            $('.page-content').hide();
-            $('.tv-show-page').hide();
-            $('.service-login').hide();
-            $('.starting-page').hide();
-            $('.hamburger-content').hide();
-            for (show of showsToAdd) {
-                AddElement(show, '#results');
-            }
-        }
-    });
+  $(document).on('click', '#show-back-arrow', function() {
+    $('.page-content').slideDown();
+    setTimeout(function() {
+      $('.tv-show-page').toggle();
+    }, 400);
+  });
+
+  $(document).on('click', '#search-back-arrow', function() {
+    $('.search-content').hide();
+    $('.page-content').show();
+  });
+
+  $("#search-form").submit(function(e) {
+    let foundShow = false;
+    const showsToAdd = [];
+    e.preventDefault();
+    for (show of TvShows) {
+      if (show.title.toLowerCase().includes($('#search-box').val().toLowerCase())) {
+        showsToAdd.push(show)
+        foundShow = true;
+      }
+    }
+    $('#search-box').val('');
+    if (!foundShow) {
+      alert('Show not found.');
+    } else {
+      $('#results').empty();
+      $('.search-content').show();
+      $('.page-content').hide();
+      $('.tv-show-page').hide();
+      $('.service-login').hide();
+      $('.starting-page').hide();
+      $('.hamburger-content').hide();
+      for (show of showsToAdd) {
+        AddElement(show, '#results');
+      }
+    }
+  });
 });
