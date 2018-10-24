@@ -287,9 +287,38 @@ $(document).ready(function() {
 
   updateList();
 
+    let cameFromSearch = false;
+
   function AddElement(show, location) {
     let html = "<a href=\"#\" id=\"" + show.id + "\" class=\"content\" style=\"background: url(" + show.imgPath + "); background-position: center; background-size: cover;\"><h5 class=\"content-title\">" + show.title + "</h5><h4 class=\"content-service " + show.services[0] + "\">" + show.services[0] + "</h4></div>";
     $(location).append(html);
+
+    $('#' + show.id).click(function() {
+    //var id = $(this).attr('id');
+    //let show = null;
+
+//    for (let i = 0; i < TvShows.length; i++) {
+//      if (TvShows[i].id === id) {
+//        show = TvShows[i];
+//      }
+//    }
+
+    let html = "<div id=\"show-display\"><h5>" + show.title + "</h5></div>"
+    $("#show-title").empty().append(show.title);
+    $("#show-description").empty().append(show.description);
+    $("#show-description").empty().append(show.description);
+    $(".show-img-container").empty().append("<img src=\"" + show.imgPath + "\">");
+    $("#show-rating-year").empty().append("X Stars - 20XX");
+    if ($('.page-content').is(':visible')) {
+        $('.page-content').slideUp(300);
+        cameFromSearch = false;
+    } else {
+        $('.search-content').hide()
+        cameFromSearch = true;
+    }
+    $('.tv-show-page').show();
+  });
+
   };
 
   let ScrollAmount = 500;
@@ -339,62 +368,47 @@ $(document).ready(function() {
 
   $('.tv-show-page').hide();
 
-  $('.content').click(function() {
-    var id = $(this).attr('id');
-    let show = null;
+    $(document).on('click', '#show-back-arrow', function() {
+        if (cameFromSearch) {
+            $('.search-content').show();
+            $('.tv-show-page').hide();
+        } else {
+            $('.page-content').slideDown();
+            setTimeout(function() {
+                $('.tv-show-page').toggle();
+            }, 400);
+        }
+    });
 
-    for (let i = 0; i < TvShows.length; i++) {
-      if (TvShows[i].id === id) {
-        show = TvShows[i];
-      }
-    }
+    $(document).on('click', '#search-back-arrow', function() {
+        $('.search-content').hide();
+        $('.page-content').show();
+    });
 
-    let html = "<div id=\"show-display\"><h5>" + show.title + "</h5></div>"
-    $("#show-title").empty().append(show.title);
-    $("#show-description").empty().append(show.description);
-    $("#show-description").empty().append(show.description);
-    $(".show-img-container").empty().append("<img src=\"" + show.imgPath + "\">");
-    $("#show-rating-year").empty().append("X Stars - 20XX");
-    $('.page-content').slideUp(300);
-    $('.tv-show-page').show();
-  })
-
-  $(document).on('click', '#show-back-arrow', function() {
-    $('.page-content').slideDown();
-    setTimeout(function() {
-      $('.tv-show-page').toggle();
-    }, 400);
-  });
-
-  $(document).on('click', '#search-back-arrow', function() {
-    $('.search-content').hide();
-    $('.page-content').show();
-  });
-
-  $("#search-form").submit(function(e) {
-    let foundShow = false;
-    const showsToAdd = [];
-    e.preventDefault();
-    for (show of TvShows) {
-      if (show.title.toLowerCase().includes($('#search-box').val().toLowerCase())) {
-        showsToAdd.push(show)
-        foundShow = true;
-      }
-    }
-    $('#search-box').val('');
-    if (!foundShow) {
-      alert('Show not found.');
-    } else {
-      $('#results').empty();
-      $('.search-content').show();
-      $('.page-content').hide();
-      $('.tv-show-page').hide();
-      $('.service-login').hide();
-      $('.starting-page').hide();
-      $('.hamburger-content').hide();
-      for (show of showsToAdd) {
-        AddElement(show, '#results');
-      }
-    }
-  });
+    $("#search-form").submit(function(e) {
+        let foundShow = false;
+        const showsToAdd = [];
+        e.preventDefault();
+        for (show of TvShows) {
+            if (show.title.toLowerCase().includes($('#search-box').val().toLowerCase())) {
+                showsToAdd.push(show)
+                foundShow = true;
+            }
+        }
+        $('#search-box').val('');
+        if (!foundShow) {
+            alert('Show not found.');
+        } else {
+            $('#results').empty();
+            $('.search-content').show();
+            $('.page-content').hide();
+            $('.tv-show-page').hide();
+            $('.service-login').hide();
+            $('.starting-page').hide();
+            $('.hamburger-content').hide();
+            for (show of showsToAdd) {
+                AddElement(show, '#results');
+            }
+        }
+    });
 });
