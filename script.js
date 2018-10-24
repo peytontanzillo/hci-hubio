@@ -80,7 +80,7 @@ let WestWorld = new Media(
     'Content/westworld.jpg',
     "west_world");
 
-let mithc = new Media(
+let HighCastle = new Media(
     "Man in the High Castle",
     6,
     "sci-fi",
@@ -91,7 +91,7 @@ let mithc = new Media(
     'Content/highcastle.png',
     "high_castle");
 
-let spongebob = new Media(
+let SpongeBob = new Media(
     "Spongebob Squarepants",
     10,
     "comedy",
@@ -102,7 +102,7 @@ let spongebob = new Media(
     'Content/spongebob.jpg',
     "spongebob");
 
-let friends = new Media(
+let Friends = new Media(
     "Friends",
     7,
     "comedy",
@@ -113,7 +113,7 @@ let friends = new Media(
     'Content/friends.jpg',
     "friends");
 
-let gameofthrones = new Media(
+let GameOfThrones = new Media(
     "Game of Thrones",
     8,
     "adventure",
@@ -124,7 +124,7 @@ let gameofthrones = new Media(
     'Content/gameofthrones.jpg',
     "gameofthrones");
 
-let shameless = new Media(
+let Shameless = new Media(
     "Shameless",
     4,
     "drama",
@@ -135,7 +135,20 @@ let shameless = new Media(
     'Content/shameless.jpg',
     "shameless");
 
-let Medias = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, mithc, spongebob, friends, gameofthrones, shameless];
+// == Movies == //
+
+let Avengers = new Media(
+    "Avengers",
+    7,
+    "action",
+    "2012",
+    "sooper heroz",
+    [new Season(1)], // 1 season, 1 episode = movie
+    ["Prime Video"],
+    'Content/avengers.jpg',
+    "avengers");
+
+let Medias = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, HighCastle, SpongeBob, Friends, GameOfThrones, Shameless, Avengers];
 
 $(document).ready(function() {
     //Code when hamburger is clicked
@@ -252,13 +265,13 @@ $(document).ready(function() {
     }
 
     function updateList() {
-      $('#recommended').empty();
+        $('#recommended').empty();
         let activeServices = findActiveServices();
-//        for (service of services) {
-//            if ($('#' + service + '-switch').val() === 'on') {
-//                activeServices.push(service);
-//            }
-//        }
+        //        for (service of services) {
+        //            if ($('#' + service + '-switch').val() === 'on') {
+        //                activeServices.push(service);
+        //            }
+        //        }
         for (var i = 0; i < Medias.length; i++) {
             for (service of activeServices) {
                 if (Medias[i].services[0].toLowerCase().replace(/\s+/g, '') === service) {
@@ -271,7 +284,7 @@ $(document).ready(function() {
     }
 
     updateList();
-    
+
     function findActiveServices() {
         let activeServices = [];
         for (service of services) {
@@ -285,29 +298,29 @@ $(document).ready(function() {
     let cameFromSearch = false;
 
     function AddElement(show, location) {
-      let html = "<a href=\"#\" id=\"" + show.id + "\" class=\"content\" style=\"background: url(" + show.imgPath + "); background-position: center; background-size: cover;\"><h5 class=\"content-title\">" + show.title + "</h5><h4 class=\"content-service " + show.services[0] + "\">" + show.services[0] + "</h4></div>";
-      $(location).append(html);
-      addContentListener(show);
+        let html = "<a href=\"#\" id=\"" + show.id + "\" class=\"content\" style=\"background: url(" + show.imgPath + "); background-position: center; background-size: cover;\"><h5 class=\"content-title\">" + show.title + "</h5><h4 class=\"content-service " + show.services[0] + "\">" + show.services[0] + "</h4></div>";
+        $(location).append(html);
+        addContentListener(show);
     }
 
-  function addContentListener(show) {
-      $(document).on('click', '#' + show.id, function() {
-          console.log('yite');
-          let html = "<div id=\"show-display\"><h5>" + show.title + "</h5></div>"
-          $("#show-title").empty().append(show.title);
-          $("#show-description").empty().append(show.description);
-          $("#show-description").empty().append(show.description);
-          $(".show-img-container").empty().append("<img src=\"" + show.imgPath + "\">");
-          $("#show-rating-year").empty().append("X Stars - 20XX");
-          if ($('.page-content').is(':visible')) {
-              $('.page-content').slideUp(300);
-              cameFromSearch = false;
-          } else {
-              $('.search-content').hide()
-              cameFromSearch = true;
-          }
-          $('.tv-show-page').show();
-      });
+    function addContentListener(show) {
+        $(document).on('click', '#' + show.id, function() {
+            console.log('yite');
+            let html = "<div id=\"show-display\"><h5>" + show.title + "</h5></div>"
+            $("#show-title").empty().append(show.title);
+            $("#show-description").empty().append(show.description);
+            $("#show-description").empty().append(show.description);
+            $(".show-img-container").empty().append("<img src=\"" + show.imgPath + "\">");
+            $("#show-rating-year").empty().append("X Stars" + " - " + show.year);
+            if ($('.page-content').is(':visible')) {
+                $('.page-content').slideUp(300);
+                cameFromSearch = false;
+            } else {
+                $('.search-content').hide()
+                cameFromSearch = true;
+            }
+            $('.tv-show-page').show();
+        });
     }
 
 
@@ -376,16 +389,16 @@ $(document).ready(function() {
     });
 
     let lastSearch = '';
-    
+
     $("#search-form").submit(function(e) {
         e.preventDefault();
         lastSearch = $('#search-box').val();
         updateSearch();
         console.log('yowch');
     });
-    
+
     function updateSearch() {
-        const showsToAdd = []; 
+        const showsToAdd = [];
         let foundShow = false;
         let activeServices = findActiveServices();
         for (show of Medias) {
