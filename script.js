@@ -283,6 +283,30 @@ $(document).ready(function() {
 
     updateList();
 
+    function updateGenres() {
+        let genre = document.getElementById('genre-selector');
+        let selected = genre.options[genre.selectedIndex].value;
+
+        var myNode = document.getElementById("sortbygenre");
+        // while (myNode.firstChild) {
+        //     myNode.removeChild(myNode.firstChild);
+        // }
+        $('#sortbygenre').empty();
+
+        let shows = sortbyGenre(selected);
+        let activeServices = findActiveServices();
+        
+        for (var i = 0; i < shows.length; i++) {
+          for (service of activeServices) {
+            if (shows[i].services[0].toLowerCase().replace(/\s+/g, '') === service) {
+                AddElement(shows[i], "#sortbygenre");
+            }
+          }
+        }
+    }
+
+    updateGenres();
+
     function findActiveServices() {
         let activeServices = [];
         for (service of services) {
@@ -356,22 +380,7 @@ $(document).ready(function() {
     });
 
 
-    function updateGenres() {
-        let genre = document.getElementById('genre-selector');
-        let selected = genre.options[genre.selectedIndex].value;
 
-        var myNode = document.getElementById("sortbygenre");
-        while (myNode.firstChild) {
-            myNode.removeChild(myNode.firstChild);
-        }
-
-        let shows = sortbyGenre(selected);
-        for (var i = 0; i < shows.length; i++) {
-            AddElement(shows[i], "#sortbygenre");
-        }
-    }
-
-    updateGenres();
 
     $('#genre-selector').change(function() {
         updateGenres();
