@@ -99,7 +99,7 @@ let SpongeBob = new Media(
     "Spongeboy me bob",
     [new Season(10), new Season(10), new Season(10), new Season(10)],
     ["Prime Video"],
-    'Content/spongebob.jpg',
+    'Content/spongebob-example.jpg',
     "spongebob");
 
 let Friends = new Media(
@@ -149,6 +149,17 @@ let Avengers = new Media(
     "avengers");
 
 let Medias = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, HighCastle, SpongeBob, Friends, GameOfThrones, Shameless, Avengers];
+
+let RecommendedContent = [];
+for (let i = 0; i < Medias.length;) {
+  let maybeMedia = Medias[Math.floor(Math.random() * Medias.length)];
+  if (!RecommendedContent.includes(maybeMedia)) {
+    RecommendedContent.push(maybeMedia);
+    i++;
+  }
+}
+
+// == The rest of the code == //
 
 $(document).ready(function() {
     //Code when hamburger is clicked
@@ -271,10 +282,10 @@ $(document).ready(function() {
     function updateList() {
         $('#recommended').empty();
         let activeServices = findActiveServices();
-        for (var i = 0; i < Medias.length; i++) {
+        for (var i = 0; i < RecommendedContent.length; i++) {
             for (service of activeServices) {
-                if (Medias[i].services[0].toLowerCase().replace(/\s+/g, '') === service) {
-                    AddElement(Medias[i], "#recommended");
+                if (RecommendedContent[i].services[0].toLowerCase().replace(/\s+/g, '') === service) {
+                    AddElement(RecommendedContent[i], "#recommended");
                 }
             }
         }
@@ -295,7 +306,7 @@ $(document).ready(function() {
 
         let shows = sortbyGenre(selected);
         let activeServices = findActiveServices();
-        
+
         for (var i = 0; i < shows.length; i++) {
           for (service of activeServices) {
             if (shows[i].services[0].toLowerCase().replace(/\s+/g, '') === service) {
