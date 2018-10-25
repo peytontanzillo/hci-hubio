@@ -21,7 +21,7 @@
 
 .hamburger-content {
     z-index: 8;
-    height: 100%;
+    /* height: 100%; */
 }
 
 #hamburger {
@@ -250,7 +250,7 @@ option {
   top: 50px;
   background-color: white;
   width: 450px;
-  height: 95%;
+  height: 90%;
   padding: 20px;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
