@@ -319,7 +319,7 @@ $(document).ready(function() {
             for (let i = 5; i > Math.ceil(show.rating/2); i--) {
               $("#show-rating-year").append("<img src=\"./Content/bad.png\">")
             }
-            $("#show-rating-year").append("      " + show.year);
+            $("#show-rating-year").append(" - " + show.year);
             if ($('.page-content').is(':visible')) {
                 $('.page-content').slideUp(300);
                 cameFromSearch = false;
