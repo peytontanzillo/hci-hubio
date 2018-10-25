@@ -38,7 +38,7 @@ let TheOffice = new Media(
 
 let SouthPark = new Media(
     "South Park",
-    8,
+    7,
     "comedy",
     "1997",
     "The animated series is not for children. In fact, its goal seems to be to offend as many as possible as it presents the adventures of Stan, Kyle, Kenny and Cartman.",
@@ -74,18 +74,27 @@ let WestWorld = new Media(
     5,
     "sci-fi",
     "2017",
-    "idk.",
+    "Westworld isn't your typical amusement park. Intended for rich vacationers,\
+     the futuristic park -- which is looked after by robotic \"hosts\" -- allows its \
+     visitors to live out their fantasies through artificial consciousness. No matter how\
+     illicit the fantasy may be, there are no consequences for the park's guests, allowing for\
+     any wish to be indulged. \"Westworld\" -- which is based on the 1973 Michael Crichton movie of\
+     the same name -- features an all-star cast that includes Oscar winner Anthony Hopkins and Golden Globe winner Ed Harris.",
     [new Season(10)],
     ["HBO GO"],
     'Content/westworld.jpg',
     "west_world");
 
 let HighCastle = new Media(
-    "Man in the High Castle",
+    "The Man in the High Castle",
     6,
     "sci-fi",
     "2016",
-    "idk.",
+    "This series, loosely based Philip K. Dick's novel of the same name, takes a look at what the world\
+    Axis powers won the war, leading to the United States being divided into three parts, an area controlled\
+    by the Japanese, a Nazi-controlled section, and a buffer zone between the two. Despite the oppression, a \
+    new hope emerges when films turn up that seem to show a different world. A woman believes the films \
+    contain the key to freedom and is determined to find their mysterious guardian.",
     [new Season(10)],
     ["Prime Video"],
     'Content/highcastle.png',
@@ -93,10 +102,14 @@ let HighCastle = new Media(
 
 let SpongeBob = new Media(
     "Spongebob Squarepants",
-    10,
+    8,
     "comedy",
     "1999",
-    "Spongeboy me bob",
+    "A square yellow sponge named SpongeBob SquarePants lives in a pineapple with\
+     his pet snail, Gary, in the city of Bikini Bottom on the floor of the Pacific Ocean.\
+     He works as a fry cook at the Krusty Krab. During his time off, SpongeBob has a knack for \
+     attracting trouble with his starfish best friend, Patrick. Arrogant octopus Squidward Tentacles, \
+     SpongeBob's neighbor, dislikes SpongeBob because of his childlike behavior.",
     [new Season(10), new Season(10), new Season(10), new Season(10)],
     ["Prime Video"],
     'Content/spongebob-example.jpg',
@@ -107,10 +120,13 @@ let Friends = new Media(
     7,
     "comedy",
     "1987",
-    "friends",
+    "Three young men and three young women -- of the BFF kind -- live in the same\
+     apartment complex and face life and love in New York. They're not above sticking\
+     their noses into one another's business and swapping romantic partners, which always leads\
+     to the kind of hilarity average people will never experience -- especially during breakups.",
     [new Season(10), new Season(10)],
     ["Netflix", "Prime Video"],
-    'Content/friends.jpg',
+    'Content/Friends.jpg',
     "friends");
 
 let GameOfThrones = new Media(
@@ -118,10 +134,14 @@ let GameOfThrones = new Media(
     8,
     "adventure",
     "2015",
-    "throne of games",
+    "George R.R. Martin's best-selling book series `A Song of Ice and Fire' is brought to the screen as\
+     HBO sinks its considerable storytelling teeth into the medieval fantasy epic. It's the depiction of two powerful\
+     families - kings and queens, knights and renegades, liars and honest men - playing a deadly game for control of the\
+     Seven Kingdoms of Westeros, and to sit atop the Iron Throne. Martin is credited as a co-executive producer and one of\
+     the writers for the series, which was filmed in Northern Ireland and Malta.",
     [new Season(10), new Season(10)],
     ["HBO GO"],
-    'Content/gameofthrones.jpg',
+    'Content/gameOfThrones.jpg',
     "gameofthrones");
 
 let Shameless = new Media(
@@ -129,7 +149,11 @@ let Shameless = new Media(
     4,
     "drama",
     "2017",
-    "no idea what this show is about",
+    "Oscar-nominated actor William H. Macy stars as Frank Gallagher, a single father of six who spends much of his\
+     free time drinking at bars. The Gallagher children -- led by oldest daughter Fiona (Emmy Rossum), who takes on much\
+     of the child-rearing responsibility due to her mother's absence -- manage to raise themselves in spite of Frank's lack of parenting\
+     and unusual parenting style when he does choose to act like a father. The drama is an adaptation of the BAFTA Award-winning British\
+     show of the same name.",
     [new Season(10), new Season(10)],
     ["Showtime"],
     'Content/shameless.jpg',
@@ -142,13 +166,51 @@ let Avengers = new Media(
     7,
     "action",
     "2012",
-    "sooper heroz",
+    "Earth's mightiest heroes must come together and learn to fight as a team if\
+    they are going to stop the mischievous Loki and his alien army from enslaving humanity.",
     [new Season(1)], // 1 season, 1 episode = movie
-    ["Prime Video"],
-    'Content/avengers.jpg',
+    ["Netflix"],
+    'Content/Avengers.jpg',
     "avengers");
 
-let Medias = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, HighCastle, SpongeBob, Friends, GameOfThrones, Shameless, Avengers];
+let BlackPanther = new Media(
+    "Black Panther",
+    8,
+    "action",
+    "2018",
+    "After the death of his father, T'Challa returns home to the African nation of Wakanda to take his rightful place as king.\
+     When a powerful enemy suddenly reappears, T'Challa's mettle as king -- and as Black Panther -- gets tested when he's drawn into a\
+     conflict that puts the fate of Wakanda and the entire world at risk. Faced with treachery and danger, the young king must rally his allies\
+     and release the full power of Black Panther to defeat his foes and secure the safety of his people.",
+    [new Season(1)], // 1 season, 1 episode = movie
+    ["Netflix"],
+    'Content/black-panther.jpg',
+    "blackpanther");
+
+  let BeastsOfNoNation = new Media(
+      "Beasts of No Nation",
+      10,
+      "action",
+      "2015",
+      "As civil war rages in Africa, a fierce warlord (Idris Elba) trains a young orphan (Abraham Attah) to join his group of guerrilla soldiers.",
+      [new Season(1)], // 1 season, 1 episode = movie
+      ["Netflix"],
+      'Content/beasts-of-no-nation.png',
+      "beasts-of-no-nation");
+  //
+  // let Avengers = new Media(
+  //     "Avengers",
+  //     7,
+  //     "action",
+  //     "2012",
+  //     "sooper heroz",
+  //     [new Season(1)], // 1 season, 1 episode = movie
+  //     ["Prime Video"],
+  //     'Content/Avengers.png',
+  //     "avengers");
+
+
+let Medias = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, HighCastle, SpongeBob, Friends, GameOfThrones, Shameless, Avengers, BlackPanther, BeastsOfNoNation];
 
 let RecommendedContent = [];
 for (let i = 0; i < Medias.length;) {
