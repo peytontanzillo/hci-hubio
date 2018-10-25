@@ -21,6 +21,7 @@
 
 .hamburger-content {
     z-index: 8;
+    height: 100%;
 }
 
 #hamburger {
@@ -78,7 +79,8 @@
 .page-content {
   background-color: #1a212d;
   position: relative;
-    z-index: 1;
+  z-index: 1;
+  height: 100%;
 }
 
 .starting-page {
@@ -88,9 +90,9 @@
   font-weight: 700;
   font-size: 30px;
   text-align: center;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 .starting-text {
@@ -101,7 +103,7 @@
 
 .inner-wrapper {
   padding: 30px 40px;
-  height: 100%;
+  /* height: 100%; */
 }
 
 .content-band {
@@ -507,7 +509,8 @@ input:checked + .slider-round:before {
 .search-content {
   background-color: #1a212d;
   position: relative;
-    z-index: 3;
+  z-index: 3;
+  height: 100%;
 }
 
 #search-back-arrow {
