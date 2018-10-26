@@ -162,7 +162,7 @@ let Shameless = new Media(
 let RickAndMorty = new Media(
     "Rick and Morty",
     9,
-    "comedy",
+    ["comedy"],
     "2013",
     "After having been missing for nearly 20 years, Rick Sanchez suddenly arrives at daughter Beth's doorstep\
        to move in with her and her family. Although Beth welcomes Rick into her home, her husband, Jerry,\
@@ -178,7 +178,7 @@ let RickAndMorty = new Media(
 let Homeland = new Media(
     "Homeland",
     7,
-    "adventure",
+    ["adventure"],
     "2011",
     "When Marine Sgt. Nicholas Brody returns home following eight years in captivity, CIA agent Carrie\
        Mathison thinks he has turned and is connected to a terror plot to be carried out on American soil,\
