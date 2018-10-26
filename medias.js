@@ -335,7 +335,7 @@ let Arrival = new Media(
      Hoping to unravel the mystery, she takes a chance that could threaten her life and quite possibly all of mankind.",
     [new Season(1)], // 1 season, 1 episode = movie
     ["Hulu"],
-    'Content/arrival.jpeg',
+    'Content/arrival.jpg',
     "arrival");
 
 let HoldTheDark = new Media(
@@ -347,7 +347,7 @@ let HoldTheDark = new Media(
      a wolf expert soon finds himself unravelling a harrowing mystery.",
     [new Season(1)], // 1 season, 1 episode = movie
     ["Netflix"],
-    'Content/holdTheDark.jpg',
+    'Content/holdthedark.jpg',
     "holdTheDark");
 
 let DarkWasTheNight = new Media(
