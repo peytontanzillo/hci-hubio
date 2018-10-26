@@ -30,7 +30,8 @@ let TheOffice = new Media(
     10,
     ["comedy"],
     "2005",
-    "The series depicts the everyday lives of office employees in the Scranton, Pennsylvania, branch of the fictional Dunder Mifflin Paper Company. To simulate the look of an actual documentary, it was filmed in a single-camera setup, without a studio audience or a laugh track.",
+    "The series depicts the everyday lives of office employees in the Scranton, Pennsylvania, branch of the fictional Dunder Mifflin Paper Company. To \
+    simulate the look of an actual documentary, it was filmed in a single-camera setup, without a studio audience or a laugh track.",
     [new Season(25), new Season(20), new Season(26), new Season(25)],
     ["Netflix"],
     "Content/theoffice.jpg",
@@ -52,7 +53,8 @@ let DragonBallZ = new Media(
     7,
     ["action"],
     "1989",
-    "Dragon Ball Z follows the adventures of Goku who, along with the Z Warriors, defends the Earth against evil. The action adventures are entertaining and reinforce the concept of good versus evil. Dragon Ball Z teaches valuable character virtues such as teamwork, loyalty, and trustworthiness.",
+    "Dragon Ball Z follows the adventures of Goku who, along with the Z Warriors, defends the Earth against evil. The action adventures are entertaining and \
+    reinforce the concept of good versus evil. Dragon Ball Z teaches valuable character virtues such as teamwork, loyalty, and trustworthiness.",
     [new Season(12), new Season(8), new Season(24), new Season(25)],
     ["Crunchyroll", "Hulu"],
     './Content/Dragon-Ball-Z.jpg',
@@ -63,7 +65,8 @@ let Dark = new Media(
     10,
     ["sci-fi"],
     "2018",
-    "When two children go missing in a small German town, its sinful past is exposed along with the double lives and fractured relationships that exist among four families as they search for the kids.",
+    "When two children go missing in a small German town, its sinful past is exposed along with the double lives and fractured relationships that exist among \
+    four families as they search for the kids.",
     [new Season(12)],
     ["Netflix"],
     'Content/dark.jpg',
@@ -165,11 +168,11 @@ let RickAndMorty = new Media(
     ["comedy"],
     "2013",
     "After having been missing for nearly 20 years, Rick Sanchez suddenly arrives at daughter Beth's doorstep\
-       to move in with her and her family. Although Beth welcomes Rick into her home, her husband, Jerry,\
-       isn't as happy about the family reunion. Jerry is concerned about Rick, a sociopathic scientist,\
-       using the garage as his personal laboratory. In the lab, Rick works on a number of sci-fi gadgets,\
-       some of which could be considered dangerous. But that's not all Rick does that concerns Jerry.\
-       He also goes on adventures across the universe that often involve his grandchildren, Morty and Summer.",
+     to move in with her and her family. Although Beth welcomes Rick into her home, her husband, Jerry,\
+     isn't as happy about the family reunion. Jerry is concerned about Rick, a sociopathic scientist,\
+     using the garage as his personal laboratory. In the lab, Rick works on a number of sci-fi gadgets,\
+     some of which could be considered dangerous. But that's not all Rick does that concerns Jerry.\
+     He also goes on adventures across the universe that often involve his grandchildren, Morty and Summer.",
     [new Season(10), new Season(10), new Season(10)],
     ["Hulu"],
     'Content/rickAndMorty.jpg',
@@ -181,13 +184,13 @@ let Homeland = new Media(
     ["adventure"],
     "2011",
     "When Marine Sgt. Nicholas Brody returns home following eight years in captivity, CIA agent Carrie\
-       Mathison thinks he has turned and is connected to a terror plot to be carried out on American soil,\
-        so she engages him in a dangerous game of cat and mouse that puts America's national security at risk.\
-         Later on, Carrie gets a promotion and returns to the front lines overseas. She is assigned to one of the\
-          CIA's most volatile and dangerous stations in the Middle East, where she is in the heart of battle in the war\
-           on terror. Years later, after being disillusioned and placing herself in a self-imposed exile in Berlin,\
-            Carrie becomes estranged from the CIA, eventually returning stateside where she works for a foundation\
-             providing aid to Muslims living in America.",
+     Mathison thinks he has turned and is connected to a terror plot to be carried out on American soil,\
+     so she engages him in a dangerous game of cat and mouse that puts America's national security at risk.\
+     Later on, Carrie gets a promotion and returns to the front lines overseas. She is assigned to one of the\
+     CIA's most volatile and dangerous stations in the Middle East, where she is in the heart of battle in the war\
+     on terror. Years later, after being disillusioned and placing herself in a self-imposed exile in Berlin,\
+     Carrie becomes estranged from the CIA, eventually returning stateside where she works for a foundation\
+     providing aid to Muslims living in America.",
     [new Season(12), new Season(12), new Season(12), new Season(12), new Season(12), new Season(12), new Season(12)],
     ["Showtime", "Hulu"],
     'Content/homeland.jpg',
@@ -198,7 +201,10 @@ let MissKobayashisDragonMaid = new Media(
     9,
     ["comedy"],
     "2017",
-    "Miss Kobayashi is your average office worker who lives a boring life, alone in her small apartment–until she saves the life of a female dragon in distress. The dragon, named Tohru, has the ability to magically transform into an adorable human girl (albeit with horns and a long tail!), who will do anything to pay off her debt of gratitude, whether Miss Kobayashi likes it or not. With a very persistent and amorous dragon as a roommate, nothing comes easy, and Miss Kobayashi’s normal life is about to go off the deep end!",
+    "Miss Kobayashi is your average office worker who lives a boring life, alone in her small apartment–until she saves the life of a female dragon in distress.\
+     The dragon, named Tohru, has the ability to magically transform into an adorable human girl (albeit with horns and a long tail!),\
+     who will do anything to pay off her debt of gratitude, whether Miss Kobayashi likes it or not. With a very persistent and amorous dragon as a roommate, \
+     nothing comes easy, and Miss Kobayashi’s normal life is about to go off the deep end!",
     [new Season(14)],
     ["Crunchyroll"],
     'Content/Kobayashi.jpg',
@@ -209,7 +215,10 @@ let Megalobox = new Media(
     10,
     ["action"],
     "2018",
-    "A desolate land stretches out from the city of poverty. A motorcycle speeds recklessly, blowing clouds of sand and dust. The rider is the protagonist of this story – he has neither a name nor a past. All he has is his ring name, “Junk Dog” and a technique for rigging MEGALOBOX matches with his pal Gansaku Nanbu, which they use to support their hand-to-mouth lives. JD is bored, resigned, and unfulfilled. Yuri has been the reigning champion of MEGALOBOX for the past few years. He has the skills and presence of a true champion. This is a story of JD and his rival, Yuri.",
+    "A desolate land stretches out from the city of poverty. A motorcycle speeds recklessly, blowing clouds of sand and dust. The rider is the protagonist of \
+     this story – he has neither a name nor a past. All he has is his ring name, “Junk Dog” and a technique for rigging MEGALOBOX matches with his pal Gansaku \
+     Nanbu, which they use to support their hand-to-mouth lives. JD is bored, resigned, and unfulfilled. Yuri has been the reigning champion of MEGALOBOX for \
+     the past few years. He has the skills and presence of a true champion. This is a story of JD and his rival, Yuri.",
     [new Season(13)],
     ["Crunchyroll"],
     'Content/Megalobox.jpg',
@@ -220,7 +229,10 @@ let CowboyBebop = new Media(
     10,
     ["adventure", "sci-fi"],
     "1998",
-    "The Bebop crew is just trying to make a buck. This motley lot of intergalactic loners teams up to track down fugitives and turn them in for cold hard cash. Spike is a hero whose cool façade hides a dark and deadly past. The pilot Jet is a bruiser of a brute who can’t wait to collect the next bounty. Faye Valentine is a femme fatale prone to breaking hearts and separating fools from their money. Along for the ride are the brilliant, but weird, hacker Ed and a super-genius Welsh Corgi named Ein.",
+    "The Bebop crew is just trying to make a buck. This motley lot of intergalactic loners teams up to track down fugitives and turn them in for cold hard \
+     cash. Spike is a hero whose cool façade hides a dark and deadly past. The pilot Jet is a bruiser of a brute who can’t wait to collect the next bounty.\
+     Faye Valentine is a femme fatale prone to breaking hearts and separating fools from their money. Along for the ride are the brilliant, but weird, hacker\
+     Ed and a super-genius Welsh Corgi named Ein.",
     [new Season(26)],
     ["Crunchyroll"],
     'Content/CowboyBebop.jpg',
@@ -231,7 +243,11 @@ let ATLA = new Media(
     10,
     ["adventure"],
     "2005",
-    "The world is divided into four nations -- the Water Tribe, the Earth Kingdom, the Fire Nation and and the Air Nomads -- each represented by a natural element for which the nation is named. Benders have the ability to control and manipulate the element from their nation. Only the Avatar is the master of all four elements. The ruthless Fire Nation wants to conquer the world but the only bender who has enough power, the Avatar, has disappeared ... until now. His tribe soon discovers that Aang is the long-lost Avatar. Now Katara and Sokka must safeguard Aang on his journey to master all four elements and save the world from the Fire Nation.",
+    "The world is divided into four nations -- the Water Tribe, the Earth Kingdom, the Fire Nation and and the Air Nomads -- each represented by a natural \
+     element for which the nation is named. Benders have the ability to control and manipulate the element from their nation. Only the Avatar is the master of \
+     all four elements. The ruthless Fire Nation wants to conquer the world but the only bender who has enough power, the Avatar, has disappeared ... \
+     until now. His tribe soon discovers that Aang is the long-lost Avatar. Now Katara and Sokka must safeguard Aang on his journey to master all four elements \
+     and save the world from the Fire Nation.",
     [new Season(20), new Season(20), new Season(21)],
     ["Prime Video"],
     'Content/ATLA.jpg',
@@ -242,11 +258,32 @@ let StrangerThings = new Media(
     10,
     ["adventure", "sci-fi"],
     "2016",
-    "This thrilling Netflix original drama stars Golden Globe-winning actress Winona Ryder as Joyce Byers, who lives in a small Indiana town in 1983 -- inspired by a time when tales of science fiction captivated audiences. When Joyce's 12-year-old son, Will, goes missing, she launches a terrifying investigation into his disappearance with local authorities. As they search for answers, they unravel a series of extraordinary mysteries involving secret government experiments, unnerving supernatural forces, and a very unusual little girl.",
+    "This thrilling Netflix original drama stars Golden Globe-winning actress Winona Ryder as Joyce Byers, who lives in a small Indiana town in 1983 --\
+     inspired by a time when tales of science fiction captivated audiences. When Joyce's 12-year-old son, Will, goes missing, she launches a terrifying \
+     investigation into his disappearance with local authorities. As they search for answers, they unravel a series of extraordinary mysteries \
+     involving secret government experiments, unnerving supernatural forces, and a very unusual little girl.",
     [new Season(8), new Season(9)],
     ["Netflix"],
     'Content/StrangerThings.jpg',
     "strangerthings");
+
+  let Konosuba = new Media(
+    "Konosuba",
+    8,
+    ["adenture", "comedy"],
+    "2017",
+    "When Kazuma Satou died, he was given two choices, pass on to heaven or be revived in a fantasy world.\
+     After choosing the new world, the goddess Aqua tasked him with defeating the Demon King, and let him choose any weapon to aid him.\
+     Unfortunately, Kazuma chose to bring Aqua herself and has regretted the decision ever since then.\
+     Not only is he stuck with a useless deity turned party archpriest, the pair also has to make enough money for living expenses. \
+     To add to their problems, their group continued to grow as more problematic adventurers joined their ranks. Their token spellcaster,\
+     Megumin, is an explosion magic specialist who can only cast one spell once per day and refuses to learn anything else. There is also their stalwart crusader,\
+     Lalatina 'Darkness' Dustiness Ford, a helpless masochist who makes Kazuma look pure in comparison.",
+    [new Season(10), new Season(10)],
+    ["Crunchyroll"],
+    'Content/Konosuba.png',
+    "konosuba");
+
 
 // == Movies == //
 
@@ -256,7 +293,7 @@ let Avengers = new Media(
     ["action"],
     "2012",
     "Earth's mightiest heroes must come together and learn to fight as a team if\
-    they are going to stop the mischievous Loki and his alien army from enslaving humanity.",
+     they are going to stop the mischievous Loki and his alien army from enslaving humanity.",
     [new Season(1)], // 1 season, 1 episode = movie
     ["Netflix"],
     'Content/Avengers.jpg',
@@ -293,9 +330,9 @@ let Arrival = new Media(
     "sci-fi",
     "2012",
     "Linguistics professor Louise Banks (Amy Adams) leads an elite team of investigators when gigantic\
-       spaceships touch down in 12 locations around the world. As nations teeter on the verge of global war, Banks\
-       and her crew must race against time to find a way to communicate with the extraterrestrial visitors.\
-       Hoping to unravel the mystery, she takes a chance that could threaten her life and quite possibly all of mankind.",
+     spaceships touch down in 12 locations around the world. As nations teeter on the verge of global war, Banks\
+     and her crew must race against time to find a way to communicate with the extraterrestrial visitors.\
+     Hoping to unravel the mystery, she takes a chance that could threaten her life and quite possibly all of mankind.",
     [new Season(1)], // 1 season, 1 episode = movie
     ["Hulu"],
     'Content/arrival.jpeg',
@@ -307,7 +344,7 @@ let HoldTheDark = new Media(
     "adventure",
     "2018",
     "Summoned to a remote Alaskan village to search for the wolves that killed three children,\
-       a wolf expert soon finds himself unravelling a harrowing mystery.",
+     a wolf expert soon finds himself unravelling a harrowing mystery.",
     [new Season(1)], // 1 season, 1 episode = movie
     ["Netflix"],
     'Content/holdTheDark.jpg',
@@ -319,7 +356,7 @@ let DarkWasTheNight = new Media(
     "adventure",
     "2014",
     "When a logging company decimates a forest in a small town, a sheriff\
-       (Kevin Durand) and his deputy (Lukas Haas) must confront the violent and unexplainable events that follow.",
+     (Kevin Durand) and his deputy (Lukas Haas) must confront the violent and unexplainable events that follow.",
     [new Season(1)], // 1 season, 1 episode = movie
     ["Hulu"],
     'Content/DarkWasTheNight.jpg',
@@ -331,7 +368,7 @@ let FiveCentimetersPerSecond = new Media(
     "drama",
     "2007",
     "The story is set in Japan, beginning in the 1990s \
-    up until the present day (2008), with each act centered on a boy named Takaki Tōno.\
+     up until the present day (2008), with each act centered on a boy named Takaki Tōno.\
      The first act takes place during a time when cell phones are uncommon and email had not yet reached the general population.",
     [new Season(1)], // 1 season, 1 episode = movie
     ["Crunchyroll"],
@@ -355,8 +392,8 @@ let StarTrekIntoDarkness = new Media(
     ["sci-fi"],
     "2013",
     "The crew of the Starship Enterprise returns home after an act of terrorism within its own organization destroys most of Starfleet and what it represents, \
-    leaving Earth in a state of crisis. With a personal score to settle, Capt. James T. Kirk (Chris Pine) leads his people (Zachary Quinto, Karl Urban, Zoë Saldana) \
-    on a mission to capture a one-man weapon of mass destruction, thereby propelling all of them into an epic game of life and death.",
+     leaving Earth in a state of crisis. With a personal score to settle, Capt. James T. Kirk (Chris Pine) leads his people (Zachary Quinto, Karl Urban, Zoë Saldana) \
+     on a mission to capture a one-man weapon of mass destruction, thereby propelling all of them into an epic game of life and death.",
     [new Season(1)], // 1 season, 1 episode = movie
     ["Prime Video"],
     'Content/startrekintodarkness.jpg',
@@ -368,8 +405,8 @@ let TheDarkKnight = new Media(
     ["drama"],
     "2008",
     "With the help of allies Lt. Jim Gordon (Gary Oldman) and DA Harvey Dent (Aaron Eckhart), Batman (Christian Bale) has been able to keep a tight lid on \
-    crime in Gotham City. But when a vile young criminal calling himself the Joker (Heath Ledger) suddenly throws the town into chaos, the caped Crusader begins \
-    to tread a fine line between heroism and vigilantism.",
+     crime in Gotham City. But when a vile young criminal calling himself the Joker (Heath Ledger) suddenly throws the town into chaos, the caped Crusader begins \
+     to tread a fine line between heroism and vigilantism.",
     [new Season(1)], // 1 season, 1 episode = movie
     ["Prime Video"],
     'Content/darkknight.jpg',
@@ -381,8 +418,8 @@ let TheDarkKnightRises = new Media(
     ["drama"],
     "2012",
     "It has been eight years since Batman (Christian Bale), in collusion with Commissioner Gordon (Gary Oldman), vanished into the night. Assuming responsibility \
-    for the death of Harvey Dent, Batman sacrificed everything for what he and Gordon hoped would be the greater good. However, the arrival of a cunning cat burglar \
-    (Anne Hathaway) and a merciless terrorist named Bane (Tom Hardy) force Batman out of exile and into a battle he may not be able to win.",
+     for the death of Harvey Dent, Batman sacrificed everything for what he and Gordon hoped would be the greater good. However, the arrival of a cunning cat burglar \
+     (Anne Hathaway) and a merciless terrorist named Bane (Tom Hardy) force Batman out of exile and into a battle he may not be able to win.",
     [new Season(1)], // 1 season, 1 episode = movie
     ["Prime Video"],
     'Content/darkknightrises.jpg',
@@ -394,8 +431,8 @@ let ThorDarkWorld = new Media(
     ["sci-fi"],
     "2013",
     "In ancient times, the gods of Asgard fought and won a war against an evil race known as the Dark Elves. The survivors were neutralized, and their ultimate weapon, \
-    the Aether, was buried in a secret location. Hundreds of years later, Jane Foster (Natalie Portman) finds the Aether and becomes its host, forcing Thor \
-    (Chris Hemsworth) to bring her to Asgard before Dark Elf Malekith (Christopher Eccleston) captures her and uses the weapon to destroy the Nine Realms -- including Earth.",
+     the Aether, was buried in a secret location. Hundreds of years later, Jane Foster (Natalie Portman) finds the Aether and becomes its host, forcing Thor \
+     (Chris Hemsworth) to bring her to Asgard before Dark Elf Malekith (Christopher Eccleston) captures her and uses the weapon to destroy the Nine Realms -- including Earth.",
     [new Season(1)], // 1 season, 1 episode = movie
     ["Prime Video"],
     'Content/thordarkworld.jpg',
@@ -407,13 +444,14 @@ let ZeroDarkThirty = new Media(
     ["drama"],
     "2012",
     "Following the terrorist attacks of Sept. 11, 2001, Osama bin Laden becomes one of the most-wanted men on the planet. The worldwide manhunt for the terrorist leader \
-    occupies the resources and attention of two U.S. presidential administrations. Ultimately, it is the work of a dedicated female operative (Jessica Chastain) that proves \
-    instrumental in finally locating bin Laden. In May 2011, Navy SEALs launch a nighttime strike, killing bin Laden in his compound in Abbottabad, Pakistan.",
+     occupies the resources and attention of two U.S. presidential administrations. Ultimately, it is the work of a dedicated female operative (Jessica Chastain) that proves \
+     instrumental in finally locating bin Laden. In May 2011, Navy SEALs launch a nighttime strike, killing bin Laden in his compound in Abbottabad, Pakistan.",
     [new Season(1)], // 1 season, 1 episode = movie
     ["Prime Video"],
     'Content/zerodarkthirty.jpg',
     "zerodarkthirty");
 
-let Medias = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, HighCastle, SpongeBob, Friends, GameOfThrones, Shameless, Avengers, BlackPanther, BeastsOfNoNation,
-    TwentyWeeks, StarTrekIntoDarkness, TheDarkKnight, TheDarkKnightRises, ThorDarkWorld, ZeroDarkThirty, MissKobayashisDragonMaid, Megalobox, CowboyBebop, ATLA, StrangerThings, RickAndMorty, Homeland
+let Medias = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, HighCastle, SpongeBob, Friends, GameOfThrones, Shameless, Avengers, BlackPanther,
+   BeastsOfNoNation,TwentyWeeks, StarTrekIntoDarkness, TheDarkKnight, TheDarkKnightRises, ThorDarkWorld, ZeroDarkThirty, MissKobayashisDragonMaid,
+   Megalobox, CowboyBebop, ATLA, Konosuba, StrangerThings, RickAndMorty, Homeland
 ];
