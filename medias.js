@@ -455,3 +455,13 @@ let Medias = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, HighCastle, Sp
    BeastsOfNoNation,TwentyWeeks, StarTrekIntoDarkness, TheDarkKnight, TheDarkKnightRises, ThorDarkWorld, ZeroDarkThirty, MissKobayashisDragonMaid,
    Megalobox, CowboyBebop, ATLA, Konosuba, StrangerThings, RickAndMorty, Homeland
 ];
+
+function compare(a,b) {
+  if (a.title < b.title)
+    return -1;
+  if (a.title > b.title)
+    return 1;
+  return 0;
+}
+
+Medias.sort(compare);
