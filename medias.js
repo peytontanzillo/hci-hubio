@@ -1,12 +1,12 @@
 class Media {
-    constructor(title, rating, genre, year, description, seasons, services, imgPath, id) {
+    constructor(title, rating, genres, year, description, seasons, services, imgPath, id) {
         this.title = title;
         this.rating = rating;
         this.description = description;
-        this.genre = genre;
         this.year = year;
 
         // Arrays
+        this.genres = genres;
         this.seasons = seasons;
         this.services = services;
 
@@ -28,7 +28,7 @@ class Season {
 let TheOffice = new Media(
     "The Office",
     10,
-    "comedy",
+    ["comedy"],
     "2005",
     "The series depicts the everyday lives of office employees in the Scranton, Pennsylvania, branch of the fictional Dunder Mifflin Paper Company. To simulate the look of an actual documentary, it was filmed in a single-camera setup, without a studio audience or a laugh track.",
     [new Season(25), new Season(20), new Season(26), new Season(25)],
@@ -39,7 +39,7 @@ let TheOffice = new Media(
 let SouthPark = new Media(
     "South Park",
     7,
-    "comedy",
+    ["comedy"],
     "1997",
     "The animated series is not for children. In fact, its goal seems to be to offend as many as possible as it presents the adventures of Stan, Kyle, Kenny and Cartman.",
     [new Season(12), new Season(12), new Season(12), new Season(12)],
@@ -50,7 +50,7 @@ let SouthPark = new Media(
 let DragonBallZ = new Media(
     "Dragon Ball Z",
     7,
-    "action",
+    ["action"],
     "1989",
     "Dragon Ball Z follows the adventures of Goku who, along with the Z Warriors, defends the Earth against evil. The action adventures are entertaining and reinforce the concept of good versus evil. Dragon Ball Z teaches valuable character virtues such as teamwork, loyalty, and trustworthiness.",
     [new Season(12), new Season(8), new Season(24), new Season(25)],
@@ -61,7 +61,7 @@ let DragonBallZ = new Media(
 let Dark = new Media(
     "Dark",
     10,
-    "sci-fi",
+    ["sci-fi"],
     "2018",
     "When two children go missing in a small German town, its sinful past is exposed along with the double lives and fractured relationships that exist among four families as they search for the kids.",
     [new Season(12)],
@@ -72,7 +72,7 @@ let Dark = new Media(
 let WestWorld = new Media(
     "West World",
     5,
-    "sci-fi",
+    ["sci-fi"],
     "2017",
     "Westworld isn't your typical amusement park. Intended for rich vacationers,\
      the futuristic park -- which is looked after by robotic \"hosts\" -- allows its \
@@ -88,7 +88,7 @@ let WestWorld = new Media(
 let HighCastle = new Media(
     "The Man in the High Castle",
     6,
-    "sci-fi",
+    ["sci-fi"],
     "2016",
     "This series, loosely based Philip K. Dick's novel of the same name, takes a look at what the world\
     Axis powers won the war, leading to the United States being divided into three parts, an area controlled\
@@ -103,7 +103,7 @@ let HighCastle = new Media(
 let SpongeBob = new Media(
     "Spongebob Squarepants",
     8,
-    "comedy",
+    ["comedy"],
     "1999",
     "A square yellow sponge named SpongeBob SquarePants lives in a pineapple with\
      his pet snail, Gary, in the city of Bikini Bottom on the floor of the Pacific Ocean.\
@@ -118,7 +118,7 @@ let SpongeBob = new Media(
 let Friends = new Media(
     "Friends",
     7,
-    "comedy",
+    ["comedy"],
     "1987",
     "Three young men and three young women -- of the BFF kind -- live in the same\
      apartment complex and face life and love in New York. They're not above sticking\
@@ -132,7 +132,7 @@ let Friends = new Media(
 let GameOfThrones = new Media(
     "Game of Thrones",
     8,
-    "adventure",
+    ["adventure"],
     "2015",
     "George R.R. Martin's best-selling book series `A Song of Ice and Fire' is brought to the screen as\
      HBO sinks its considerable storytelling teeth into the medieval fantasy epic. It's the depiction of two powerful\
@@ -147,7 +147,7 @@ let GameOfThrones = new Media(
 let Shameless = new Media(
     "Shameless",
     4,
-    "drama",
+    ["drama"],
     "2017",
     "Oscar-nominated actor William H. Macy stars as Frank Gallagher, a single father of six who spends much of his\
      free time drinking at bars. The Gallagher children -- led by oldest daughter Fiona (Emmy Rossum), who takes on much\
@@ -162,7 +162,7 @@ let Shameless = new Media(
 let MissKobayashisDragonMaid = new Media(
     "Miss Kobayashi's Dragon Maid",
     9,
-    "comedy",
+    ["comedy"],
     "2017",
     "Miss Kobayashi is your average office worker who lives a boring life, alone in her small apartment–until she saves the life of a female dragon in distress. The dragon, named Tohru, has the ability to magically transform into an adorable human girl (albeit with horns and a long tail!), who will do anything to pay off her debt of gratitude, whether Miss Kobayashi likes it or not. With a very persistent and amorous dragon as a roommate, nothing comes easy, and Miss Kobayashi’s normal life is about to go off the deep end!",
     [new Season(14)],
@@ -173,7 +173,7 @@ let MissKobayashisDragonMaid = new Media(
 let Megalobox = new Media(
     "MEGALOBOX",
     10,
-    "action",
+    ["action"],
     "2018",
     "A desolate land stretches out from the city of poverty. A motorcycle speeds recklessly, blowing clouds of sand and dust. The rider is the protagonist of this story – he has neither a name nor a past. All he has is his ring name, “Junk Dog” and a technique for rigging MEGALOBOX matches with his pal Gansaku Nanbu, which they use to support their hand-to-mouth lives. JD is bored, resigned, and unfulfilled. Yuri has been the reigning champion of MEGALOBOX for the past few years. He has the skills and presence of a true champion. This is a story of JD and his rival, Yuri.",
     [new Season(13)],
@@ -181,12 +181,23 @@ let Megalobox = new Media(
     'Content/Megalobox.jpg',
     "Megalobox");
 
+let CowboyBebop = new Media(
+  "CowboyBebop",
+  10,
+  ["adventure", "sci-fi"],
+  "1998",
+  "The Bebop crew is just trying to make a buck. This motley lot of intergalactic loners teams up to track down fugitives and turn them in for cold hard cash. Spike is a hero whose cool façade hides a dark and deadly past. The pilot Jet is a bruiser of a brute who can’t wait to collect the next bounty. Faye Valentine is a femme fatale prone to breaking hearts and separating fools from their money. Along for the ride are the brilliant, but weird, hacker Ed and a super-genius Welsh Corgi named Ein.",
+  [new Season(26)],
+  ["Crunchyroll"],
+  'Content/CowboyBebop.jpg',
+  "CowboyBebop");
+
 // == Movies == //
 
 let Avengers = new Media(
     "Avengers",
     7,
-    "action",
+    ["action"],
     "2012",
     "Earth's mightiest heroes must come together and learn to fight as a team if\
     they are going to stop the mischievous Loki and his alien army from enslaving humanity.",
@@ -198,7 +209,7 @@ let Avengers = new Media(
 let BlackPanther = new Media(
     "Black Panther",
     8,
-    "action",
+    ["action"],
     "2018",
     "After the death of his father, T'Challa returns home to the African nation of Wakanda to take his rightful place as king.\
      When a powerful enemy suddenly reappears, T'Challa's mettle as king -- and as Black Panther -- gets tested when he's drawn into a\
@@ -212,7 +223,7 @@ let BlackPanther = new Media(
   let BeastsOfNoNation = new Media(
       "Beasts of No Nation",
       10,
-      "action",
+      ["action"],
       "2015",
       "As civil war rages in Africa, a fierce warlord (Idris Elba) trains a young orphan (Abraham Attah) to join his group of guerrilla soldiers.",
       [new Season(1)], // 1 season, 1 episode = movie
@@ -223,7 +234,7 @@ let BlackPanther = new Media(
   let TwentyWeeks = new Media(
     "20 weeks",
     7,
-    "romance",
+    ["romance"],
     "2017",
     "A couple must decide on how to move forward when their baby is diagnosed with a serious health condition at the 20-week scan.",
     [new Season(1)], // 1 season, 1 episode = movie
@@ -234,7 +245,7 @@ let BlackPanther = new Media(
   let StarTrekIntoDarkness = new Media(
     "Star Trek: Into Darkness",
     7,
-    "sci-fi",
+    ["sci-fi"],
     "2013",
     "The crew of the Starship Enterprise returns home after an act of terrorism within its own organization destroys most of Starfleet and what it represents, \
     leaving Earth in a state of crisis. With a personal score to settle, Capt. James T. Kirk (Chris Pine) leads his people (Zachary Quinto, Karl Urban, Zoë Saldana) \
@@ -247,7 +258,7 @@ let BlackPanther = new Media(
   let TheDarkKnight = new Media(
     "The Dark Knight",
     7,
-    "drama",
+    ["drama"],
     "2008",
     "With the help of allies Lt. Jim Gordon (Gary Oldman) and DA Harvey Dent (Aaron Eckhart), Batman (Christian Bale) has been able to keep a tight lid on \
     crime in Gotham City. But when a vile young criminal calling himself the Joker (Heath Ledger) suddenly throws the town into chaos, the caped Crusader begins \
@@ -260,7 +271,7 @@ let BlackPanther = new Media(
   let TheDarkKnightRises = new Media(
     "The Dark Knight Rises",
     6,
-    "drama",
+    ["drama"],
     "2012",
     "It has been eight years since Batman (Christian Bale), in collusion with Commissioner Gordon (Gary Oldman), vanished into the night. Assuming responsibility \
     for the death of Harvey Dent, Batman sacrificed everything for what he and Gordon hoped would be the greater good. However, the arrival of a cunning cat burglar \
@@ -273,7 +284,7 @@ let BlackPanther = new Media(
   let ThorDarkWorld = new Media(
     "Thor: The Dark World",
     3,
-    "sci-fi",
+    ["sci-fi"],
     "2013",
     "In ancient times, the gods of Asgard fought and won a war against an evil race known as the Dark Elves. The survivors were neutralized, and their ultimate weapon, \
     the Aether, was buried in a secret location. Hundreds of years later, Jane Foster (Natalie Portman) finds the Aether and becomes its host, forcing Thor \
@@ -286,7 +297,7 @@ let BlackPanther = new Media(
   let ZeroDarkThirty = new Media(
     "Zero Dark Thirty",
     8,
-    "drama",
+    ["drama"],
     "2012",
     "Following the terrorist attacks of Sept. 11, 2001, Osama bin Laden becomes one of the most-wanted men on the planet. The worldwide manhunt for the terrorist leader \
     occupies the resources and attention of two U.S. presidential administrations. Ultimately, it is the work of a dedicated female operative (Jessica Chastain) that proves \
@@ -297,4 +308,4 @@ let BlackPanther = new Media(
     "zerodarkthirty");
 
 let Medias = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, HighCastle, SpongeBob, Friends, GameOfThrones, Shameless, Avengers, BlackPanther, BeastsOfNoNation,
-  TwentyWeeks, StarTrekIntoDarkness, TheDarkKnight, TheDarkKnightRises, ThorDarkWorld, ZeroDarkThirty, MissKobayashisDragonMaid, Megalobox];
+  TwentyWeeks, StarTrekIntoDarkness, TheDarkKnight, TheDarkKnightRises, ThorDarkWorld, ZeroDarkThirty, MissKobayashisDragonMaid, Megalobox, CowboyBebop];

@@ -20,6 +20,7 @@ $(document).ready(function() {
     // get the logged in services
 
     let services = ['netflix', 'hulu', 'hbogo', 'showtime', 'primevideo', 'crunchyroll'];
+    let genres = ['action', 'adventure', 'comedy', 'drama', 'romance', 'sci-fi'];
 
 
     for (service of services) {
@@ -118,15 +119,29 @@ $(document).ready(function() {
     });
 
 
+
+
     function sortbyGenre(genre) { // returns results that are the selected genre
         let results = [];
         for (var i = 0; i < Medias.length; i++) {
-            if (Medias[i].genre === genre) {
+          for (var j = 0; j < genres.length; j++){
+            if (Medias[i].genres[j] === genre) {
                 results.push(Medias[i]);
             }
+          }
         }
         return results;
     }
+
+    // function sortbyGenre(genre) { // returns results that are the selected genre
+    //     let results = [];
+    //     for (var i = 0; i < Medias.length; i++) {
+    //         if (Medias[i].genre === genre) {
+    //             results.push(Medias[i]);
+    //         }
+    //     }
+    //     return results;
+    // }
 
     function updateList() {
         $('#recommended').empty();
