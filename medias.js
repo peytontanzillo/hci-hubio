@@ -383,5 +383,5 @@ let BlackPanther = new Media(
 
 let Medias = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, HighCastle, SpongeBob, Friends,
   GameOfThrones, Shameless, Avengers, BlackPanther, BeastsOfNoNation,
-  //Arrival, RickAndMorty, Homeland, HoldTheDark, DarkWasTheNight, FiveCentimetersPerSecond,
+  Arrival, RickAndMorty, Homeland, HoldTheDark, DarkWasTheNight, FiveCentimetersPerSecond,
   TwentyWeeks, StarTrekIntoDarkness, TheDarkKnight, TheDarkKnightRises, ThorDarkWorld, ZeroDarkThirty];
