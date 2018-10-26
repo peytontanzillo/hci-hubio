@@ -175,7 +175,7 @@ let RickAndMorty = new Media(
      He also goes on adventures across the universe that often involve his grandchildren, Morty and Summer.",
     [new Season(10), new Season(10), new Season(10)],
     ["Hulu"],
-    'Content/rickAndMorty.jpg',
+    'Content/rickAndMorty.png',
     "rickandmorty");
 
 let Homeland = new Media(
