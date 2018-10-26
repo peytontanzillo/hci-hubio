@@ -209,8 +209,74 @@ let BlackPanther = new Media(
     'Content/twentyweeks.jpg',
     "twentyweeks");
 
+  let StarTrekIntoDarkness = new Media(
+    "Star Trek: Into Darkness",
+    7,
+    "sci-fi",
+    "2013",
+    "The crew of the Starship Enterprise returns home after an act of terrorism within its own organization destroys most of Starfleet and what it represents, \
+    leaving Earth in a state of crisis. With a personal score to settle, Capt. James T. Kirk (Chris Pine) leads his people (Zachary Quinto, Karl Urban, Zoë Saldana) \
+    on a mission to capture a one-man weapon of mass destruction, thereby propelling all of them into an epic game of life and death.",
+    [new Season(1)], // 1 season, 1 episode = movie
+    ["Prime Video"],
+    'Content/startrekintodarkness.jpg',
+    "startrekintodarkness");
 
-let Medias = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, HighCastle, SpongeBob, Friends, GameOfThrones, Shameless, Avengers, BlackPanther, BeastsOfNoNation, TwentyWeeks];
+  let TheDarkKnight = new Media(
+    "The Dark Knight",
+    7,
+    "drama",
+    "2008",
+    "With the help of allies Lt. Jim Gordon (Gary Oldman) and DA Harvey Dent (Aaron Eckhart), Batman (Christian Bale) has been able to keep a tight lid on \
+    crime in Gotham City. But when a vile young criminal calling himself the Joker (Heath Ledger) suddenly throws the town into chaos, the caped Crusader begins \
+    to tread a fine line between heroism and vigilantism.",
+    [new Season(1)], // 1 season, 1 episode = movie
+    ["Prime Video"],
+    'Content/darkknight.jpg',
+    "thedarkknight");
+
+  let TheDarkKnightRises = new Media(
+    "The Dark Knight Rises",
+    6,
+    "drama",
+    "2012",
+    "It has been eight years since Batman (Christian Bale), in collusion with Commissioner Gordon (Gary Oldman), vanished into the night. Assuming responsibility \
+    for the death of Harvey Dent, Batman sacrificed everything for what he and Gordon hoped would be the greater good. However, the arrival of a cunning cat burglar \
+    (Anne Hathaway) and a merciless terrorist named Bane (Tom Hardy) force Batman out of exile and into a battle he may not be able to win.",
+    [new Season(1)], // 1 season, 1 episode = movie
+    ["Prime Video"],
+    'Content/darkknightrises.jpg',
+    "thedarkknightrises");
+
+  let ThorDarkWorld = new Media(
+    "Thor: The Dark World",
+    3,
+    "sci-fi",
+    "2013",
+    "In ancient times, the gods of Asgard fought and won a war against an evil race known as the Dark Elves. The survivors were neutralized, and their ultimate weapon, \
+    the Aether, was buried in a secret location. Hundreds of years later, Jane Foster (Natalie Portman) finds the Aether and becomes its host, forcing Thor \
+    (Chris Hemsworth) to bring her to Asgard before Dark Elf Malekith (Christopher Eccleston) captures her and uses the weapon to destroy the Nine Realms -- including Earth.",
+    [new Season(1)], // 1 season, 1 episode = movie
+    ["Prime Video"],
+    'Content/thordarkworld.jpg',
+    "thorddarkworld");
+
+  let ZeroDarkThirty = new Media(
+    "Zero Dark Thirty",
+    8,
+    "drama",
+    "2012",
+    "Following the terrorist attacks of Sept. 11, 2001, Osama bin Laden becomes one of the most-wanted men on the planet. The worldwide manhunt for the terrorist leader \
+    occupies the resources and attention of two U.S. presidential administrations. Ultimately, it is the work of a dedicated female operative (Jessica Chastain) that proves \
+    instrumental in finally locating bin Laden. In May 2011, Navy SEALs launch a nighttime strike, killing bin Laden in his compound in Abbottabad, Pakistan.",
+    [new Season(1)], // 1 season, 1 episode = movie
+    ["Prime Video"],
+    'Content/zerodarkthirty.jpg',
+    "zerodarkthirty");
+
+
+let Medias = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, HighCastle, SpongeBob, Friends, GameOfThrones, Shameless, Avengers, BlackPanther, BeastsOfNoNation,
+  TwentyWeeks, StarTrekIntoDarkness, TheDarkKnight, TheDarkKnightRises, ThorDarkWorld, ZeroDarkThirty];
 
 let RecommendedContent = [];
 for (let i = 0; i < Medias.length;) {
