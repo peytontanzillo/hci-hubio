@@ -88,7 +88,7 @@ let WestWorld = new Media(
 let HighCastle = new Media(
     "The Man in the High Castle",
     6,
-    ["sci-fi"],
+    ["sci-fi", "drama"],
     "2016",
     "This series, loosely based Philip K. Dick's novel of the same name, takes a look at what the world\
     Axis powers won the war, leading to the United States being divided into three parts, an area controlled\
@@ -132,7 +132,7 @@ let Friends = new Media(
 let GameOfThrones = new Media(
     "Game of Thrones",
     8,
-    ["adventure"],
+    ["adventure", "drama"],
     "2015",
     "George R.R. Martin's best-selling book series `A Song of Ice and Fire' is brought to the screen as\
      HBO sinks its considerable storytelling teeth into the medieval fantasy epic. It's the depiction of two powerful\
@@ -159,28 +159,28 @@ let Shameless = new Media(
     'Content/shameless.jpg',
     "shameless");
 
-  let RickAndMorty = new Media(
-      "Rick and Morty",
-      9,
-      "comedy",
-      "2013",
-      "After having been missing for nearly 20 years, Rick Sanchez suddenly arrives at daughter Beth's doorstep\
+let RickAndMorty = new Media(
+    "Rick and Morty",
+    9,
+    "comedy",
+    "2013",
+    "After having been missing for nearly 20 years, Rick Sanchez suddenly arrives at daughter Beth's doorstep\
        to move in with her and her family. Although Beth welcomes Rick into her home, her husband, Jerry,\
        isn't as happy about the family reunion. Jerry is concerned about Rick, a sociopathic scientist,\
        using the garage as his personal laboratory. In the lab, Rick works on a number of sci-fi gadgets,\
        some of which could be considered dangerous. But that's not all Rick does that concerns Jerry.\
        He also goes on adventures across the universe that often involve his grandchildren, Morty and Summer.",
-      [new Season(10), new Season(10), new Season(10)],
-      ["Hulu"],
-      'Content/rickAndMorty.jpg',
-      "rickandmorty");
+    [new Season(10), new Season(10), new Season(10)],
+    ["Hulu"],
+    'Content/rickAndMorty.jpg',
+    "rickandmorty");
 
-  let Homeland = new Media(
-      "Homeland",
-      7,
-      "adventure",
-      "2011",
-      "When Marine Sgt. Nicholas Brody returns home following eight years in captivity, CIA agent Carrie\
+let Homeland = new Media(
+    "Homeland",
+    7,
+    "adventure",
+    "2011",
+    "When Marine Sgt. Nicholas Brody returns home following eight years in captivity, CIA agent Carrie\
        Mathison thinks he has turned and is connected to a terror plot to be carried out on American soil,\
         so she engages him in a dangerous game of cat and mouse that puts America's national security at risk.\
          Later on, Carrie gets a promotion and returns to the front lines overseas. She is assigned to one of the\
@@ -188,10 +188,10 @@ let Shameless = new Media(
            on terror. Years later, after being disillusioned and placing herself in a self-imposed exile in Berlin,\
             Carrie becomes estranged from the CIA, eventually returning stateside where she works for a foundation\
              providing aid to Muslims living in America.",
-      [new Season(12), new Season(12), new Season(12), new Season(12), new Season(12), new Season(12), new Season(12)],
-      ["Showtime", "Hulu"],
-      'Content/homeland.jpg',
-      "Homeland");
+    [new Season(12), new Season(12), new Season(12), new Season(12), new Season(12), new Season(12), new Season(12)],
+    ["Showtime", "Hulu"],
+    'Content/homeland.jpg',
+    "Homeland");
 
 let MissKobayashisDragonMaid = new Media(
     "Miss Kobayashi's Dragon Maid",
@@ -216,15 +216,37 @@ let Megalobox = new Media(
     "Megalobox");
 
 let CowboyBebop = new Media(
-  "CowboyBebop",
-  10,
-  ["adventure", "sci-fi"],
-  "1998",
-  "The Bebop crew is just trying to make a buck. This motley lot of intergalactic loners teams up to track down fugitives and turn them in for cold hard cash. Spike is a hero whose cool façade hides a dark and deadly past. The pilot Jet is a bruiser of a brute who can’t wait to collect the next bounty. Faye Valentine is a femme fatale prone to breaking hearts and separating fools from their money. Along for the ride are the brilliant, but weird, hacker Ed and a super-genius Welsh Corgi named Ein.",
-  [new Season(26)],
-  ["Crunchyroll"],
-  'Content/CowboyBebop.jpg',
-  "CowboyBebop");
+    "CowboyBebop",
+    10,
+    ["adventure", "sci-fi"],
+    "1998",
+    "The Bebop crew is just trying to make a buck. This motley lot of intergalactic loners teams up to track down fugitives and turn them in for cold hard cash. Spike is a hero whose cool façade hides a dark and deadly past. The pilot Jet is a bruiser of a brute who can’t wait to collect the next bounty. Faye Valentine is a femme fatale prone to breaking hearts and separating fools from their money. Along for the ride are the brilliant, but weird, hacker Ed and a super-genius Welsh Corgi named Ein.",
+    [new Season(26)],
+    ["Crunchyroll"],
+    'Content/CowboyBebop.jpg',
+    "CowboyBebop");
+
+let ATLA = new Media(
+    "Avatar: The Last Airbender",
+    10,
+    ["adventure"],
+    "2005",
+    "The world is divided into four nations -- the Water Tribe, the Earth Kingdom, the Fire Nation and and the Air Nomads -- each represented by a natural element for which the nation is named. Benders have the ability to control and manipulate the element from their nation. Only the Avatar is the master of all four elements. The ruthless Fire Nation wants to conquer the world but the only bender who has enough power, the Avatar, has disappeared ... until now. His tribe soon discovers that Aang is the long-lost Avatar. Now Katara and Sokka must safeguard Aang on his journey to master all four elements and save the world from the Fire Nation.",
+    [new Season(20), new Season(20), new Season(21)],
+    ["Prime Video"],
+    'Content/ATLA.jpg',
+    "atla");
+
+let StrangerThings = new Media(
+    "Stranger Things",
+    10,
+    ["adventure", "sci-fi"],
+    "2016",
+    "This thrilling Netflix original drama stars Golden Globe-winning actress Winona Ryder as Joyce Byers, who lives in a small Indiana town in 1983 -- inspired by a time when tales of science fiction captivated audiences. When Joyce's 12-year-old son, Will, goes missing, she launches a terrifying investigation into his disappearance with local authorities. As they search for answers, they unravel a series of extraordinary mysteries involving secret government experiments, unnerving supernatural forces, and a very unusual little girl.",
+    [new Season(8), new Season(9)],
+    ["Netflix"],
+    'Content/StrangerThings.jpg',
+    "strangerthings");
 
 // == Movies == //
 
@@ -254,56 +276,56 @@ let BlackPanther = new Media(
     'Content/black-panther.jpg',
     "blackpanther");
 
-  let BeastsOfNoNation = new Media(
-      "Beasts of No Nation",
-      10,
-      ["action"],
-      "2015",
-      "As civil war rages in Africa, a fierce warlord (Idris Elba) trains a young orphan (Abraham Attah) to join his group of guerrilla soldiers.",
-      [new Season(1)], // 1 season, 1 episode = movie
-      ["Netflix"],
-      'Content/beasts-of-no-nation.png',
-      "beasts-of-no-nation");
+let BeastsOfNoNation = new Media(
+    "Beasts of No Nation",
+    10,
+    ["action"],
+    "2015",
+    "As civil war rages in Africa, a fierce warlord (Idris Elba) trains a young orphan (Abraham Attah) to join his group of guerrilla soldiers.",
+    [new Season(1)], // 1 season, 1 episode = movie
+    ["Netflix"],
+    'Content/beasts-of-no-nation.png',
+    "beasts-of-no-nation");
 
-  let Arrival = new Media(
-      "Arrival",
-      8,
-      "sci-fi",
-      "2012",
-      "Linguistics professor Louise Banks (Amy Adams) leads an elite team of investigators when gigantic\
+let Arrival = new Media(
+    "Arrival",
+    8,
+    "sci-fi",
+    "2012",
+    "Linguistics professor Louise Banks (Amy Adams) leads an elite team of investigators when gigantic\
        spaceships touch down in 12 locations around the world. As nations teeter on the verge of global war, Banks\
        and her crew must race against time to find a way to communicate with the extraterrestrial visitors.\
        Hoping to unravel the mystery, she takes a chance that could threaten her life and quite possibly all of mankind.",
-      [new Season(1)], // 1 season, 1 episode = movie
-      ["Hulu"],
-      'Content/arrival.jpeg',
-      "arrival");
+    [new Season(1)], // 1 season, 1 episode = movie
+    ["Hulu"],
+    'Content/arrival.jpeg',
+    "arrival");
 
-  let HoldTheDark = new Media(
-      "Hold the Dark",
-      5,
-      "adventure",
-      "2018",
-      "Summoned to a remote Alaskan village to search for the wolves that killed three children,\
+let HoldTheDark = new Media(
+    "Hold the Dark",
+    5,
+    "adventure",
+    "2018",
+    "Summoned to a remote Alaskan village to search for the wolves that killed three children,\
        a wolf expert soon finds himself unravelling a harrowing mystery.",
-      [new Season(1)], // 1 season, 1 episode = movie
-      ["Netflix"],
-      'Content/holdTheDark.jpg',
-      "holdTheDark");
+    [new Season(1)], // 1 season, 1 episode = movie
+    ["Netflix"],
+    'Content/holdTheDark.jpg',
+    "holdTheDark");
 
-  let DarkWasTheNight = new Media(
-      "Dark Was the Night",
-      5,
-      "adventure",
-      "2014",
-      "When a logging company decimates a forest in a small town, a sheriff\
+let DarkWasTheNight = new Media(
+    "Dark Was the Night",
+    5,
+    "adventure",
+    "2014",
+    "When a logging company decimates a forest in a small town, a sheriff\
        (Kevin Durand) and his deputy (Lukas Haas) must confront the violent and unexplainable events that follow.",
-      [new Season(1)], // 1 season, 1 episode = movie
-      ["Hulu"],
-      'Content/DarkWasTheNight.jpg',
-      "DarkWasTheNight");
+    [new Season(1)], // 1 season, 1 episode = movie
+    ["Hulu"],
+    'Content/DarkWasTheNight.jpg',
+    "DarkWasTheNight");
 
-  let FiveCentimetersPerSecond = new Media(
+let FiveCentimetersPerSecond = new Media(
     "5 Centimeters per Second",
     9,
     "drama",
@@ -316,7 +338,7 @@ let BlackPanther = new Media(
     'Content/fiveCentimeters.jpg',
     "fiveCentimetersPerSecond");
 
-  let TwentyWeeks = new Media(
+let TwentyWeeks = new Media(
     "20 weeks",
     7,
     ["romance"],
@@ -327,7 +349,7 @@ let BlackPanther = new Media(
     'Content/twentyweeks.jpg',
     "twentyweeks");
 
-  let StarTrekIntoDarkness = new Media(
+let StarTrekIntoDarkness = new Media(
     "Star Trek: Into Darkness",
     7,
     ["sci-fi"],
@@ -340,7 +362,7 @@ let BlackPanther = new Media(
     'Content/startrekintodarkness.jpg',
     "startrekintodarkness");
 
-  let TheDarkKnight = new Media(
+let TheDarkKnight = new Media(
     "The Dark Knight",
     7,
     ["drama"],
@@ -353,7 +375,7 @@ let BlackPanther = new Media(
     'Content/darkknight.jpg',
     "thedarkknight");
 
-  let TheDarkKnightRises = new Media(
+let TheDarkKnightRises = new Media(
     "The Dark Knight Rises",
     6,
     ["drama"],
@@ -366,7 +388,7 @@ let BlackPanther = new Media(
     'Content/darkknightrises.jpg',
     "thedarkknightrises");
 
-  let ThorDarkWorld = new Media(
+let ThorDarkWorld = new Media(
     "Thor: The Dark World",
     3,
     ["sci-fi"],
@@ -379,7 +401,7 @@ let BlackPanther = new Media(
     'Content/thordarkworld.jpg',
     "thorddarkworld");
 
-  let ZeroDarkThirty = new Media(
+let ZeroDarkThirty = new Media(
     "Zero Dark Thirty",
     8,
     ["drama"],
@@ -393,4 +415,5 @@ let BlackPanther = new Media(
     "zerodarkthirty");
 
 let Medias = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, HighCastle, SpongeBob, Friends, GameOfThrones, Shameless, Avengers, BlackPanther, BeastsOfNoNation,
-  TwentyWeeks, StarTrekIntoDarkness, TheDarkKnight, TheDarkKnightRises, ThorDarkWorld, ZeroDarkThirty, MissKobayashisDragonMaid, Megalobox, CowboyBebop];
+    TwentyWeeks, StarTrekIntoDarkness, TheDarkKnight, TheDarkKnightRises, ThorDarkWorld, ZeroDarkThirty, MissKobayashisDragonMaid, Megalobox, CowboyBebop, ATLA
+];

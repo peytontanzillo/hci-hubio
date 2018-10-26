@@ -1,10 +1,10 @@
 let RecommendedContent = [];
 for (let i = 0; i < Medias.length;) {
-  let maybeMedia = Medias[Math.floor(Math.random() * Medias.length)];
-  if (!RecommendedContent.includes(maybeMedia)) {
-    RecommendedContent.push(maybeMedia);
-    i++;
-  }
+    let maybeMedia = Medias[Math.floor(Math.random() * Medias.length)];
+    if (!RecommendedContent.includes(maybeMedia)) {
+        RecommendedContent.push(maybeMedia);
+        i++;
+    }
 }
 
 // == The rest of the code == //
@@ -102,7 +102,7 @@ $(document).ready(function() {
         loginHamburger = buttonid;
     }
 
-    $('#login-form').submit( function(e) {
+    $('#login-form').submit(function(e) {
         e.preventDefault();
         if ($('#username-input').val() == 'cat' && $('#password-input').val() == 'dog') {
             $(loginHamburger).removeClass("login");
@@ -124,11 +124,11 @@ $(document).ready(function() {
     function sortbyGenre(genre) { // returns results that are the selected genre
         let results = [];
         for (var i = 0; i < Medias.length; i++) {
-          for (var j = 0; j < genres.length; j++){
-            if (Medias[i].genres[j] === genre) {
-                results.push(Medias[i]);
+            for (var j = 0; j < genres.length; j++) {
+                if (Medias[i].genres[j] === genre) {
+                    results.push(Medias[i]);
+                }
             }
-          }
         }
         return results;
     }
@@ -172,11 +172,11 @@ $(document).ready(function() {
         let activeServices = findActiveServices();
 
         for (var i = 0; i < shows.length; i++) {
-          for (service of activeServices) {
-            if (shows[i].services[0].toLowerCase().replace(/\s+/g, '') === service) {
-                AddElement(shows[i], "#sortbygenre");
+            for (service of activeServices) {
+                if (shows[i].services[0].toLowerCase().replace(/\s+/g, '') === service) {
+                    AddElement(shows[i], "#sortbygenre");
+                }
             }
-          }
         }
     }
 
@@ -209,14 +209,14 @@ $(document).ready(function() {
             $("#show-description").empty().append(show.description);
             $(".show-img-container").empty().append("<img src=\"" + show.imgPath + "\">");
             $("#show-rating-year").empty();
-            for (let i = 0; i < Math.floor(show.rating/2); i++) {
-              $("#show-rating-year").append("<img src=\"./Content/good.png\">")
+            for (let i = 0; i < Math.floor(show.rating / 2); i++) {
+                $("#show-rating-year").append("<img src=\"./Content/good.png\">")
             }
             if (show.rating % 2 === 1) {
-              $("#show-rating-year").append("<img src=\"./Content/half.png\">")
+                $("#show-rating-year").append("<img src=\"./Content/half.png\">")
             }
-            for (let i = 5; i > Math.ceil(show.rating/2); i--) {
-              $("#show-rating-year").append("<img src=\"./Content/bad.png\">")
+            for (let i = 5; i > Math.ceil(show.rating / 2); i--) {
+                $("#show-rating-year").append("<img src=\"./Content/bad.png\">")
             }
             $("#show-rating-year").append(" - " + show.year);
             if ($('.page-content').is(':visible')) {
