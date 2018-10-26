@@ -50,8 +50,6 @@ $(document).ready(function() {
         });
     }
 
-
-
     let serviceToLoginID = new Map();
     serviceToLoginID.set("#netflixLogin", ["Netflix", "netflix"]);
     serviceToLoginID.set("#huluLogin", ["Hulu", "hulu"]);
@@ -118,9 +116,6 @@ $(document).ready(function() {
         }
     });
 
-
-
-
     function sortbyGenre(genre) { // returns results that are the selected genre
         let results = [];
         for (var i = 0; i < Medias.length; i++) {
@@ -132,16 +127,6 @@ $(document).ready(function() {
         }
         return results;
     }
-
-    // function sortbyGenre(genre) { // returns results that are the selected genre
-    //     let results = [];
-    //     for (var i = 0; i < Medias.length; i++) {
-    //         if (Medias[i].genre === genre) {
-    //             results.push(Medias[i]);
-    //         }
-    //     }
-    //     return results;
-    // }
 
     function updateList() {
         $('#recommended').empty();
@@ -243,7 +228,6 @@ $(document).ready(function() {
         });
     }
 
-
     let ScrollAmount = 500;
 
     $('#recommended-scroll-right').click(function() {
@@ -266,16 +250,13 @@ $(document).ready(function() {
     $('#results-scroll-left').click(function() {
         document.getElementById('results').scrollLeft -= ScrollAmount;
     });
-    
+
     $('#episode-scroll-right').click(function() {
         document.getElementById('results').scrollLeft += ScrollAmount;
     });
     $('#episode-scroll-left').click(function() {
         document.getElementById('results').scrollLeft -= ScrollAmount;
     });
-
-
-
 
     $('#genre-selector').change(function() {
         updateGenres();
