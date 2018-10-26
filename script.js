@@ -208,7 +208,6 @@ let BlackPanther = new Media(
     ["Hulu"],
     'Content/twentyweeks.jpg',
     "twentyweeks");
-  )
 
 
 let Medias = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, HighCastle, SpongeBob, Friends, GameOfThrones, Shameless, Avengers, BlackPanther, BeastsOfNoNation, TwentyWeeks];
