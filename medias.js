@@ -159,6 +159,40 @@ let Shameless = new Media(
     'Content/shameless.jpg',
     "shameless");
 
+  let RickAndMorty = new Media(
+      "Rick and Morty",
+      9,
+      "comedy",
+      "2013",
+      "After having been missing for nearly 20 years, Rick Sanchez suddenly arrives at daughter Beth's doorstep\
+       to move in with her and her family. Although Beth welcomes Rick into her home, her husband, Jerry,\
+       isn't as happy about the family reunion. Jerry is concerned about Rick, a sociopathic scientist,\
+       using the garage as his personal laboratory. In the lab, Rick works on a number of sci-fi gadgets,\
+       some of which could be considered dangerous. But that's not all Rick does that concerns Jerry.\
+       He also goes on adventures across the universe that often involve his grandchildren, Morty and Summer.",
+      [new Season(10), new Season(10), new Season(10)],
+      ["Hulu"],
+      'Content/rickAndMorty.jpg',
+      "rickandmorty");
+
+  let Homeland = new Media(
+      "Homeland",
+      7,
+      "adventure",
+      "2011",
+      "When Marine Sgt. Nicholas Brody returns home following eight years in captivity, CIA agent Carrie\
+       Mathison thinks he has turned and is connected to a terror plot to be carried out on American soil,\
+        so she engages him in a dangerous game of cat and mouse that puts America's national security at risk.\
+         Later on, Carrie gets a promotion and returns to the front lines overseas. She is assigned to one of the\
+          CIA's most volatile and dangerous stations in the Middle East, where she is in the heart of battle in the war\
+           on terror. Years later, after being disillusioned and placing herself in a self-imposed exile in Berlin,\
+            Carrie becomes estranged from the CIA, eventually returning stateside where she works for a foundation\
+             providing aid to Muslims living in America.",
+      [new Season(12), new Season(12), new Season(12), new Season(12), new Season(12), new Season(12), new Season(12)],
+      ["Showtime", "Hulu"],
+      'Content/homeland.jpg',
+      "Homeland");
+
 let MissKobayashisDragonMaid = new Media(
     "Miss Kobayashi's Dragon Maid",
     9,
@@ -230,6 +264,57 @@ let BlackPanther = new Media(
       ["Netflix"],
       'Content/beasts-of-no-nation.png',
       "beasts-of-no-nation");
+
+  let Arrival = new Media(
+      "Arrival",
+      8,
+      "sci-fi",
+      "2012",
+      "Linguistics professor Louise Banks (Amy Adams) leads an elite team of investigators when gigantic\
+       spaceships touch down in 12 locations around the world. As nations teeter on the verge of global war, Banks\
+       and her crew must race against time to find a way to communicate with the extraterrestrial visitors.\
+       Hoping to unravel the mystery, she takes a chance that could threaten her life and quite possibly all of mankind.",
+      [new Season(1)], // 1 season, 1 episode = movie
+      ["Hulu"],
+      'Content/arrival.jpeg',
+      "arrival");
+
+  let HoldTheDark = new Media(
+      "Hold the Dark",
+      5,
+      "adventure",
+      "2018",
+      "Summoned to a remote Alaskan village to search for the wolves that killed three children,\
+       a wolf expert soon finds himself unravelling a harrowing mystery.",
+      [new Season(1)], // 1 season, 1 episode = movie
+      ["Netflix"],
+      'Content/holdTheDark.jpg',
+      "holdTheDark");
+
+  let DarkWasTheNight = new Media(
+      "Dark Was the Night",
+      5,
+      "adventure",
+      "2014",
+      "When a logging company decimates a forest in a small town, a sheriff\
+       (Kevin Durand) and his deputy (Lukas Haas) must confront the violent and unexplainable events that follow.",
+      [new Season(1)], // 1 season, 1 episode = movie
+      ["Hulu"],
+      'Content/DarkWasTheNight.jpg',
+      "DarkWasTheNight");
+
+  let FiveCentimetersPerSecond = new Media(
+    "5 Centimeters per Second",
+    9,
+    "drama",
+    "2007",
+    "The story is set in Japan, beginning in the 1990s \
+    up until the present day (2008), with each act centered on a boy named Takaki Tōno.\
+     The first act takes place during a time when cell phones are uncommon and email had not yet reached the general population.",
+    [new Season(1)], // 1 season, 1 episode = movie
+    ["Crunchyroll"],
+    'Content/fiveCentimeters.jpg',
+    "fiveCentimetersPerSecond");
 
   let TwentyWeeks = new Media(
     "20 weeks",
