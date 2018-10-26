@@ -219,6 +219,10 @@ $(document).ready(function() {
                 $("#show-rating-year").append("<img src=\"./Content/bad.png\">")
             }
             $("#show-rating-year").append(" - " + show.year);
+            $(".service-container").empty();
+            for (service of show.services) {
+              $(".service-container").append("<div class=\"content-service-block\" id=\"" + service.toLowerCase().replace(/\s+/g, '') + "\">" + service + "</div>");
+            }
             if ($('.page-content').is(':visible')) {
                 $('.page-content').slideUp(300);
                 cameFromSearch = false;

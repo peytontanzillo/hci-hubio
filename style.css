@@ -379,6 +379,30 @@ option {
   color: #ff8500;
 }
 
+#netflix {
+  background-color: #ff0000;
+}
+
+#hulu {
+  background-color: #00ff00;
+}
+
+#hbo {
+  background-color: #ccd2d5;
+}
+
+#showtime {
+  background-color: #c20000;
+}
+
+#primevideo {
+  background-color: #00aae7;
+}
+
+#crunchyroll {
+  background-color: #ff8500;
+}
+
 /* === For the toggles === */
 /* The switch - the box around the slider */
 .switch {
@@ -530,4 +554,20 @@ input:checked + .slider-round:before {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 40px;
+}
+
+.content-service-block {
+  /* background-color: gray; */
+  display: inline-block;
+  position: relative;
+  padding: 10px;
+  font-size: 18px;
+  text-transform: uppercase;
+  width: 150px;
+  float: left;
+  margin-right: 20px;
+}
+
+.service-container {
+
 }
