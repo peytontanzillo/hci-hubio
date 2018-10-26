@@ -159,6 +159,7 @@ let Shameless = new Media(
     'Content/shameless.jpg',
     "shameless");
 
+<<<<<<< HEAD
   let RickAndMorty = new Media(
       "Rick and Morty",
       9,
@@ -192,6 +193,29 @@ let Shameless = new Media(
       ["Showtime", "Hulu"],
       'Content/homeland.jpg',
       "Homeland");
+=======
+let MissKobayashisDragonMaid = new Media(
+    "Miss Kobayashi's Dragon Maid",
+    9,
+    "comedy",
+    "2017",
+    "Miss Kobayashi is your average office worker who lives a boring life, alone in her small apartment–until she saves the life of a female dragon in distress. The dragon, named Tohru, has the ability to magically transform into an adorable human girl (albeit with horns and a long tail!), who will do anything to pay off her debt of gratitude, whether Miss Kobayashi likes it or not. With a very persistent and amorous dragon as a roommate, nothing comes easy, and Miss Kobayashi’s normal life is about to go off the deep end!",
+    [new Season(14)],
+    ["Crunchyroll"],
+    'Content/Kobayashi.jpg',
+    "misskobayashisdragonmaid");
+
+let Megalobox = new Media(
+    "MEGALOBOX",
+    10,
+    "action",
+    "2018",
+    "A desolate land stretches out from the city of poverty. A motorcycle speeds recklessly, blowing clouds of sand and dust. The rider is the protagonist of this story – he has neither a name nor a past. All he has is his ring name, “Junk Dog” and a technique for rigging MEGALOBOX matches with his pal Gansaku Nanbu, which they use to support their hand-to-mouth lives. JD is bored, resigned, and unfulfilled. Yuri has been the reigning champion of MEGALOBOX for the past few years. He has the skills and presence of a true champion. This is a story of JD and his rival, Yuri.",
+    [new Season(13)],
+    ["Crunchyroll"],
+    'Content/Megalobox.jpg',
+    "Megalobox");
+>>>>>>> 32d0253cbef8cfc0bb0c79fe62ddd0af67ffbcfa
 
 // == Movies == //
 
