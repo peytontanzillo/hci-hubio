@@ -504,6 +504,24 @@ input:checked + .slider-round:before {
     cursor: pointer;
 }
 
+#play-button {
+    width: 100px;
+    display: inline-block;
+    float: left;
+}
+
+#movie-play {
+   text-align: center;
+}
+
+
+#movie-play > h1 > span {
+    margin: auto;
+    font-size: 50px;
+    margin: 21px;
+    float: left;
+}
+
 /* Search CSS */
 
 .search-content {

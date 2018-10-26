@@ -226,6 +226,15 @@ $(document).ready(function() {
                 $('.search-content').slideUp(300);
                 cameFromSearch = true;
             }
+            if(show.seasons.length === 1 && show.seasons[0].NumberOfEpisodes === 1) {
+                //Do things for it being a movie
+                $('#movie-play').show();
+                $('#tv-play').hide();
+                $('#movie').empty().text(show.title);
+            } else {
+                $('#tv-play').show();
+                $('#movie-play').hide();
+            }
             $('.tv-show-page').show();
         });
     }
@@ -251,6 +260,13 @@ $(document).ready(function() {
         document.getElementById('results').scrollLeft += ScrollAmount;
     });
     $('#results-scroll-left').click(function() {
+        document.getElementById('results').scrollLeft -= ScrollAmount;
+    });
+    
+    $('#episode-scroll-right').click(function() {
+        document.getElementById('results').scrollLeft += ScrollAmount;
+    });
+    $('#episode-scroll-left').click(function() {
         document.getElementById('results').scrollLeft -= ScrollAmount;
     });
 
