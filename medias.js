@@ -56,7 +56,7 @@ let DragonBallZ = new Media(
     "Dragon Ball Z follows the adventures of Goku who, along with the Z Warriors, defends the Earth against evil. The action adventures are entertaining and \
     reinforce the concept of good versus evil. Dragon Ball Z teaches valuable character virtues such as teamwork, loyalty, and trustworthiness.",
     [new Season(12), new Season(8), new Season(24), new Season(25)],
-    ["Crunchyroll", "Hulu"],
+    ["Hulu"],
     './Content/Dragon-Ball-Z.jpg',
     "dragon_ball_z");
 
@@ -264,7 +264,7 @@ let StrangerThings = new Media(
      involving secret government experiments, unnerving supernatural forces, and a very unusual little girl.",
     [new Season(8), new Season(9)],
     ["Netflix"],
-    'Content/StrangerThings.jpg',
+    'Content/strangerthings.jpg',
     "strangerthings");
 
   let Konosuba = new Media(
