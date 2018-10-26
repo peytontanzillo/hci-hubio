@@ -341,7 +341,7 @@ let Arrival = new Media(
 let HoldTheDark = new Media(
     "Hold the Dark",
     5,
-    "adventure",
+    ["adventure"],
     "2018",
     "Summoned to a remote Alaskan village to search for the wolves that killed three children,\
      a wolf expert soon finds himself unravelling a harrowing mystery.",
@@ -353,7 +353,7 @@ let HoldTheDark = new Media(
 let DarkWasTheNight = new Media(
     "Dark Was the Night",
     5,
-    "adventure",
+    ["adventure"],
     "2014",
     "When a logging company decimates a forest in a small town, a sheriff\
      (Kevin Durand) and his deputy (Lukas Haas) must confront the violent and unexplainable events that follow.",
@@ -365,7 +365,7 @@ let DarkWasTheNight = new Media(
 let FiveCentimetersPerSecond = new Media(
     "5 Centimeters per Second",
     9,
-    "drama",
+    ["drama"],
     "2007",
     "The story is set in Japan, beginning in the 1990s \
      up until the present day (2008), with each act centered on a boy named Takaki Tōno.\
@@ -453,7 +453,7 @@ let ZeroDarkThirty = new Media(
 
 let Medias = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, HighCastle, SpongeBob, Friends, GameOfThrones, Shameless, Avengers, BlackPanther,
    BeastsOfNoNation,TwentyWeeks, StarTrekIntoDarkness, TheDarkKnight, TheDarkKnightRises, ThorDarkWorld, ZeroDarkThirty, MissKobayashisDragonMaid,
-   Megalobox, CowboyBebop, ATLA, Konosuba, StrangerThings, RickAndMorty, Homeland
+   Megalobox, CowboyBebop, ATLA, Konosuba, StrangerThings, RickAndMorty, Homeland, FiveCentimetersPerSecond, DarkWasTheNight, HoldTheDark, Arrival
 ];
 
 function compare(a,b) {
