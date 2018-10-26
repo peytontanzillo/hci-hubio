@@ -159,7 +159,6 @@ let Shameless = new Media(
     'Content/shameless.jpg',
     "shameless");
 
-<<<<<<< HEAD
   let RickAndMorty = new Media(
       "Rick and Morty",
       9,
@@ -193,7 +192,7 @@ let Shameless = new Media(
       ["Showtime", "Hulu"],
       'Content/homeland.jpg',
       "Homeland");
-=======
+
 let MissKobayashisDragonMaid = new Media(
     "Miss Kobayashi's Dragon Maid",
     9,
@@ -215,7 +214,6 @@ let Megalobox = new Media(
     ["Crunchyroll"],
     'Content/Megalobox.jpg',
     "Megalobox");
->>>>>>> 32d0253cbef8cfc0bb0c79fe62ddd0af67ffbcfa
 
 // == Movies == //
 
