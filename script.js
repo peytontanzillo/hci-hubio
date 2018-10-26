@@ -197,20 +197,21 @@ let BlackPanther = new Media(
       ["Netflix"],
       'Content/beasts-of-no-nation.png',
       "beasts-of-no-nation");
-  //
-  // let Avengers = new Media(
-  //     "Avengers",
-  //     7,
-  //     "action",
-  //     "2012",
-  //     "sooper heroz",
-  //     [new Season(1)], // 1 season, 1 episode = movie
-  //     ["Prime Video"],
-  //     'Content/Avengers.png',
-  //     "avengers");
+
+  let TwentyWeeks = new Media(
+    "20 weeks",
+    7,
+    "romance",
+    "2017",
+    "A couple must decide on how to move forward when their baby is diagnosed with a serious health condition at the 20-week scan.",
+    [new Season(1)], // 1 season, 1 episode = movie
+    ["Hulu"],
+    'Content/twentyweeks.jpg',
+    "twentyweeks");
+  )
 
 
-let Medias = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, HighCastle, SpongeBob, Friends, GameOfThrones, Shameless, Avengers, BlackPanther, BeastsOfNoNation];
+let Medias = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, HighCastle, SpongeBob, Friends, GameOfThrones, Shameless, Avengers, BlackPanther, BeastsOfNoNation, TwentyWeeks];
 
 let RecommendedContent = [];
 for (let i = 0; i < Medias.length;) {
