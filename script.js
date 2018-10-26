@@ -315,7 +315,8 @@ $(document).ready(function() {
         loginHamburger = buttonid;
     }
 
-    $(document).on('click', '#login-button', function() {
+    $('#login-form').submit( function(e) {
+        e.preventDefault();
         if ($('#username-input').val() == 'cat' && $('#password-input').val() == 'dog') {
             $(loginHamburger).removeClass("login");
             $(loginHamburger).addClass("logout");
@@ -486,7 +487,6 @@ $(document).ready(function() {
         e.preventDefault();
         lastSearch = $('#search-box').val();
         updateSearch();
-        console.log('yowch');
     });
 
     function updateSearch() {
