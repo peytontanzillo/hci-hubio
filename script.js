@@ -241,27 +241,26 @@ $(document).ready(function() {
     
     function updateEpisodes() {
         $('#watch-episode').empty();
+        document.getElementById('watch-episode').scrollLeft = 0;
         let selectedSeason = currentShow.seasons[$('#season-selector')[0].selectedIndex];
         for (let i = 1; i <= selectedSeason.NumberOfEpisodes; i++) {
              let html = "<a href=\"#\" id=\"episode-" + i + "\" class=\"episode\" style=\"background: white;\"><h5 class=\"content-title\">Episode " + i + "</h5></div>";
             $('#watch-episode').append(html);
         }    
-        addEpisodeListener($('#season-selector')[0].selectedIndex + 1);
     }
     
-    function addEpisodeListener(selectedSeason) {
-        $(document).on('click', '.episode', function() {
-            if (loginServices.has(currentShow.services[0])) {
-                const episodeNumber = $(this).attr("id").split("-")[1];
-                $('#tv-show-playback').empty().text("Season " + selectedSeason + " Episode " + episodeNumber + " of")
-                $('#playback-show').empty().text(currentShow.title);
-                $('.playback').show();
-                $('.tv-show-page').hide();
-            } else {
-                alert('You must be logged in to ' + currentShow.services[0] + ' to watch this content!');
-            }
-        });        
-    }
+    $(document).on('click', '.episode', function() {
+        const selectedSeason = $('#season-selector')[0].selectedIndex + 1;
+        if (loginServices.has(currentShow.services[0])) {
+            const episodeNumber = $(this).attr("id").split("-")[1];
+            $('#tv-show-playback').empty().text("Season " + selectedSeason + " Episode " + episodeNumber + " of")
+            $('#playback-show').empty().text(currentShow.title);
+            $('.playback').show();
+            $('.tv-show-page').hide();
+        } else {
+            alert('You must be logged in to ' + currentShow.services[0] + ' to watch this content!');
+        }
+    });        
     
     $(document).on('click', '#play-button', function() {
         if (loginServices.has(currentShow.services[0])) {
@@ -298,10 +297,10 @@ $(document).ready(function() {
     });
 
     $('#episode-scroll-right').click(function() {
-        document.getElementById('results').scrollLeft += ScrollAmount;
+        document.getElementById('watch-episode').scrollLeft += ScrollAmount;
     });
     $('#episode-scroll-left').click(function() {
-        document.getElementById('results').scrollLeft -= ScrollAmount;
+        document.getElementById('watch-episode').scrollLeft -= ScrollAmount;
     });
 
     $('#genre-selector').change(function() {
