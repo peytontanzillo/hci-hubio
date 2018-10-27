@@ -190,7 +190,11 @@ $(document).ready(function() {
             console.log('yite');
             let html = "<div id=\"show-display\"><h5>" + show.title + "</h5></div>"
             $("#show-title").empty().append(show.title);
-            $("#show-description").empty().append(show.description.substr(0, 300));
+            let extra = '';
+            if (show.description.length > 500) {
+              extra = '...';
+            }
+            $("#show-description").empty().append(show.description.substr(0, 500) + extra);
             $(".show-img-container").empty().append("<img src=\"" + show.imgPath + "\">");
             $("#show-rating-year").empty();
             for (let i = 0; i < Math.floor(show.rating / 2); i++) {
