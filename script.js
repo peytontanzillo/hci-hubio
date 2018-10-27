@@ -244,7 +244,7 @@ $(document).ready(function() {
         document.getElementById('watch-episode').scrollLeft = 0;
         let selectedSeason = currentShow.seasons[$('#season-selector')[0].selectedIndex];
         for (let i = 1; i <= selectedSeason.NumberOfEpisodes; i++) {
-             let html = "<a href=\"#\" id=\"episode-" + i + "\" class=\"episode\" style=\"background: white;\"><h5 class=\"content-title\">Episode " + i + "</h5></div>";
+             let html = "<a href=\"#\" id=\"episode-" + i + "\" class=\"episode\" style=\"background: url(" + currentShow.imgPath + "); background-position: center; background-size: cover;\"><h5 class=\"content-title\">Episode " + i + "</h5></div>";
             $('#watch-episode').append(html);
         }    
     }
