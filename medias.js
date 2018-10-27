@@ -100,7 +100,7 @@ let HighCastle = new Media(
     contain the key to freedom and is determined to find their mysterious guardian.",
     [new Season(10)],
     ["Prime Video"],
-    'Content/highcastle.png',
+    'Content/highcastle.jpg',
     "high_castle");
 
 let SpongeBob = new Media(
