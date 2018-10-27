@@ -466,10 +466,49 @@ let ZeroDarkThirty = new Media(
     'Content/zerodarkthirty.jpg',
     "zerodarkthirty");
 
+let ET = new Media(
+    "E.T. the Extra-Terrestrial",
+    8,
+    ["drama"],
+    "1982",
+    "After a gentle alien becomes stranded on Earth, the being is discovered and befriended by a young boy named Elliott (Henry Thomas). Bringing the \
+    extraterrestrial into his suburban California house, Elliott introduces E.T., as the alien is dubbed, to his brother and his little sister, Gertie \
+    (Drew Barrymore), and the children decide to keep its existence a secret. Soon, however, E.T. falls ill, resulting in government intervention and a \
+    dire situation for both Elliott and the alien.",
+    [new Season(1)], // 1 season, 1 episode = movie
+    ["HBO GO", "Prime Video"],
+    'Content/et.jpg',
+    "et");
+
+let DaysOfSummmer = new Media(
+    "500 Days of Summer",
+    7,
+    ["romance", "drama"],
+    "2009",
+    "Tom (Joseph Gordon-Levitt), greeting-card writer and hopeless romantic, is caught completely off-guard when his girlfriend, Summer (Zooey Deschanel), \
+    suddenly dumps him. He reflects on their 500 days together to try to figure out where their love affair went sour, and in doing so, Tom rediscovers his \
+    true passions in life.",
+    [new Season(1)], // 1 season, 1 episode = movie
+    ["HBO GO", "Prime Video"],
+    'Content/500days.jpg',
+    "500daysofsummer");
+
+let DevilWearsPrada = new Media(
+    "The Devil Wears Prada",
+    7,
+    ["romance", "drama", "comedy"],
+    "2006",
+    "Andy (Anne Hathaway) is a recent college graduate with big dreams. Upon landing a job at prestigious Runway magazine, she finds herself the assistant \
+    to diabolical editor Miranda Priestly (Meryl Streep). Andy questions her ability to survive her grim tour as Miranda's whipping girl without getting scorched.",
+    [new Season(1)], // 1 season, 1 episode = movie
+    ["HBO GO", "Prime Video"],
+    'Content/prada.jpg',
+    "thedevilwearsprada");
+
 let Medias = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, HighCastle, SpongeBob, Friends, GameOfThrones, Shameless, Avengers, BlackPanther,
    BeastsOfNoNation,TwentyWeeks, StarTrekIntoDarkness, TheDarkKnight, TheDarkKnightRises, ThorDarkWorld, ZeroDarkThirty, MissKobayashisDragonMaid,
    Megalobox, CowboyBebop, ATLA, Konosuba, StrangerThings, RickAndMorty, Homeland, FiveCentimetersPerSecond, DarkWasTheNight, HoldTheDark, Arrival,
-   FamilyGuy
+   FamilyGuy, ET, DaysOfSummmer, DevilWearsPrada
 ];
 
 function compare(a,b) {
