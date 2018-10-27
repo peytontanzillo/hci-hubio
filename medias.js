@@ -51,7 +51,7 @@ let SouthPark = new Media(
 let DragonBallZ = new Media(
     "Dragon Ball Z",
     7,
-    ["action"],
+    ["action", "animation"],
     "1989",
     "Dragon Ball Z follows the adventures of Goku who, along with the Z Warriors, defends the Earth against evil. The action adventures are entertaining and \
     reinforce the concept of good versus evil. Dragon Ball Z teaches valuable character virtues such as teamwork, loyalty, and trustworthiness.",
@@ -106,7 +106,7 @@ let HighCastle = new Media(
 let SpongeBob = new Media(
     "Spongebob Squarepants",
     8,
-    ["comedy"],
+    ["animation", "comedy"],
     "1999",
     "A square yellow sponge named SpongeBob SquarePants lives in a pineapple with\
      his pet snail, Gary, in the city of Bikini Bottom on the floor of the Pacific Ocean.\
@@ -165,7 +165,7 @@ let Shameless = new Media(
 let RickAndMorty = new Media(
     "Rick and Morty",
     9,
-    ["comedy"],
+    ["animation", "comedy"],
     "2013",
     "After having been missing for nearly 20 years, Rick Sanchez suddenly arrives at daughter Beth's doorstep\
      to move in with her and her family. Although Beth welcomes Rick into her home, her husband, Jerry,\
@@ -199,7 +199,7 @@ let Homeland = new Media(
 let MissKobayashisDragonMaid = new Media(
     "Miss Kobayashi's Dragon Maid",
     9,
-    ["comedy"],
+    ["animation", "comedy"],
     "2017",
     "Miss Kobayashi is your average office worker who lives a boring life, alone in her small apartment–until she saves the life of a female dragon in distress.\
      The dragon, named Tohru, has the ability to magically transform into an adorable human girl (albeit with horns and a long tail!),\
@@ -213,7 +213,7 @@ let MissKobayashisDragonMaid = new Media(
 let Megalobox = new Media(
     "MEGALOBOX",
     10,
-    ["action"],
+    ["action", "animation"],
     "2018",
     "A desolate land stretches out from the city of poverty. A motorcycle speeds recklessly, blowing clouds of sand and dust. The rider is the protagonist of \
      this story – he has neither a name nor a past. All he has is his ring name, “Junk Dog” and a technique for rigging MEGALOBOX matches with his pal Gansaku \
@@ -227,7 +227,7 @@ let Megalobox = new Media(
 let CowboyBebop = new Media(
     "CowboyBebop",
     10,
-    ["adventure", "sci-fi"],
+    ["adventure", "animation", "sci-fi"],
     "1998",
     "The Bebop crew is just trying to make a buck. This motley lot of intergalactic loners teams up to track down fugitives and turn them in for cold hard \
      cash. Spike is a hero whose cool façade hides a dark and deadly past. The pilot Jet is a bruiser of a brute who can’t wait to collect the next bounty.\
@@ -241,7 +241,7 @@ let CowboyBebop = new Media(
 let ATLA = new Media(
     "Avatar: The Last Airbender",
     10,
-    ["adventure"],
+    ["adventure", "animation"],
     "2005",
     "The world is divided into four nations -- the Water Tribe, the Earth Kingdom, the Fire Nation and and the Air Nomads -- each represented by a natural \
      element for which the nation is named. Benders have the ability to control and manipulate the element from their nation. Only the Avatar is the master of \
@@ -270,7 +270,7 @@ let StrangerThings = new Media(
   let Konosuba = new Media(
     "Konosuba",
     8,
-    ["adenture", "comedy"],
+    ["adenture", "animation", "comedy"],
     "2017",
     "When Kazuma Satou died, he was given two choices, pass on to heaven or be revived in a fantasy world.\
      After choosing the new world, the goddess Aqua tasked him with defeating the Demon King, and let him choose any weapon to aid him.\
@@ -365,7 +365,7 @@ let DarkWasTheNight = new Media(
 let FiveCentimetersPerSecond = new Media(
     "5 Centimeters per Second",
     9,
-    ["drama", "romance"],
+    ["animation", "drama", "romance"],
     "2007",
     "The story is set in Japan, beginning in the 1990s \
      up until the present day (2008), with each act centered on a boy named Takaki Tōno.\
