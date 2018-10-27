@@ -93,11 +93,11 @@ let HighCastle = new Media(
     6,
     ["sci-fi", "drama"],
     "2016",
-    "This series, loosely based Philip K. Dick's novel of the same name, takes a look at what the world\
-    Axis powers won the war, leading to the United States being divided into three parts, an area controlled\
-    by the Japanese, a Nazi-controlled section, and a buffer zone between the two. Despite the oppression, a \
-    new hope emerges when films turn up that seem to show a different world. A woman believes the films \
-    contain the key to freedom and is determined to find their mysterious guardian.",
+    "This series, loosely based Philip K. Dick's novel of the same name, takes a look at what the world might look like had the \
+    outcome of World War II turned out differently. In this dystopian scenario, the Axis powers won the war, leading to the \
+    United States being divided into three parts, an area controlled by the Japanese, a Nazi-controlled section, and a buffer \
+    zone between the two. Despite the oppression, a new hope emerges when films turn up that seem to show a different world. \
+    A woman believes the films contain the key to freedom and is determined to find their mysterious guardian.",
     [new Season(10)],
     ["Prime Video"],
     'Content/highcastle.jpg',
@@ -108,7 +108,7 @@ let SpongeBob = new Media(
     8,
     ["comedy"],
     "1999",
-    "A square yellow sponge named SpongeBob SquarePants lives in a pineapple with\
+    "A square yellow sponge named SpongeBob SquarePants lives in a pineapple with \
      his pet snail, Gary, in the city of Bikini Bottom on the floor of the Pacific Ocean.\
      He works as a fry cook at the Krusty Krab. During his time off, SpongeBob has a knack for \
      attracting trouble with his starfish best friend, Patrick. Arrogant octopus Squidward Tentacles, \
