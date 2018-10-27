@@ -517,8 +517,10 @@ input:checked + .slider-round:before {
 #show-title {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
-    font-size: 40px;
+    font-weight: bold;
+    font-size: 48px;
     padding: 20px;
+    /* text-transform: uppercase; */
 }
 
 #show-rating-year {
@@ -526,6 +528,10 @@ input:checked + .slider-round:before {
     font-weight: 500;
     font-size: 25px;
     padding-bottom: 20px;
+}
+
+#show-description {
+  font-size: 18px;
 }
 
 #show-back-arrow {
@@ -539,10 +545,16 @@ input:checked + .slider-round:before {
     width: 100px;
     display: inline-block;
     float: left;
+    cursor: pointer;
 }
 
 #movie-play {
    text-align: center;
+   margin-left: auto;
+   margin-right: auto;
+   position: relative;
+   display: inline-block;
+   margin-top: 5%;
 }
 
 
@@ -648,3 +660,7 @@ input:checked + .slider-round:before {
     text-decoration: none;
 }
 
+.episode:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 2px 4px #000000ee;
+}

@@ -93,11 +93,11 @@ let HighCastle = new Media(
     6,
     ["sci-fi", "drama"],
     "2016",
-    "This series, loosely based Philip K. Dick's novel of the same name, takes a look at what the world\
-    Axis powers won the war, leading to the United States being divided into three parts, an area controlled\
-    by the Japanese, a Nazi-controlled section, and a buffer zone between the two. Despite the oppression, a \
-    new hope emerges when films turn up that seem to show a different world. A woman believes the films \
-    contain the key to freedom and is determined to find their mysterious guardian.",
+    "This series, loosely based Philip K. Dick's novel of the same name, takes a look at what the world might look like had the \
+    outcome of World War II turned out differently. In this dystopian scenario, the Axis powers won the war, leading to the \
+    United States being divided into three parts, an area controlled by the Japanese, a Nazi-controlled section, and a buffer \
+    zone between the two. Despite the oppression, a new hope emerges when films turn up that seem to show a different world. \
+    A woman believes the films contain the key to freedom and is determined to find their mysterious guardian.",
     [new Season(10)],
     ["Prime Video"],
     'Content/highcastle.jpg',
@@ -108,7 +108,7 @@ let SpongeBob = new Media(
     8,
     ["animation", "comedy"],
     "1999",
-    "A square yellow sponge named SpongeBob SquarePants lives in a pineapple with\
+    "A square yellow sponge named SpongeBob SquarePants lives in a pineapple with \
      his pet snail, Gary, in the city of Bikini Bottom on the floor of the Pacific Ocean.\
      He works as a fry cook at the Krusty Krab. During his time off, SpongeBob has a knack for \
      attracting trouble with his starfish best friend, Patrick. Arrogant octopus Squidward Tentacles, \
@@ -284,6 +284,21 @@ let StrangerThings = new Media(
     'Content/Konosuba.png',
     "konosuba");
 
+    let FamilyGuy = new Media(
+      "Family Guy",
+      8,
+      ["comedy"],
+      "1998",
+      "Sick, twisted and politically incorrect, the animated series features the adventures of the Griffin family. Endearingly \
+      ignorant Peter and his stay-at-home wife Lois reside in Quahog, R.I., and have three kids. Meg, the eldest child, is a \
+      social outcast, and teenage Chris is awkward and clueless when it comes to the opposite sex. The youngest, Stewie, is a \
+      genius baby bent on killing his mother and destroying the world. The talking dog, Brian, keeps Stewie in check while sipping \
+      martinis and sorting through his own life issues.",
+      [new Season(10), new Season(10), new Season(10), new Season(10), new Season(10), new Season(10), new Season(10), new Season(10)],
+      ["Hulu", "Prime Video"],
+      'Content/family-guy.jpg',
+      "familyguy");
+
 
 // == Movies == //
 
@@ -453,7 +468,8 @@ let ZeroDarkThirty = new Media(
 
 let Medias = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, HighCastle, SpongeBob, Friends, GameOfThrones, Shameless, Avengers, BlackPanther,
    BeastsOfNoNation,TwentyWeeks, StarTrekIntoDarkness, TheDarkKnight, TheDarkKnightRises, ThorDarkWorld, ZeroDarkThirty, MissKobayashisDragonMaid,
-   Megalobox, CowboyBebop, ATLA, Konosuba, StrangerThings, RickAndMorty, Homeland, FiveCentimetersPerSecond, DarkWasTheNight, HoldTheDark, Arrival
+   Megalobox, CowboyBebop, ATLA, Konosuba, StrangerThings, RickAndMorty, Homeland, FiveCentimetersPerSecond, DarkWasTheNight, HoldTheDark, Arrival,
+   FamilyGuy
 ];
 
 function compare(a,b) {
