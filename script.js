@@ -65,6 +65,7 @@ $(document).ready(function() {
     $('.page-content').hide();
     $('.service-login').hide();
     $('.search-content').hide();
+    $('.playback').hide();
 
     function addButtonListener(buttonid) {
         $(document).on('click', buttonid, function() {
@@ -184,10 +185,12 @@ $(document).ready(function() {
         $(location).append(html);
         addContentListener(show);
     }
+    
+    let currentShow = undefined;
 
     function addContentListener(show) {
         $(document).on('click', '#' + show.id, function() {
-            console.log('yite');
+            currentShow = show;
             let html = "<div id=\"show-display\"><h5>" + show.title + "</h5></div>"
             $("#show-title").empty().append(show.title);
             $("#show-description").empty().append(show.description.substr(0, 300));
@@ -222,10 +225,42 @@ $(document).ready(function() {
             } else {
                 $('#tv-play').show();
                 $('#movie-play').hide();
+                $('#season-selector').empty();
+                for (let i = 1; i <= show.seasons.length; i++) {
+                    $('#season-selector').append("<option value=\"season" + i + "\">Season " + i + "</option>");
+                }
+                updateEpisodes();
             }
             $('.tv-show-page').show();
         });
     }
+    
+    function updateEpisodes() {
+        $('#watch-episode').empty();
+        let selectedSeason = currentShow.seasons[$('#season-selector')[0].selectedIndex];
+        for (let i = 1; i <= selectedSeason.NumberOfEpisodes; i++) {
+             let html = "<a href=\"#\" id=\"episode-" + i + "\" class=\"episode\" style=\"background: white;\"><h5 class=\"content-title\">Episode " + i + "</h5></div>";
+            $('#watch-episode').append(html);
+        }    
+        addEpisodeListener($('#season-selector')[0].selectedIndex + 1);
+    }
+    
+    function addEpisodeListener(selectedSeason) {
+        $(document).on('click', '.episode', function() {
+            const episodeNumber = $(this).attr("id").split("-")[1];
+            $('#tv-show-playback').empty().text("Season " + selectedSeason + " Episode " + episodeNumber + " of")
+            $('#playback-show').empty().text(currentShow.title);
+            $('.playback').show();
+            $('.tv-show-page').hide();
+        });        
+    }
+    
+    $(document).on('click', '#play-button', function() {
+        $('#tv-show-playback').empty();
+        $('#playback-show').empty().text(currentShow.title);
+        $('.playback').show();
+        $('.tv-show-page').hide();
+    });        
 
     let ScrollAmount = 500;
 
@@ -260,6 +295,10 @@ $(document).ready(function() {
     $('#genre-selector').change(function() {
         updateGenres();
     });
+    
+    $('#season-selector').change(function() {
+        updateEpisodes();
+    });
 
     $('.tv-show-page').hide();
 
@@ -280,6 +319,11 @@ $(document).ready(function() {
     $(document).on('click', '#search-back-arrow', function() {
         $('.search-content').hide();
         $('.page-content').show();
+    });
+    
+     $(document).on('click', '#playback-back-arrow', function() {
+        $('.playback').hide();
+        $('.tv-show-page').show();
     });
 
     let lastSearch = '';
@@ -307,6 +351,7 @@ $(document).ready(function() {
         $('#search-box').val('');
         $('.page-content').hide();
         $('.tv-show-page').hide();
+        $('.playback').hide();
         $('.service-login').hide();
         $('.starting-page').hide();
         $('.hamburger-content').hide();
