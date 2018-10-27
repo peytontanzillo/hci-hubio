@@ -137,12 +137,12 @@
   margin: auto;
 }
 
-#recommended-scroll-left, #genre-scroll-left, #results-scroll-left {
+#recommended-scroll-left, #genre-scroll-left, #results-scroll-left, #episodes-scroll-left {
   float: left;
 
 }
 
-#recommended-scroll-right, #genre-scroll-right, #results-scroll-right {
+#recommended-scroll-right, #genre-scroll-right, #results-scroll-right, #episodes-scroll-right {
   float: right;
 
 }
@@ -508,14 +508,15 @@ input:checked + .slider-round:before {
 
 .show-img-container > img {
     position: relative;
-    max-width: 550px;
+    width: 550px;
+    height: 300px;
     float: right;
 }
 
 #show-title {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
-    font-size: 60px;
+    font-size: 40px;
     padding: 20px;
 }
 
@@ -549,6 +550,19 @@ input:checked + .slider-round:before {
     font-size: 50px;
     margin: 21px;
     float: left;
+}
+
+#about-show {
+    overflow: hidden;
+    margin: 0;
+}
+
+#tv-play{
+    margin: -40px;
+}
+
+.service-container {
+    padding-top: 30px;
 }
 
 /* Search CSS */
