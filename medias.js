@@ -284,6 +284,21 @@ let StrangerThings = new Media(
     'Content/Konosuba.png',
     "konosuba");
 
+    let FamilyGuy = new Media(
+      "Family Guy",
+      8,
+      ["comedy"],
+      "1998",
+      "Sick, twisted and politically incorrect, the animated series features the adventures of the Griffin family. Endearingly \
+      ignorant Peter and his stay-at-home wife Lois reside in Quahog, R.I., and have three kids. Meg, the eldest child, is a \
+      social outcast, and teenage Chris is awkward and clueless when it comes to the opposite sex. The youngest, Stewie, is a \
+      genius baby bent on killing his mother and destroying the world. The talking dog, Brian, keeps Stewie in check while sipping \
+      martinis and sorting through his own life issues.",
+      [new Season(10), new Season(10), new Season(10), new Season(10), new Season(10), new Season(10), new Season(10), new Season(10)],
+      ["Hulu", "Prime Video"],
+      'Content/family-guy.jpg',
+      "familyguy");
+
 
 // == Movies == //
 
@@ -453,7 +468,8 @@ let ZeroDarkThirty = new Media(
 
 let Medias = [TheOffice, SouthPark, DragonBallZ, Dark, WestWorld, HighCastle, SpongeBob, Friends, GameOfThrones, Shameless, Avengers, BlackPanther,
    BeastsOfNoNation,TwentyWeeks, StarTrekIntoDarkness, TheDarkKnight, TheDarkKnightRises, ThorDarkWorld, ZeroDarkThirty, MissKobayashisDragonMaid,
-   Megalobox, CowboyBebop, ATLA, Konosuba, StrangerThings, RickAndMorty, Homeland, FiveCentimetersPerSecond, DarkWasTheNight, HoldTheDark, Arrival
+   Megalobox, CowboyBebop, ATLA, Konosuba, StrangerThings, RickAndMorty, Homeland, FiveCentimetersPerSecond, DarkWasTheNight, HoldTheDark, Arrival,
+   FamilyGuy
 ];
 
 function compare(a,b) {
