@@ -365,7 +365,7 @@ let DarkWasTheNight = new Media(
 let FiveCentimetersPerSecond = new Media(
     "5 Centimeters per Second",
     9,
-    ["drama"],
+    ["drama", "romance"],
     "2007",
     "The story is set in Japan, beginning in the 1990s \
      up until the present day (2008), with each act centered on a boy named Takaki Tōno.\
