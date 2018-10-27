@@ -20,7 +20,7 @@ $(document).ready(function() {
     // get the logged in services
 
     let services = ['netflix', 'hulu', 'hbogo', 'showtime', 'primevideo', 'crunchyroll'];
-    let genres = ['action', 'adventure', 'comedy', 'drama', 'romance', 'sci-fi'];
+    let genres = ['action', 'adventure', 'animation', 'comedy', 'drama', 'romance', 'sci-fi'];
 
 
     for (service of services) {
@@ -185,7 +185,7 @@ $(document).ready(function() {
         $(location).append(html);
         addContentListener(show);
     }
-    
+
     let currentShow = undefined;
 
     function addContentListener(show) {
@@ -238,7 +238,7 @@ $(document).ready(function() {
             $('.tv-show-page').show();
         });
     }
-    
+
     function updateEpisodes() {
         $('#watch-episode').empty();
         document.getElementById('watch-episode').scrollLeft = 0;
@@ -246,9 +246,9 @@ $(document).ready(function() {
         for (let i = 1; i <= selectedSeason.NumberOfEpisodes; i++) {
              let html = "<a href=\"#\" id=\"episode-" + i + "\" class=\"episode\" style=\"background: url(" + currentShow.imgPath + "); background-position: center; background-size: cover;\"><h5 class=\"content-title\">Episode " + i + "</h5></div>";
             $('#watch-episode').append(html);
-        }    
+        }
     }
-    
+
     $(document).on('click', '.episode', function() {
         const selectedSeason = $('#season-selector')[0].selectedIndex + 1;
         if (loginServices.has(currentShow.services[0])) {
@@ -260,8 +260,8 @@ $(document).ready(function() {
         } else {
             alert('You must be logged in to ' + currentShow.services[0] + ' to watch this content!');
         }
-    });        
-    
+    });
+
     $(document).on('click', '#play-button', function() {
         if (loginServices.has(currentShow.services[0])) {
             $('#tv-show-playback').empty();
@@ -271,7 +271,7 @@ $(document).ready(function() {
         } else {
             alert('You must be logged in to ' + currentShow.services[0] + ' to watch this content!');
         }
-    });        
+    });
 
     let ScrollAmount = 500;
 
@@ -306,7 +306,7 @@ $(document).ready(function() {
     $('#genre-selector').change(function() {
         updateGenres();
     });
-    
+
     $('#season-selector').change(function() {
         updateEpisodes();
     });
@@ -331,7 +331,7 @@ $(document).ready(function() {
         $('.search-content').hide();
         $('.page-content').show();
     });
-    
+
      $(document).on('click', '#playback-back-arrow', function() {
         $('.playback').hide();
         $('.tv-show-page').show();
