@@ -251,19 +251,27 @@ $(document).ready(function() {
     
     function addEpisodeListener(selectedSeason) {
         $(document).on('click', '.episode', function() {
-            const episodeNumber = $(this).attr("id").split("-")[1];
-            $('#tv-show-playback').empty().text("Season " + selectedSeason + " Episode " + episodeNumber + " of")
-            $('#playback-show').empty().text(currentShow.title);
-            $('.playback').show();
-            $('.tv-show-page').hide();
+            if (loginServices.has(currentShow.services[0])) {
+                const episodeNumber = $(this).attr("id").split("-")[1];
+                $('#tv-show-playback').empty().text("Season " + selectedSeason + " Episode " + episodeNumber + " of")
+                $('#playback-show').empty().text(currentShow.title);
+                $('.playback').show();
+                $('.tv-show-page').hide();
+            } else {
+                alert('You must be logged in to ' + currentShow.services[0] + ' to watch this content!');
+            }
         });        
     }
     
     $(document).on('click', '#play-button', function() {
-        $('#tv-show-playback').empty();
-        $('#playback-show').empty().text(currentShow.title);
-        $('.playback').show();
-        $('.tv-show-page').hide();
+        if (loginServices.has(currentShow.services[0])) {
+            $('#tv-show-playback').empty();
+            $('#playback-show').empty().text(currentShow.title);
+            $('.playback').show();
+            $('.tv-show-page').hide();
+        } else {
+            alert('You must be logged in to ' + currentShow.services[0] + ' to watch this content!');
+        }
     });        
 
     let ScrollAmount = 500;
