@@ -310,7 +310,7 @@ let Avengers = new Media(
     "Earth's mightiest heroes must come together and learn to fight as a team if\
      they are going to stop the mischievous Loki and his alien army from enslaving humanity.",
     [new Season(1)], // 1 season, 1 episode = movie
-    ["Netflix"],
+    ["Prime Video"],
     'Content/Avengers.jpg',
     "avengers");
 
@@ -324,7 +324,7 @@ let BlackPanther = new Media(
      conflict that puts the fate of Wakanda and the entire world at risk. Faced with treachery and danger, the young king must rally his allies\
      and release the full power of Black Panther to defeat his foes and secure the safety of his people.",
     [new Season(1)], // 1 season, 1 episode = movie
-    ["Netflix"],
+    ["Netflix", "Prime Video"],
     'Content/black-panther.jpg',
     "blackpanther");
 
